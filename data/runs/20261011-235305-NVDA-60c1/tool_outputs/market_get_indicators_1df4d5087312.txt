@@ -1,0 +1,66 @@
+## boll_ub values from 2026-08-12 to 2026-10-11:
+
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 242.8314930014783
+2026-10-08: 242.66187958312887
+2026-10-07: 242.28066509872954
+2026-10-06: 240.62703805377078
+2026-10-05: 238.4265974123651
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 236.5434584747065
+2026-10-01: 235.5277946490018
+2026-09-30: 234.68929903851594
+2026-09-29: 234.1417741787798
+2026-09-28: 233.62772906606054
+2026-09-27: N/A: Not a trading day (weekend or holiday)
+2026-09-26: N/A: Not a trading day (weekend or holiday)
+2026-09-25: 232.8040882609149
+2026-09-24: 233.16889625559105
+2026-09-23: 233.5855401521581
+2026-09-22: 233.27666922936527
+2026-09-21: 232.68318234010334
+2026-09-20: N/A: Not a trading day (weekend or holiday)
+2026-09-19: N/A: Not a trading day (weekend or holiday)
+2026-09-18: 231.64729876105497
+2026-09-17: 231.28446991454146
+2026-09-16: 231.18518211699245
+2026-09-15: 231.3010043461088
+2026-09-14: 231.833036543946
+2026-09-13: N/A: Not a trading day (weekend or holiday)
+2026-09-12: N/A: Not a trading day (weekend or holiday)
+2026-09-11: 232.1376142850164
+2026-09-10: 232.65608390006486
+2026-09-09: 232.99364996508834
+2026-09-08: 232.6917702236505
+2026-09-07: N/A: Not a trading day (weekend or holiday)
+2026-09-06: N/A: Not a trading day (weekend or holiday)
+2026-09-05: N/A: Not a trading day (weekend or holiday)
+2026-09-04: 232.09496283782065
+2026-09-03: 230.95406941095635
+2026-09-02: 229.72804406001484
+2026-09-01: 229.19431900019026
+2026-08-31: 229.37598033183676
+2026-08-30: N/A: Not a trading day (weekend or holiday)
+2026-08-29: N/A: Not a trading day (weekend or holiday)
+2026-08-28: 229.8841807722028
+2026-08-27: 231.3093802732318
+2026-08-26: 231.8488759327836
+2026-08-25: 234.31264502424509
+2026-08-24: 234.9990700023766
+2026-08-23: N/A: Not a trading day (weekend or holiday)
+2026-08-22: N/A: Not a trading day (weekend or holiday)
+2026-08-21: 235.6513895948371
+2026-08-20: 235.41763783406097
+2026-08-19: 234.9969584982602
+2026-08-18: 234.59206056564418
+2026-08-17: 233.77118795486956
+2026-08-16: N/A: Not a trading day (weekend or holiday)
+2026-08-15: N/A: Not a trading day (weekend or holiday)
+2026-08-14: 232.02645822004953
+2026-08-13: 230.00055117464052
+2026-08-12: 227.71087153649958
+
+
+Bollinger Upper Band: Typically 2 standard deviations above the middle line. Usage: Signals potential overbought conditions and breakout zones. Tips: Confirm signals with other tools; prices may ride the band in strong trends.

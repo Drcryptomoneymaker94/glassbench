@@ -1,0 +1,30 @@
+# Company Fundamentals for T
+
+Name: AT&T Inc.
+Sector: Communication Services
+Industry: Telecom Services
+Market Cap: 173913538560
+PE Ratio (TTM): 8.376238
+Forward PE: 9.875409
+PEG Ratio: 1.54
+Price to Book: 1.5807174
+EPS (TTM): 3.03
+Forward EPS: 2.57002
+Dividend Yield: 4.36
+Beta: 0.431
+52 Week High: 29.44
+52 Week Low: 19.89
+50 Day Average: 24.6914
+200 Day Average: 25.14735
+Revenue (TTM): 127238995968
+Gross Profit: 75989000192
+EBITDA: 44939001856
+Net Income: 21479999488
+Profit Margin: 0.16943
+Operating Margin: 0.24786
+Return on Equity: 0.18339
+Return on Assets: 0.04163
+Debt to Equity: 129.054
+Current Ratio: 0.971
+Book Value: 16.056
+Free Cash Flow: 10142000128

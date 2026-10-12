@@ -1,7 +1,14 @@
-"""Everything Desk knows about TradingAgents v0.4 internals lives here.
+"""Everything Desk knows about TradingAgents internals lives here.
 
 Node names, state keys, stages and what each agent reads. If an upstream
 release renames any of these, this file (and its test) is the one place to fix.
+
+Up to 0.5.x every analyst was a node of the main graph with its own tool node
+(tools_market) and a message clearing node (Msg Clear Market). Since 0.6.0
+each analyst is a small graph of its own inside its node ("agent", "tools",
+"wrap_up" inside "Market Analyst"), so a callback from inside it names the
+inner node; the checkpoint namespace still starts with the analyst's node.
+`resolve` handles both layouts, so runs on either engine attribute the same way.
 """
 
 from __future__ import annotations
@@ -67,6 +74,27 @@ for _a in AGENTS:
     if _a.get("clear_node"):
         NODE_MAP[_a["clear_node"]] = (_a["id"], "clear")
 
+# Nodes inside an analyst's own graph (0.6.0+): the model's turns, its tools, and the turn that asks for the report.
+INNER_NODES = {"agent": "inner", "wrap_up": "inner", "tools": "tools"}
+
+
+def resolve(metadata: dict | None) -> tuple[str, str] | None:
+    """(agent id, node kind) for a LangGraph callback, from its node, or from the analyst graph it runs inside."""
+    md = metadata or {}
+    node = md.get("langgraph_node")
+    if node in NODE_MAP:
+        return NODE_MAP[node]
+    outer = str(md.get("langgraph_checkpoint_ns") or "").split("|", 1)[0].split(":", 1)[0]
+    if node in INNER_NODES and outer in NODE_MAP:
+        return NODE_MAP[outer][0], INNER_NODES[node]
+    return None
+
+
+def speaker(metadata: dict | None) -> str | None:
+    """The agent whose model is talking in this callback, or None for tool and housekeeping nodes."""
+    hit = resolve(metadata)
+    return hit[0] if hit and hit[1] in ("agent", "inner") else None
+
 
 def agents_for(analyst_keys: list[str]) -> list[dict]:
     chosen = set(analyst_keys)
@@ -108,7 +136,10 @@ def flag_for(text: str, rules=FLAG_RULES) -> str | None:
 # ---------------------------------------------------------------------------
 # Decisions: parse the markdown the engine renders from its structured outputs
 def _field(text: str, label: str) -> str | None:
-    m = re.search(rf"\*\*{re.escape(label)}\*\*:\s*(.+?)(?=\n\s*\n\*\*|\nFINAL TRANSACTION|\Z)", text or "", re.S)
+    # A field runs to the next paragraph that opens with a bold label at the start of its line. 0.6.0's research
+    # plan writes its labels as bullets ("- **Rationale**:"); indented sub-bullets inside a field stay in it.
+    m = re.search(rf"\*\*{re.escape(label)}\*\*:\s*(.+?)(?=\n(?:[ \t]*\n)+(?:[-*][ \t]+)?\*\*|\nFINAL TRANSACTION|\Z)",
+                  text or "", re.S)
     return m.group(1).strip() if m else None
 
 

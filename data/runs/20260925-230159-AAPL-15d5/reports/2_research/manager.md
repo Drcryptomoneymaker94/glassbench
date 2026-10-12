@@ -1,0 +1,10 @@
+- **Recommendation**: Underweight
+
+- **Rationale**: The bull case convincingly shows AAPL remains a high-quality compounder: Q3 FY26 revenue +16.4% YoY, EPS +28.7% YoY, gross margin above 50%, strong FCF, falling net debt, and an intact ecosystem moat. However, the bear case wins the risk/reward argument. The stock trades near $338.9 at ~35.6x forward EPS of $9.59, while forward EPS growth is only ~10%, implying a forward PEG near 3.6x and a TTM FCF yield of only ~2.75%. The bull’s “PEG under 2” relies on trailing EPS growth, which is backward-looking and flattered by a weak comparison. Meanwhile, inventory rose 87% YoY and jumped from ~6.3% to ~10.1% of quarterly revenue, current ratio is only ~1.003 with working capital near $492M, and insider activity shows zero buys. Technically, price is extended near the 52-week high of $345.34, with potential downside toward the 200-day near $287 or lower if the multiple compresses. These facts justify caution: AAPL is priced for near-flawless execution, so the bull case is not destroyed, but the risk/reward at current levels is skewed negatively.
+
+- **Strategic Actions**:
+  - Trim existing AAPL exposure into strength. For a standard 5% portfolio weight, reduce to roughly 3–4%; for larger positions, trim by about one-third to one-half.
+  - Avoid initiating new long positions at the current ~$339 level. The upside to the 52-week high is limited, while downside risk to the $287–$300 zone is material if momentum or margins disappoint.
+  - Use the $345.34 52-week high as a resistance marker; if price fails there or breaks below the 50-day moving average near $322, reduce further or tighten stops.
+  - Consider hedging the remaining position with protective puts or covered calls if the trader wants to maintain upside exposure while managing downside risk. No options market data was provided, so sizing should be confirmed separately.
+  - Re-entry or adding back would become more attractive only on a pullback toward the 200-day area near $287–$300, or with hard evidence that holiday-quarter inventory converts cleanly and Services/margin trends hold above 50%.

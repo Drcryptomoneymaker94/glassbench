@@ -71,7 +71,7 @@ TRADINGAGENTS = {
         "stages": [
             {"id": "data", "label": "Data", "mode": "tools", "nodes": [
                 {"id": "prices", "label": "Prices, indicators", "kind": "data", "sub": "Yahoo"},
-                {"id": "fund", "label": "Statements", "kind": "data", "sub": "Yahoo, Alpha Vantage"},
+                {"id": "fund", "label": "Statements", "kind": "data", "sub": "SEC EDGAR, Yahoo"},
                 {"id": "newsd", "label": "News and macro", "kind": "data", "sub": "Yahoo, FRED, Polymarket"},
                 {"id": "social", "label": "Social", "kind": "data", "sub": "StockTwits, Reddit"},
             ]},
@@ -112,14 +112,15 @@ TRADINGAGENTS = {
             ["aggressive", "portfolio_manager"], ["conservative", "portfolio_manager"], ["neutral", "portfolio_manager"],
         ],
         "notes": [
-            "Analysts run in parallel and independently; each one's tool messages are wiped after its report so the next stage sees only the report.",
+            "Analysts run in parallel and independently. Since 0.6.0 each one works in a graph of its own, with its own message history, and hands on only its report (earlier versions wiped its tool messages after the report).",
             "Bull and bear alternate for the configured number of rounds (Desk default: 1). The same holds for the three risk voices.",
             "Quick model: analysts, debaters, trader. Deep model: research manager and portfolio manager.",
         ],
     },
     "agents": _ta_agents(),
     "data": [
-        {"source": "Yahoo Finance (yfinance)", "used_for": "prices, indicators, statements, company profile, recent news", "point_in_time": "prices and statements filtered to the date; profile withheld on past dates; news only recent"},
+        {"source": "SEC EDGAR (engine's sec_edgar vendor)", "used_for": "balance sheet, income statement, cash flow; the default for statements since 0.6.0", "point_in_time": "yes, by filing date"},
+        {"source": "Yahoo Finance (yfinance)", "used_for": "prices, indicators, company profile, recent news; statements for non-US filers", "point_in_time": "prices and statements filtered to the date; profile withheld on past dates; news only recent"},
         {"source": "Alpha Vantage", "used_for": "alternative vendor for the same data", "point_in_time": "same rules"},
         {"source": "FRED", "used_for": "macro series for the news analyst", "point_in_time": "yes, by date"},
         {"source": "StockTwits, Reddit, Polymarket", "used_for": "sentiment and event odds", "point_in_time": "no: present-day feeds"},
@@ -148,7 +149,8 @@ AI_HEDGE_FUND = {
         "simulated broker executes at the next completed close. Analysts come in two kinds behind one interface: LLM "
         "agents in the voice of famous investors (Buffett, Munger, Graham, Lynch, Druckenmiller) and a quant model for "
         "post-earnings drift. Each returns a conviction from -1 to +1 and a thesis. Data comes from the Financial "
-        "Datasets API, which needs its own key."
+        "Datasets API, which needs its own key and prepaid credits. Glassbench adds a free route of its own, Yahoo Finance "
+        "prices and SEC EDGAR statements, which is not native to the framework and is labelled on every run that uses it."
     ),
     "links": [
         {"label": "GitHub", "url": "https://github.com/virattt/ai-hedge-fund"},
@@ -160,14 +162,14 @@ AI_HEDGE_FUND = {
         {"label": "Licence", "value": "MIT"},
         {"label": "Language", "value": "Python"},
         {"label": "Paper", "value": "none", "note": "educational project"},
-        {"label": "Data", "value": "Financial Datasets API", "note": "prepaid credits, about $0.02 a request; no free tier"},
+        {"label": "Data", "value": "Financial Datasets API", "note": "prepaid credits, about $0.02 a request; Glassbench also offers a free Yahoo Finance and SEC EDGAR route, not native"},
         {"label": "LLM calls per run", "value": "one per LLM analyst", "note": "a second pass only when execution waits past the next day"},
         {"label": "LLM providers", "value": "Anthropic, OpenAI, DeepSeek, Google, xAI, Kimi, TypeSafe (Jev)"},
     ],
     "flow": {
         "stages": [
             {"id": "data", "label": "Data", "mode": "tools", "nodes": [
-                {"id": "fd", "label": "Prices, fundamentals, earnings", "kind": "data", "sub": "Financial Datasets"},
+                {"id": "fd", "label": "Prices, fundamentals, earnings", "kind": "data", "sub": "Financial Datasets, or free Yahoo + SEC EDGAR"},
             ]},
             {"id": "analysts", "label": "Analysts (alpha models)", "mode": "parallel", "nodes": [
                 {"id": "buffett", "label": "Buffett", "kind": "quick", "sub": "LLM agent"},
@@ -201,6 +203,8 @@ AI_HEDGE_FUND = {
             "No debate: each analyst scores independently and a policy blends the convictions (deep-value strategy: Graham at double weight, plus Buffett and Munger).",
             "Strategies are YAML files; the same pipeline runs a backtest, paper trading or live trading by swapping the clock and the broker.",
             "Glassbench runs one cycle per stock and date: each analyst is a lane, then blend, risk and execution. Each run keeps its own prompt cache, so reruns are independent and every prompt and answer stays in the run folder.",
+            "Since 2.5.0 a cycle is two steps, assess at a close and execute at the next completed close; Glassbench sequences them for one stock and date, as the framework's own paper and backtest modes do.",
+            "Free data route (not native): Glassbench's adapter serves the framework's data protocol from Yahoo Finance and SEC EDGAR. Each 10-Q and 10-K becomes one trailing twelve month row dated by its filing day, with the full filing history, where Financial Datasets' credits plan reaches back twelve months. Debt counts the current portion once, and market cap is priced at the filing day's close, so those two figures differ from Financial Datasets.",
             "AI Hedge Fund returns weights, not ratings. Glassbench maps the blended conviction to its five tiers so both frameworks share one table: 0.50 or more Buy, 0.15 Overweight, above -0.15 Hold, above -0.50 Underweight, else Sell.",
         ],
     },
@@ -216,7 +220,8 @@ AI_HEDGE_FUND = {
         {"id": "limits", "name": "Risk limits", "stage": "risk", "role": "rule", "reads": ["target positions"], "what": "Hard limits the analysts cannot override.", "tools": None},
     ],
     "data": [
-        {"source": "Financial Datasets API", "used_for": "prices, fundamentals, earnings", "point_in_time": "the engine builds its snapshot by filing date; not yet verified by Glassbench on real data"},
+        {"source": "Financial Datasets API (native)", "used_for": "prices, fundamentals, earnings", "point_in_time": "by filing date; filing dates and margins checked by Glassbench against SEC filings for MSFT, NVDA, AAPL and JPM"},
+        {"source": "Yahoo Finance and SEC EDGAR (Glassbench adapter, not native)", "used_for": "prices and earnings surprises from Yahoo; statements from SEC filings", "point_in_time": "statements by filing date; earnings surprises by announcement date; sector and industry are today's, as with Financial Datasets"},
     ],
     "evidence": [
         {"claim": "No published evaluation; the project states it is educational and does not trade", "source": "README", "note": ""},

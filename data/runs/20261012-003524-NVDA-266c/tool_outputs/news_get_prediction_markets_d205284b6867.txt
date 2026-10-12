@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "S&P 500 2026"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will Bitcoin have the best performance in 2026?** — Yes 19% ($453,962 volume, resolves 2027-01-01, 1-week -5.5pp)
+- **Will Gold have the best performance in 2026?** — Yes 8% ($287,654 volume, resolves 2027-01-01, 1-week -4.0pp)
+- **Will the S&P 500 have the best performance in 2026?** — Yes 67% ($200,637 volume, resolves 2027-01-01, 1-week +5.5pp)
+- **SpaceX IPO: Officially added to S&P 500 in 2026?** — Yes 5% ($29,344 volume, resolves 2027-01-01, 1-week +3.2pp)
+- **Will S&P 500 (SPX) close at <$6,000 in December?** — Yes 6% ($24,422 volume, resolves 2026-12-31)
+- **Will S&P 500 (SPY) hit (LOW) $750 in October?** — Yes 24% ($8,337 volume, resolves 2026-11-01, 1-week -19.5pp)

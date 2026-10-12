@@ -7,6 +7,13 @@ from deskapp.runconfig import CURRENT_CONFIG, install_run_config
 from deskapp.settings import engine_config
 
 
+def _stock_vendor() -> str:
+    """The engine's own default for fundamental data: yfinance up to 0.5.x, sec_edgar,yfinance since 0.6.0."""
+    from tradingagents.default_config import DEFAULT_CONFIG
+
+    return DEFAULT_CONFIG["data_vendors"]["fundamental_data"]
+
+
 class RunConfigIsolation(unittest.TestCase):
     def test_concurrent_runs_each_see_their_own_vendors(self):
         try:
@@ -29,7 +36,7 @@ class RunConfigIsolation(unittest.TestCase):
         [t.start() for t in threads]
         [t.join() for t in threads]
         self.assertEqual(seen["edgar_valuation"], "sec_edgar,yfinance")
-        self.assertEqual(seen["edgar_statements"], "yfinance")
+        self.assertEqual(seen["edgar_statements"], _stock_vendor())
 
     def test_a_stock_run_after_a_variant_run_is_stock_again(self):
         try:
@@ -39,7 +46,7 @@ class RunConfigIsolation(unittest.TestCase):
         from tradingagents.dataflows.config import set_config
 
         install_run_config()
-        for variant, expected in (("edgar_valuation", "sec_edgar,yfinance"), ("", "yfinance")):
+        for variant, expected in (("edgar_valuation", "sec_edgar,yfinance"), ("", _stock_vendor())):
             config = engine_config(1, "deepseek-v4-pro", "deepseek-v4-flash", variant=variant)
             token = CURRENT_CONFIG.set(config)
             set_config(config)

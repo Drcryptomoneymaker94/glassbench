@@ -1,0 +1,9 @@
+**Rating**: Underweight
+
+**Executive Summary**: Trim KO into strength rather than exit: reduce roughly 25-33% of existing exposure into the $90-92 area, leaning toward the upper end if the position is oversized. Retain a core position; do not add at ~$88. Treat $92.49 as an upside reassessment level, not a stop, and rebuild only near $79-82 or $70-75, or on evidence of volume-led growth and sustained FCF coverage.
+
+**Investment Thesis**: The valuation and quality-of-beat evidence carries the decision. The bull's own base case of 25x forward EPS of $3.53 lands near $88, essentially today's price, so further upside requires a staples re-rating to 27-30x on a 2.4% yield and a PEG of roughly 3-4. The +17% EPS print is flattered by lower interest expense and a lower tax rate, with operating income up only ~7.9%, and the FY25 FCF payout of 166% plus insider selling into strength with zero 2026 open-market buys argue against adding here. However, the debate supports Underweight rather than the trader's Sell because all three analysts converge on keeping a core: Q2'26 revenue +6.7%, TTM operating margin near 35%, net debt down $9.2B, H1'26 operating cash flow above all of FY25, a 0.34 beta, and 61 years of dividend growth remain real defensive attributes. The aggressive analyst's downside asymmetry point is valid, but the conservative analyst is correct that this is a de-risking trim, not a short or full exit, and the neutral analyst's staged sizing best calibrates the action. Downgrade to Sell only on a volume break of the 50-DMA/200-DMA zone or confirmed FCF/volume deterioration; upgrade on clear volume-led growth and sustained FCF coverage that justify the current multiple.
+
+**Price Target**: 79.0
+
+**Time Horizon**: 3-6 months

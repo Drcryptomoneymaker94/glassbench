@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "Taiwan China"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will China invade Taiwan by end of 2026?** — Yes 2% ($43,867,753 volume, resolves 2027-01-01, 1-week -0.3pp)
+- **China x Taiwan military clash before 2027?** — Yes 5% ($3,472,365 volume, resolves 2027-01-01, 1-week +0.3pp)
+- **Will China invade Taiwan by December 31, 2027?** — Yes 10% ($3,457,668 volume, resolves 2028-01-01, 1-week -1.0pp)
+- **Will China invade Taiwan by June 30, 2027?** — Yes 8% ($475,779 volume, resolves 2027-07-01)
+- **Will China blockade Taiwan in 2026?** — Yes 4% ($419,500 volume, resolves 2027-01-01, 1-week +0.3pp)
+- **Lai Ching-te out as President of Taiwan by December 31, 2026?** — Yes 7% ($106,780 volume, resolves 2027-01-01, 1-week +3.3pp)

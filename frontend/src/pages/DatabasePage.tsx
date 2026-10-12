@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, type Run, type SearchResult } from "../api";
 import { DownloadIcon } from "../components/Icons";
-import { RATINGS, VARIANT_LABELS, engineLabel, modelLabel, versionLabel, versionTitle } from "../components/RunFilters";
+import { RATINGS, VARIANT_LABELS, engineLabel, engineName, modelLabel, versionLabel, versionTitle } from "../components/RunFilters";
 import { fmtDate, fmtPrice, fmtUsd, ratingColor } from "../format";
 import { StatusCell } from "./RunsPage";
 
@@ -289,7 +289,7 @@ export default function DatabasePage() {
                           <td><StatusCell status={r.status} /></td>
                           <td style={{ fontWeight: 700 }}>{r.ticker}</td>
                           <td className="num">{r.trade_date}</td>
-                          <td title={versionTitle(r.engine_version)}>TradingAgents <span className="muted mono" style={{ fontSize: 10.5 }}>{versionLabel(r.engine_version)}</span></td>
+                          <td title={versionTitle(r.engine_version, r.engine)}>{engineName(r)} <span className="muted mono" style={{ fontSize: 10.5 }}>{versionLabel(r.engine_version)}</span></td>
                           <td style={{ color: "var(--ink-2)" }}>{r.variant ? VARIANT_LABELS[r.variant] ?? r.variant : "Stock"}</td>
                           <td className="mono" style={{ fontSize: 11.5, color: "var(--ink-2)" }}>{modelLabel(r.quick_model)} · {modelLabel(r.deep_model)}</td>
                           <td className="rating" style={{ color: ratingColor(r.rating) }}>{r.rating ?? dash}</td>

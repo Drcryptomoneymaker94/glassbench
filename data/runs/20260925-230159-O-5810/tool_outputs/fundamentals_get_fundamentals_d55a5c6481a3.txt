@@ -1,0 +1,30 @@
+# Company Fundamentals for O
+
+Name: Realty Income Corporation
+Sector: Real Estate
+Industry: REIT - Retail
+Market Cap: 52552949760
+PE Ratio (TTM): 40.540146
+Forward PE: 35.76258
+PEG Ratio: 2.8
+Price to Book: 1.3287717
+EPS (TTM): 1.37
+Forward EPS: 1.55302
+Dividend Yield: 5.88
+Beta: 0.712
+52 Week High: 67.94
+52 Week Low: 55.07
+50 Day Average: 61.8814
+200 Day Average: 61.9007
+Revenue (TTM): 6065508864
+Gross Profit: 5621530112
+EBITDA: 5357639168
+Net Income: 1267576960
+Profit Margin: 0.20898001
+Operating Margin: 0.46965998
+Return on Equity: 0.03225
+Return on Assets: 0.02359
+Debt to Equity: 74.722
+Current Ratio: 1.528
+Book Value: 41.798
+Free Cash Flow: 1582081920

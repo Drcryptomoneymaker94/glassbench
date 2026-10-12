@@ -50,6 +50,9 @@ export type RunView = {
   status: "queued" | "running" | "finished" | "failed" | "cancelled";
   engine: string;
   variant?: string;
+  /** AI Hedge Fund: data source id and its label (yahoo is Glassbench's free adapter, not native). */
+  dataSource?: string;
+  dataLabel?: string;
   /** Agents and stages the run declared for itself (AI Hedge Fund); TradingAgents runs use the app's meta. */
   agentMeta?: AgentMeta[];
   stages?: Stage[];
@@ -117,6 +120,8 @@ function apply(run: RunView, meta: Meta, e: DeskEvent) {
       run.queuedAt = e.ts;
       run.engine = p.engine ?? "tradingagents";
       run.variant = p.variant || undefined;
+      run.dataSource = p.data_source || undefined;
+      run.dataLabel = p.data_label || undefined;
       if (p.agent_meta) {
         run.agentMeta = p.agent_meta;
         run.stages = p.stages;

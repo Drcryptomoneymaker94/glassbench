@@ -65,6 +65,8 @@ MIGRATIONS = [
     ("memory", "ALTER TABLE runs ADD COLUMN memory TEXT DEFAULT 'shared'"),
     ("variant", "ALTER TABLE runs ADD COLUMN variant TEXT DEFAULT ''"),
     ("models_served", "ALTER TABLE runs ADD COLUMN models_served TEXT"),
+    # AI Hedge Fund runs: where the numbers came from. Empty means the framework's own data, as released.
+    ("data_source", "ALTER TABLE runs ADD COLUMN data_source TEXT DEFAULT ''"),
 ]
 
 # Which event payload fields are worth full-text search.

@@ -1,0 +1,148 @@
+{
+  "schema_version": 2,
+  "status": "pending",
+  "execution_policy": "next_close",
+  "fund": "glassbench",
+  "as_of": "2026-10-10",
+  "proposal": {
+    "schema_version": 2,
+    "fund": "glassbench",
+    "as_of": "2026-10-10",
+    "spec": {
+      "schema_version": 2,
+      "name": "glassbench",
+      "strategies": [
+        {
+          "name": "deep-value",
+          "display_name": "Deep Value",
+          "weight": 1.0,
+          "models": [
+            {
+              "name": "graham",
+              "weight": 2.0,
+              "params": {}
+            },
+            {
+              "name": "buffett",
+              "weight": 1.0,
+              "params": {}
+            },
+            {
+              "name": "munger",
+              "weight": 1.0,
+              "params": {}
+            }
+          ],
+          "blend": {
+            "method": "conviction_weighted",
+            "gross_target": 1.0,
+            "mode": "long_only"
+          }
+        }
+      ],
+      "risk": {
+        "max_position_pct": 0.25,
+        "max_gross_exposure": 1.0
+      },
+      "capital": 100000.0,
+      "rebalance": "weekly",
+      "benchmark": "SPY"
+    },
+    "universe": [
+      "NVDA"
+    ],
+    "marks": {
+      "NVDA": 229.28
+    },
+    "skipped": [],
+    "strategies": [
+      {
+        "name": "deep-value",
+        "slice": 1.0,
+        "signals": [
+          {
+            "model_name": "graham",
+            "ticker": "NVDA",
+            "date": "2026-10-10",
+            "value": 0.0,
+            "reasoning": "The enterprise is financially sound: a current ratio of 4.59, debt/equity of 0.15, and positive, growing earnings across every period shown satisfy my balance-sheet and stability tests. But at 28 times earnings and roughly 24 times book value, the price already capitalizes a great deal of future growth rather than offering a margin of safety. I cannot call it bullish on such a valuation, though the demonstrated finances and stable record keep me from calling it bearish.",
+            "components": {},
+            "metadata": {
+              "signal": "neutral",
+              "confidence": 62.0,
+              "model": "deepseek-flash",
+              "prompt_key": "d7fc0f16d017e50b8f375eaa",
+              "snapshot_hash": "97f2770e4192441f69d18975",
+              "cached": false,
+              "abstained": false
+            }
+          },
+          {
+            "model_name": "buffett",
+            "ticker": "NVDA",
+            "date": "2026-10-10",
+            "value": 0.78,
+            "reasoning": "The numbers describe a truly exceptional business: 84% returns on equity, 75% gross margins, 64% net margins, 83% revenue growth, and a balance sheet with only 0.15 debt-to-equity and a 4.59 current ratio. Book value per share has compounded rapidly and free cash flow is real and growing, so management is allocating capital well. At 28 times earnings\u2014down from 46 a year ago\u2014the price is fair, not demanding perfection, for a business of this quality. I would be comfortable owning it for a decade, though I would keep an eye on the semiconductor cycle.",
+            "components": {},
+            "metadata": {
+              "signal": "bullish",
+              "confidence": 78.0,
+              "model": "deepseek-flash",
+              "prompt_key": "dc47d41eb21cb61c0f082f20",
+              "snapshot_hash": "97f2770e4192441f69d18975",
+              "cached": false,
+              "abstained": false
+            }
+          },
+          {
+            "model_name": "munger",
+            "ticker": "NVDA",
+            "date": "2026-10-10",
+            "value": 0.85,
+            "reasoning": "This is not a mediocre business hiding behind one good year: ROE is 84%, net margin is 64%, gross margin is 75%, revenue is up 83%, and free cash flow per share has grown from 3.18 to 5.27. Debt is trivial at 0.15 debt/equity, the current ratio is 4.59, and book value per share has compounded from 4.89 to 9.50. At 28x earnings, the price does not require believing something stupid. The real risk is semiconductor cyclicality and margin mean-reversion, but on the filed numbers this is a great business at a fair price.",
+            "components": {},
+            "metadata": {
+              "signal": "bullish",
+              "confidence": 85.0,
+              "model": "deepseek-flash",
+              "prompt_key": "5d0d5c9f6551864e17c11ce2",
+              "snapshot_hash": "97f2770e4192441f69d18975",
+              "cached": false,
+              "abstained": false
+            }
+          }
+        ],
+        "convictions": {
+          "NVDA": 0.4075
+        },
+        "weights": {
+          "NVDA": 1.0
+        },
+        "eligible_scores": {
+          "NVDA": 0.4075
+        },
+        "flat_reason": null,
+        "final_contribution": {
+          "NVDA": 0.25
+        }
+      }
+    ],
+    "target_weights": {
+      "NVDA": 1.0
+    },
+    "clamps": [
+      {
+        "limit": "max_position_pct",
+        "ticker": "NVDA",
+        "before": 1.0,
+        "after": 0.25
+      }
+    ],
+    "final_weights": {
+      "NVDA": 0.25
+    },
+    "risk_scale_factor": null
+  },
+  "reason": "No subsequent completed benchmark session is available. Run again explicitly when data is available.",
+  "scheduled_execution_date": null
+}

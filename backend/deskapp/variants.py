@@ -8,6 +8,9 @@ ticker and date. Every change a variant makes is written to the run's event log.
   evidence. Swapped in the outgoing request, so only runs with this variant see it.
 - pit_valuation: appends point-in-time valuation from SEC EDGAR to the fundamentals tool output
   on past-dated runs, where the engine withholds Yahoo's present-day profile.
+- units_labeled: Yahoo returns dividendYield and debtToEquity as percentages (0.32 means 0.32%, 78.4 means
+  78.4%, 0.78x) while its margins and returns are fractions; the fundamentals snapshot prints all of them
+  without units. This variant labels the two percentages, the change proposed upstream.
 - edgar_statements / edgar_valuation: a matched pair for the upstream contribution. Both read
   statements as filed; only the second also gets valuation as of the run date, from the engine's
   own sec_edgar vendor. Same cells, one difference, so the pair isolates what valuation adds.
@@ -16,6 +19,7 @@ ticker and date. Every change a variant makes is written to the run's event log.
 from __future__ import annotations
 
 import logging
+import re
 from datetime import date
 
 from . import adapter
@@ -28,6 +32,7 @@ VARIANTS = {
     "prompt_pre1196": {"label": "Decisive wording", "detail": "Manager prompts from before commit a4acd8a (reserve Hold for genuinely balanced evidence). Only for engines between a4acd8a and 62d3479; upstream fixed the Hold default in 62d3479 (v0.5.0), so newer engines refuse this variant."},
     "edgar_statements": {"label": "EDGAR statements", "detail": "Control of the valuation test: statements as they were filed (engine's sec_edgar vendor); the company profile stays withheld on past dates, as released"},
     "edgar_valuation": {"label": "EDGAR statements + valuation", "detail": "Treatment of the valuation test: statements as filed plus market cap and multiples as of the run date, served by the engine's sec_edgar vendor (fork branch desk/edgar-valuation)"},
+    "units_labeled": {"label": "Units labeled", "detail": "Yahoo's dividend yield and debt to equity are percentages; the fundamentals snapshot prints them with their unit (for example Debt to Equity: 78.4% (0.78x)), the fix proposed upstream"},
     "pit_valuation": {"label": "+ EDGAR as filed", "detail": "Past dates only: statements as they were filed (engine's sec_edgar vendor, v0.5.0+) plus Desk's point-in-time valuation block from SEC filings"},
 }
 
@@ -127,7 +132,7 @@ def install_variants() -> None:
         payload = _swap(payload, counts)
         if any(counts):
             config = var_child_runnable_config.get() or {}
-            agent_id, _ = adapter.NODE_MAP.get((config.get("metadata") or {}).get("langgraph_node"), (None, None))
+            agent_id = (adapter.resolve(config.get("metadata")) or (None,))[0]
             capture.bus.emit(capture.run_id, "variant.applied", agent_id, variant="prompt_pre1196", swaps=counts,
                              detail="Replaced current Hold wording with the pre-a4acd8a text in this request")
         return payload
@@ -140,10 +145,26 @@ def install_variants() -> None:
     _installed = True
 
 
+def label_units(text: str) -> str:
+    """Yahoo's two percentage fields, written with their unit; everything else untouched."""
+    def debt_to_equity(m):
+        value = float(m.group(1))
+        return f"Debt to Equity: {value:g}% ({value / 100:.2f}x)"
+
+    text = re.sub(r"^Debt to Equity: (-?\d+(?:\.\d+)?)$", debt_to_equity, text, flags=re.M)
+    return re.sub(r"^Dividend Yield: (-?\d+(?:\.\d+)?)$", lambda m: f"Dividend Yield: {float(m.group(1)):g}%", text, flags=re.M)
+
+
 def _with_valuation(fn, vendor: str = ""):
     def get_fundamentals(ticker, curr_date=None, *args, **kwargs):
         out = fn(ticker, curr_date, *args, **kwargs)
         capture = CURRENT_CAPTURE.get()
+        if capture is not None and getattr(capture, "variant", "") == "units_labeled" and vendor == "yfinance":
+            labeled = label_units(out)
+            if labeled != out:
+                capture.bus.emit(capture.run_id, "variant.applied", "fundamentals", variant="units_labeled",
+                                 detail="Dividend yield and debt to equity labeled as percentages")
+            return labeled
         if capture is not None and getattr(capture, "variant", "") == "edgar_valuation" and vendor == "sec_edgar":
             cap_line = next((line for line in out.splitlines() if line.startswith("Market Cap")), "served")
             capture.bus.emit(capture.run_id, "variant.applied", "fundamentals", variant="edgar_valuation", chars=len(out),

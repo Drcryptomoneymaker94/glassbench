@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "US election 2026 midterms"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will the Democratic Party control the House after the 2026 Midterm elections?** — Yes 90% ($9,167,528 volume, resolves 2026-11-04, 1-week -2.0pp)
+- **Will the Republican Party control the House after the 2026 Midterm elections?** — Yes 10% ($7,248,860 volume, resolves 2026-11-04, 1-week +2.0pp)
+- **2026 Balance of Power: R Senate, R House** — Yes 8% ($7,054,389 volume, resolves 2026-11-04, 1-week +1.0pp)
+- **2026 Balance of Power: D Senate, D House** — Yes 62% ($5,257,702 volume, resolves 2026-11-04, 1-week -5.0pp)
+- **Will the Democratic Party control the Senate after the 2026 Midterm elections?** — Yes 64% ($3,681,284 volume, resolves 2026-11-04, 1-week -4.0pp)
+- **2026 Balance of Power: R Senate, D House** — Yes 28% ($3,452,741 volume, resolves 2026-11-04, 1-week +1.0pp)

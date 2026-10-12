@@ -32,6 +32,12 @@ function AihfDecisionCard({ run }: { run: RunView }) {
         )}
       </div>
       <div className="kv">
+        <span className="k">Data</span>
+        <span className="v">{d?.data_label ?? run.dataLabel ?? "Financial Datasets"}</span>
+        <span className="rating" style={{ color: (d?.data_source ?? run.dataSource) === "yahoo" ? "var(--warn)" : undefined }}>
+          {(d?.data_source ?? run.dataSource) === "yahoo" ? "not native" : "native"}
+        </span>
+
         <span className="k">Blend</span>
         <span className="v num">conviction {signed(conviction)}</span>
         <span className="rating">{stance ?? "—"}</span>
@@ -62,6 +68,11 @@ function AihfDecisionCard({ run }: { run: RunView }) {
       {d?.execution?.refreshed_as_of && (
         <p className="muted" style={{ margin: 0, fontSize: 11.5 }}>
           Rated on the view as of {d.as_of}. The simulated order used a view refreshed as of {d.execution.refreshed_as_of}, the day before execution.
+        </p>
+      )}
+      {(d?.data_source ?? run.dataSource) === "yahoo" && (
+        <p className="bt-note" style={{ margin: 0, fontSize: 11.5 }}>
+          Free data through Glassbench's adapter (Yahoo Finance prices and earnings dates, SEC EDGAR statements), not AI Hedge Fund's own Financial Datasets client. Results might not be ideal.
         </p>
       )}
       {d?.rating_rule && <p className="muted" style={{ margin: 0, fontSize: 11.5 }}>{d.rating_rule}</p>}

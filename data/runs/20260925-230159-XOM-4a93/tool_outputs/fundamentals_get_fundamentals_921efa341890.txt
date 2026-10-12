@@ -1,0 +1,30 @@
+# Company Fundamentals for XOM
+
+Name: ExxonMobil Holdings Corporation
+Sector: Energy
+Industry: Oil & Gas Integrated
+Market Cap: 660331954176
+PE Ratio (TTM): 20.667953
+Forward PE: 14.498916
+PEG Ratio: 1.39
+Price to Book: 2.5458148
+EPS (TTM): 7.77
+Forward EPS: 11.076
+Dividend Yield: 2.54%
+Beta: 0.175
+52 Week High: 176.41
+52 Week Low: 110.39
+50 Day Average: 159.1328
+200 Day Average: 147.7701
+Revenue (TTM): 361060007936
+Gross Profit: 107475001344
+EBITDA: 67937001472
+Net Income: 32757000192
+Profit Margin: 0.09072
+Operating Margin: 0.15859
+Return on Equity: 0.12584
+Return on Assets: 0.055209998
+Debt to Equity: 15.921% (0.16x)
+Current Ratio: 1.135
+Book Value: 63.08
+Free Cash Flow: 20671000576

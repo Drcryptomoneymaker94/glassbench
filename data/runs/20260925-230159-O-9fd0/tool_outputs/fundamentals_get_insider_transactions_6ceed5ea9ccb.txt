@@ -1,0 +1,45 @@
+# Insider Transactions data for O
+# Rows are dated by transaction date. A trade becomes public when its Form 4 is filed, up to two business days later, so the newest rows may not have been known on this date.
+
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,3475,209022,,Sale at price 60.15 per share.,MCLAUGHLIN GREGORY T,Director,,2026-09-10,I
+1,3214,0,,Stock Award(Grant) at price 0.00 per share.,ALMODOVAR PRISCILLA,Director,,2026-05-21,D
+2,3214,0,,Stock Award(Grant) at price 0.00 per share.,HOURIHAN KIMBERLY,Director,,2026-05-21,D
+3,3214,0,,Stock Award(Grant) at price 0.00 per share.,MCLAUGHLIN GREGORY T,Director,,2026-05-21,I
+4,3214,0,,Stock Award(Grant) at price 0.00 per share.,JACOBSON JEFFREY A,Director,,2026-05-21,D
+5,3214,0,,Stock Award(Grant) at price 0.00 per share.,CHAPMAN A LARRY,Director,,2026-05-21,I
+6,3214,0,,Stock Award(Grant) at price 0.00 per share.,HUSKINS PRIYA CHERIAN,Director,,2026-05-21,I
+7,3214,0,,Stock Award(Grant) at price 0.00 per share.,PREUSSE MARY HOGAN,Director,,2026-05-21,D
+8,3214,0,,Stock Award(Grant) at price 0.00 per share.,GILYARD REGINALD HAROLD,Director,,2026-05-21,D
+9,3214,0,,Stock Award(Grant) at price 0.00 per share.,LOPEZ GERARDO I,Director,,2026-05-21,D
+10,3214,0,,Stock Award(Grant) at price 0.00 per share.,MCKEE MICHAEL DALE,Director,,2026-05-21,I
+11,7400,461908,,Sale at price 62.42 per share.,BUSHORE MICHELLE,General Counsel,,2026-04-02,D
+12,7698,0,,Stock Award(Grant) at price 0.00 per share.,BUSHORE MICHELLE,General Counsel,,2026-02-26,D
+13,7128,0,,Stock Award(Grant) at price 0.00 per share.,KEHLE SHANNON,Officer,,2026-02-17,D
+14,7110,0,,Stock Award(Grant) at price 0.00 per share.,PONG JONATHAN CFA,Chief Financial Officer,,2026-02-17,D
+15,29630,0,,Stock Award(Grant) at price 0.00 per share.,WHYTE GREGORY J,Chief Operating Officer,,2026-02-17,D
+16,41360,0,,Stock Award(Grant) at price 0.00 per share.,ABRAHAM NEIL M,Officer,,2026-02-17,D
+17,10753,0,,Stock Award(Grant) at price 0.00 per share.,REDINGTON NEALE W,Officer,,2026-02-17,D
+18,137639,0,,Stock Award(Grant) at price 0.00 per share.,ROY SUMIT,Chief Executive Officer,,2026-02-17,D
+19,40727,0,,Stock Award(Grant) at price 0.00 per share.,HAGAN MARK E.,Chief Investment Officer,,2026-02-17,D
+20,31866,0,,Stock Award(Grant) at price 0.00 per share.,BUSHORE MICHELLE,General Counsel,,2026-02-17,D
+21,3399,0,,Stock Award(Grant) at price 0.00 per share.,HOURIHAN KIMBERLY,Director,,2025-10-14,D
+22,11000,664730,,Sale at price 60.43 per share.,PREUSSE MARY HOGAN,Director,,2025-09-30,D
+23,3632,0,,Stock Award(Grant) at price 0.00 per share.,ALMODOVAR PRISCILLA,Director,,2025-05-13,D
+24,3632,0,,Stock Award(Grant) at price 0.00 per share.,MCLAUGHLIN GREGORY T,Director,,2025-05-13,I
+25,3632,0,,Stock Award(Grant) at price 0.00 per share.,JACOBSON JEFFREY A,Director,,2025-05-13,D
+26,3632,0,,Stock Award(Grant) at price 0.00 per share.,CHAPMAN A LARRY,Director,,2025-05-13,I
+27,3632,0,,Stock Award(Grant) at price 0.00 per share.,HUSKINS PRIYA CHERIAN,Director,,2025-05-13,I
+28,3632,0,,Stock Award(Grant) at price 0.00 per share.,PREUSSE MARY HOGAN,Director,,2025-05-13,D
+29,3632,0,,Stock Award(Grant) at price 0.00 per share.,GILYARD REGINALD HAROLD,Director,,2025-05-13,D
+30,3632,0,,Stock Award(Grant) at price 0.00 per share.,LOPEZ GERARDO I,Director,,2025-05-13,D
+31,3632,0,,Stock Award(Grant) at price 0.00 per share.,MCKEE MICHAEL DALE,Director,,2025-05-13,I
+32,2671,0,,Stock Award(Grant) at price 0.00 per share.,KEHLE SHANNON,Officer,,2025-02-18,D
+33,5432,0,,Stock Award(Grant) at price 0.00 per share.,PONG JONATHAN CFA,Chief Financial Officer,,2025-02-18,D
+34,7242,0,,Stock Award(Grant) at price 0.00 per share.,WHYTE GREGORY J,Chief Operating Officer,,2025-02-18,D
+35,41191,0,,Stock Award(Grant) at price 0.00 per share.,ABRAHAM NEIL M,Officer,,2025-02-18,D
+36,11769,0,,Stock Award(Grant) at price 0.00 per share.,REDINGTON NEALE W,Officer,,2025-02-18,D
+37,139326,0,,Stock Award(Grant) at price 0.00 per share.,ROY SUMIT,Chief Executive Officer,,2025-02-18,D
+38,40500,0,,Stock Award(Grant) at price 0.00 per share.,HAGAN MARK E.,Chief Investment Officer,,2025-02-18,D
+39,31574,0,,Stock Award(Grant) at price 0.00 per share.,BUSHORE MICHELLE,General Counsel,,2025-02-18,D
+40,1250,70212,,Sale at price 56.17 per share.,MCLAUGHLIN GREGORY T,Director,,2024-12-03,I

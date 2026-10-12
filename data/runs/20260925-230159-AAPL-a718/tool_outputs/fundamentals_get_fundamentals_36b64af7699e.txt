@@ -1,0 +1,30 @@
+# Company Fundamentals for AAPL
+
+Name: Apple Inc.
+Sector: Technology
+Industry: Consumer Electronics
+Market Cap: 4977636933632
+PE Ratio (TTM): 39.068733
+Forward PE: 35.582424
+PEG Ratio: 2.7
+Price to Book: 46.341034
+EPS (TTM): 8.73
+Forward EPS: 9.58535
+Dividend Yield: 0.32
+Beta: 1.085
+52 Week High: 345.34
+52 Week Low: 243.42
+50 Day Average: 321.6758
+200 Day Average: 287.45044
+Revenue (TTM): 466822987776
+Gross Profit: 227123003392
+EBITDA: 167959003136
+Net Income: 128929996800
+Profit Margin: 0.27618998
+Operating Margin: 0.32623002
+Return on Equity: 1.4875101
+Return on Assets: 0.27082002
+Debt to Equity: 78.445
+Current Ratio: 1.003
+Book Value: 7.36
+Free Cash Flow: 107721875456

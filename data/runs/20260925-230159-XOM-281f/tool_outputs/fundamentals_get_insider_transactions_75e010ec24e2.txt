@@ -1,0 +1,67 @@
+# Insider Transactions data for XOM
+# Rows are dated by transaction date. A trade becomes public when its Form 4 is filed, up to two business days later, so the newest rows may not have been known on this date.
+
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,1080,167935.0,,Sale at price 155.50 per share.,TALLEY DARRIN L,Officer,,2026-03-16,I
+1,2150,339313.0,,Sale at price 157.82 per share.,TALLEY DARRIN L,Officer,,2026-03-02,I
+2,3230,481835.0,,Sale at price 149.18 per share.,TALLEY DARRIN L,Officer,,2026-02-09,I
+3,5000,698753.0,,Sale at price 139.75 - 139.76 per share.,TALLEY DARRIN L,Officer,,2026-02-02,I
+4,2500,,,,HARRIS JOHN D. II,Director,,2026-01-02,D
+5,2500,,,,HIETALA KAISA,Director,,2026-01-02,D
+6,2500,,,,POWELL DINA H,Director,,2026-01-02,D
+7,2500,,,,DREYFUS MARIA S,Director,,2026-01-02,D
+8,2500,,,,ANGELAKIS MICHAEL J,Director,,2026-01-02,D
+9,2500,,,,GARLAND GREGORY C.,Director,,2026-01-02,D
+10,2500,,,,KARSNER ALEXANDER A,Director,,2026-01-02,D
+11,2500,,,,HOOLEY JOSEPH L.,Director,,2026-01-02,D
+12,2500,,,,KELLNER LAWRENCE W.,Director,,2026-01-02,D
+13,2500,,,,KANDARIAN STEVEN A,Director,,2026-01-02,D
+14,2500,,,,UBBEN JEFFREY W,Director,,2026-01-02,D
+15,2500,,,,BRALY ANGELA F,Director,,2026-01-02,D
+16,1340,,,,CHAPMAN NEIL A,Officer,,2025-12-18,D
+17,3000,351570.0,,Sale at price 117.19 per share.,TALLEY DARRIN L,Officer,,2025-12-17,I
+18,3000,356250.0,,Sale at price 118.75 per share.,TALLEY DARRIN L,Officer,,2025-12-15,I
+19,17000,,,,ANGELAKIS MICHAEL J,Director,,2025-12-12,D
+20,5000,,,,WILLIAMS JACK P JR,Officer,,2025-12-11,D
+21,50700,,,,TAYLOR JEFFREY ALLEN,General Counsel,,2025-11-25,D
+22,69700,,,,CROCKER MATTHEW RICHARD,Officer,,2025-11-25,D/I
+23,102800,,,,GIBBS JON M.,Officer,,2025-11-25,D
+24,50700,,,,TALLEY DARRIN L,Officer,,2025-11-25,D
+25,32600,,,,CHAPMAN JAMES R.,Officer and Treasurer,,2025-11-25,D
+26,45700,,,,FOX LEONARD M.,Officer,,2025-11-25,D
+27,225000,,,,WOODS DARREN W.,Chief Executive Officer,,2025-11-25,D
+28,102800,,,,AMMANN DANIEL,Officer,,2025-11-25,D
+29,117800,,,,WILLIAMS JACK P JR,Officer,,2025-11-25,D
+30,117800,,,,CHAPMAN NEIL A,Officer,,2025-11-25,D
+31,105400,,,,MIKELLS KATHRYN A,Officer,,2025-11-25,D
+32,8000,,,,GARLAND GREGORY C.,Director,,2025-11-03,D
+33,2158,238351.0,,Sale at price 110.45 per share.,TALLEY DARRIN L,Officer,,2025-08-22,I
+34,976,,,,CHAPMAN NEIL A,Officer,,2025-05-05,D
+35,2100,237300.0,,Sale at price 113.00 per share.,TALLEY DARRIN L,Officer,,2025-03-17,I
+36,10000,,,,WILLIAMS JACK P JR,Officer,,2025-02-04,D
+37,2100,231000.0,,Sale at price 110.00 per share.,TALLEY DARRIN L,Officer,,2025-02-04,I
+38,2500,,,,HARRIS JOHN D. II,Director,,2025-01-02,D
+39,2500,,,,HIETALA KAISA,Director,,2025-01-02,D
+40,2500,,,,POWELL DINA H,Director,,2025-01-02,D
+41,2500,,,,DREYFUS MARIA S,Director,,2025-01-02,D
+42,2500,,,,ANGELAKIS MICHAEL J,Director,,2025-01-02,D
+43,2500,,,,KARSNER ALEXANDER A,Director,,2025-01-02,D
+44,2500,,,,HOOLEY JOSEPH L.,Director,,2025-01-02,D
+45,2500,,,,KELLNER LAWRENCE W.,Director,,2025-01-02,D
+46,2500,,,,KANDARIAN STEVEN A,Director,,2025-01-02,D
+47,2500,,,,UBBEN JEFFREY W,Director,,2025-01-02,D
+48,2500,,,,BRALY ANGELA F,Director,,2025-01-02,D
+49,946,,,,CHAPMAN NEIL A,Officer,,2024-12-17,D
+50,5000,,,,WILLIAMS JACK P JR,Officer,,2024-12-13,D
+51,43400,,,,TAYLOR JEFFREY ALLEN,General Counsel,,2024-11-26,D
+52,102960,,,,MCKEE KAREN T.,Officer,,2024-11-26,D/I
+53,69400,,,,GIBBS JON M.,Officer,,2024-11-26,D
+54,50700,,,,TALLEY DARRIN L,Officer,,2024-11-26,D
+55,102800,,,,MALLON LIAM M.,Officer,,2024-11-26,D
+56,36200,,,,CHAPMAN JAMES R.,Officer and Treasurer,,2024-11-26,D
+57,102960,0.0,,Stock Award(Grant) at price 0.00 per share.,MCKEE KAREN LYNETTE,Officer,,2024-11-26,D/I
+58,50700,,,,FOX LEONARD M.,Officer,,2024-11-26,D
+59,225000,,,,WOODS DARREN W.,Chief Executive Officer,,2024-11-26,D
+60,124000,,,,WILLIAMS JACK P JR,Officer,,2024-11-26,D
+61,124000,,,,CHAPMAN NEIL A,Officer,,2024-11-26,D
+62,111600,,,,MIKELLS KATHRYN A,Officer,,2024-11-26,D

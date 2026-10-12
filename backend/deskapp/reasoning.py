@@ -38,9 +38,8 @@ def install_reasoning_tap() -> None:
                 text = (choices[0].get("delta") or {}).get("reasoning_content") if choices else None
                 if text:
                     config = var_child_runnable_config.get() or {}
-                    node = (config.get("metadata") or {}).get("langgraph_node")
-                    agent_id, kind = adapter.NODE_MAP.get(node, (None, None))
-                    if agent_id and kind == "agent":
+                    agent_id = adapter.speaker(config.get("metadata"))
+                    if agent_id:
                         capture.add_reasoning(agent_id, text)
         except Exception:  # never let observation break a run
             pass

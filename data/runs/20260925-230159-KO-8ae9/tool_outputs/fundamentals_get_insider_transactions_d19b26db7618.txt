@@ -1,0 +1,99 @@
+# Insider Transactions data for KO
+# Rows are dated by transaction date. A trade becomes public when its Form 4 is filed, up to two business days later, so the newest rows may not have been known on this date.
+
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,50000,4519260,,Sale at price 90.39 per share.,QUAN NANCY W,Officer,,2026-08-19,D
+1,50000,2521915,,Conversion of Exercise of derivative security at price 50.44 per share.,QUAN NANCY W,Officer,,2026-08-19,D
+2,55755,4827894,,Sale at price 86.55 - 86.67 per share.,ORTEGA LUISA,Divisional Officer,,2026-08-06,D
+3,40160,2104230,,Conversion of Exercise of derivative security at price 48.08 - 59.48 per share.,ORTEGA LUISA,Divisional Officer,,2026-08-06,D
+4,152483,13313580,,Sale at price 87.31 per share.,MURPHY JOHN,President,,2026-07-31,D
+5,152483,6781681,,Conversion of Exercise of derivative security at price 44.48 per share.,MURPHY JOHN,President,,2026-07-31,D
+6,527087,47468615,,Sale at price 90.04 - 90.09 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-07-29,D
+7,527087,23948198,,Conversion of Exercise of derivative security at price 45.44 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-07-29,D
+8,75727,6788624,,Sale at price 89.60 - 89.69 per share.,PIETRACCI BRUNO,Divisional Officer,,2026-07-28,D
+9,75727,4139731,,Conversion of Exercise of derivative security at price 50.44 - 59.48 per share.,PIETRACCI BRUNO,Divisional Officer,,2026-07-28,D
+10,23984,2000594,,Sale at price 83.41 per share.,MANN JENNIFER K,Officer,,2026-06-10,D
+11,100000,8074790,,Sale at price 80.75 per share.,MANN JENNIFER K,Officer,,2026-06-09,D
+12,73984,4332900,,Conversion of Exercise of derivative security at price 50.44 - 61.34 per share.,MANN JENNIFER K,Officer,,2026-06-09,D
+13,100000,7945632,,Sale at price 79.46 per share.,MANN JENNIFER K,Officer,,2026-06-08,D
+14,100000,5510694,,Conversion of Exercise of derivative security at price 50.44 - 59.48 per share.,MANN JENNIFER K,Officer,,2026-06-08,D
+15,444296,35599152,,Sale at price 80.00 - 80.13 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-06-05,D
+16,100000,7946073,,Sale at price 79.46 per share.,MANN JENNIFER K,Officer,,2026-06-05,D
+17,444296,19760065,,Conversion of Exercise of derivative security at price 44.48 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-06-05,D
+18,100000,4812979,,Conversion of Exercise of derivative security at price 45.44 - 59.48 per share.,MANN JENNIFER K,Officer,,2026-06-05,D
+19,31625,2559519,,Sale at price 80.93 per share.,QUAN NANCY W,Officer,,2026-05-15,D
+20,31625,1436882,,Conversion of Exercise of derivative security at price 45.44 per share.,QUAN NANCY W,Officer,,2026-05-15,D
+21,44678,0,,Stock Gift at price 0.00 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-05-11,I
+22,200000,15780900,,Sale at price 78.90 per share.,QUINCEY JAMES R.,Chairman of the Board,,2026-05-07,D
+23,23880,1847686,,Sale at price 77.37 per share.,DOUGLAS MONICA HOWARD,Officer,,2026-03-09,D
+24,250688,19839138,,Sale at price 79.05 - 79.14 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2026-03-03,D
+25,23556,1872747,,Sale at price 79.50 per share.,QUAN NANCY W,Officer,,2026-03-03,D
+26,28765,2284318,,Sale at price 79.41 per share.,PIETRACCI BRUNO,Divisional Officer,,2026-03-03,D
+27,72449,5833934,,Sale at price 80.52 per share.,MURPHY JOHN,President,,2026-03-02,D
+28,21326,1727406,,Sale at price 81.00 per share.,PEREZ BEATRIZ R,Officer,,2026-02-27,D
+29,21326,948474,,Conversion of Exercise of derivative security at price 44.48 per share.,PEREZ BEATRIZ R,Officer,,2026-02-27,D
+30,36326,2931074,,Sale at price 80.60 - 80.75 per share.,PEREZ BEATRIZ R,Officer,,2026-02-26,D
+31,36326,1629999,,Conversion of Exercise of derivative security at price 44.48 - 45.44 per share.,PEREZ BEATRIZ R,Officer,,2026-02-26,D
+32,7440,0,,Stock Award(Grant) at price 0.00 per share.,MAY ERIN L,Officer,,2026-02-26,D
+33,99437,7996535,,Sale at price 80.42 per share.,MURPHY JOHN,President,,2026-02-25,D
+34,20000,1603210,,Sale at price 80.16 per share.,DOUGLAS MONICA HOWARD,Officer,,2026-02-25,D
+35,99437,4065979,,Conversion of Exercise of derivative security at price 40.89 per share.,MURPHY JOHN,President,,2026-02-25,D
+36,39191,0,,Stock Award(Grant) at price 0.00 per share.,QUAN NANCY W,Officer,,2026-02-19,D
+37,39807,0,,Stock Award(Grant) at price 0.00 per share.,CHANG LISA VIRGINIA,Officer,,2026-02-19,D
+38,39807,0,,Stock Award(Grant) at price 0.00 per share.,DOUGLAS MONICA HOWARD,Officer,,2026-02-19,D
+39,46654,0,,Stock Award(Grant) at price 0.00 per share.,MANN JENNIFER K,Officer,,2026-02-19,D
+40,130633,0,,Stock Award(Grant) at price 0.00 per share.,MURPHY JOHN,President,,2026-02-19,D
+41,74647,0,,Stock Award(Grant) at price 0.00 per share.,ARROYO MANUEL,Officer,,2026-02-19,D
+42,335913,0,,Stock Award(Grant) at price 0.00 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2026-02-19,D
+43,29859,0,,Stock Award(Grant) at price 0.00 per share.,PEREZ BEATRIZ R,Officer,,2026-02-19,D
+44,65317,0,,Stock Award(Grant) at price 0.00 per share.,BRAUN HENRIQUE GNANI,Chief Operating Officer,,2026-02-19,D
+45,49759,0,,Stock Award(Grant) at price 0.00 per share.,PIETRACCI BRUNO,Divisional Officer,,2026-02-19,D
+46,15855,0,,Stock Award(Grant) at price 0.00 per share.,MAY ERIN L,Officer,,2026-02-19,D
+47,26870,0,,Stock Award(Grant) at price 0.00 per share.,ORTEGA LUISA,Divisional Officer,,2026-02-19,D
+48,337824,26046095,,Sale at price 77.10 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2026-02-03,D
+49,337824,13813623,,Conversion of Exercise of derivative security at price 40.89 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2026-02-03,D
+50,31625,2250805,,Sale at price 71.17 per share.,QUAN NANCY W,Officer,,2025-11-17,D
+51,31625,1373632,,Conversion of Exercise of derivative security at price 43.44 per share.,QUAN NANCY W,Officer,,2025-11-17,D
+52,139689,9890610,,Sale at price 70.80 per share.,ARROYO MANUEL,Officer,,2025-11-14,D
+53,40390,2864915,,Sale at price 70.93 per share.,BRAUN HENRIQUE GNANI,Chief Operating Officer,,2025-11-11,D
+54,50545,2199466,,Conversion of Exercise of derivative security at price 43.52 per share.,BRAUN HENRIQUE GNANI,Chief Operating Officer,,2025-11-11,D
+55,33000,0,,Stock Gift at price 0.00 per share.,MURPHY JOHN,President,,2025-10-29,I
+56,13548,947464,,Sale at price 69.93 per share.,DOUGLAS MONICA HOWARD,Officer,,2025-10-24,D
+57,14267,998676,,Purchase at price 69.87 - 70.31 per share.,LEVCHIN MAX R,Director,,2025-10-24,D
+58,13548,568245,,Conversion of Exercise of derivative security at price 40.89 - 43.52 per share.,DOUGLAS MONICA HOWARD,Officer,,2025-10-24,D
+59,37396,2584105,,Sale at price 69.10 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-08-05,D
+60,43847,0,,Stock Gift at price 0.00 per share.,PEREZ BEATRIZ R,Officer,,2025-08-04,D
+61,266403,19197640,,Sale at price 72.00 - 72.08 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2025-05-30,D
+62,266403,11592527,,Conversion of Exercise of derivative security at price 43.52 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2025-05-30,D
+63,28543,2021178,,Sale at price 70.81 per share.,QUAN NANCY W,Officer,,2025-05-09,D
+64,28543,1242049,,Conversion of Exercise of derivative security at price 43.52 per share.,QUAN NANCY W,Officer,,2025-05-09,D
+65,60326,4335370,,Sale at price 71.87 per share.,PEREZ BEATRIZ R,Officer,,2025-05-08,D
+66,60326,2466730,,Conversion of Exercise of derivative security at price 40.89 per share.,PEREZ BEATRIZ R,Officer,,2025-05-08,D
+67,88658,6391710,,Sale at price 72.09 per share.,MURPHY JOHN,President,,2025-05-07,D
+68,38751,1686250,,Conversion of Exercise of derivative security at price 43.52 per share.,MURPHY JOHN,President,,2025-05-07,D
+69,25277,1806514,,Sale at price 71.47 per share.,BRAUN HENRIQUE GNANI,Chief Operating Officer,,2025-03-11,D
+70,55500,3940938,,Sale at price 71.01 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-03-07,D
+71,55500,2269395,,Conversion of Exercise of derivative security at price 40.89 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-03-07,D
+72,8130,0,,Stock Award(Grant) at price 0.00 per share.,MAY ERIN L,Officer,,2025-02-27,D
+73,54708,3882074,,Sale at price 70.96 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-02-26,D
+74,5565,394231,,Sale at price 70.84 per share.,DOUGLAS MONICA HOWARD,Officer,,2025-02-26,D
+75,54708,2380619,,Conversion of Exercise of derivative security at price 43.52 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-02-26,D
+76,54953,3921518,,Sale at price 71.36 per share.,QUAN NANCY W,Officer,,2025-02-25,D
+77,13445,961352,,Sale at price 71.50 per share.,CHANG LISA VIRGINIA,Officer,,2025-02-25,D
+78,28543,1242049,,Conversion of Exercise of derivative security at price 43.52 per share.,QUAN NANCY W,Officer,,2025-02-25,D
+79,13445,678143,,Conversion of Exercise of derivative security at price 50.44 per share.,CHANG LISA VIRGINIA,Officer,,2025-02-25,D
+80,19058,1344698,,Sale at price 70.56 per share.,PIETRACCI BRUNO,Divisional Officer,,2025-02-24,D
+81,44000,0,,Stock Award(Grant) at price 0.00 per share.,QUAN NANCY W,Officer,,2025-02-20,D
+82,33523,0,,Stock Award(Grant) at price 0.00 per share.,CHANG LISA VIRGINIA,Officer,,2025-02-20,D
+83,33523,0,,Stock Award(Grant) at price 0.00 per share.,DOUGLAS MONICA HOWARD,Officer,,2025-02-20,D
+84,41904,0,,Stock Award(Grant) at price 0.00 per share.,MANN JENNIFER K,Officer,,2025-02-20,D
+85,86436,0,,Stock Award(Grant) at price 0.00 per share.,MURPHY JOHN,President,,2025-02-20,D
+86,52381,0,,Stock Award(Grant) at price 0.00 per share.,KOUMETTIS NIKOLAOS,Divisional Officer,,2025-02-20,D
+87,94285,0,,Stock Award(Grant) at price 0.00 per share.,ARROYO MANUEL,Officer,,2025-02-20,D
+88,259310,0,,Stock Award(Grant) at price 0.00 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2025-02-20,D
+89,33523,0,,Stock Award(Grant) at price 0.00 per share.,PEREZ BEATRIZ R,Officer,,2025-02-20,D
+90,41904,0,,Stock Award(Grant) at price 0.00 per share.,BRAUN HENRIQUE GNANI,Chief Operating Officer,,2025-02-20,D
+91,33082,0,,Stock Award(Grant) at price 0.00 per share.,PIETRACCI BRUNO,Divisional Officer,,2025-02-20,D
+92,209668,0,,Stock Gift at price 0.00 per share.,WEINBERG DAVID B,Director,,2024-11-22,I
+93,10950,697673,,Sale at price 63.71 per share.,DOUGLAS MONICA HOWARD,Officer,,2024-11-22,D
+94,100000,6403040,,Sale at price 64.03 per share.,QUINCEY JAMES R.,Chief Executive Officer,,2024-11-08,D

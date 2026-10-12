@@ -1,0 +1,30 @@
+# Company Fundamentals for KO
+
+Name: The Coca-Cola Company
+Sector: Consumer Defensive
+Industry: Beverages - Non-Alcoholic
+Market Cap: 377806815232
+PE Ratio (TTM): 26.36937
+Forward PE: 24.900888
+PEG Ratio: 4.0
+Price to Book: 10.452327
+EPS (TTM): 3.33
+Forward EPS: 3.52638
+Dividend Yield: 2.41
+Beta: 0.342
+52 Week High: 92.49
+52 Week Low: 65.35
+50 Day Average: 87.4238
+200 Day Average: 79.5192
+Revenue (TTM): 50128998400
+Gross Profit: 31024001024
+EBITDA: 16997999616
+Net Income: 14316000256
+Profit Margin: 0.28558
+Operating Margin: 0.34873
+Return on Equity: 0.42054
+Return on Assets: 0.09401
+Debt to Equity: 115.519
+Current Ratio: 1.305
+Book Value: 8.401
+Free Cash Flow: 5218749952

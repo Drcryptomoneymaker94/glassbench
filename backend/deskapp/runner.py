@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import json
 import logging
 import threading
@@ -57,22 +58,25 @@ class RunManager:
         return run_id
 
     def submit_aihf(self, ticker: str, trade_date: str, strategy: str | None, analysts: list[str] | None, model: str,
-                    purpose: str = "live") -> str:
-        """Queue one AI Hedge Fund cycle: a library strategy or a custom set of analysts, on one model."""
+                    purpose: str = "live", data_source: str = "financial-datasets") -> str:
+        """Queue one AI Hedge Fund cycle: a library strategy or a custom set of analysts, on one model and one data source."""
         staff, variant = aihf.plan(strategy, analysts)
+        if data_source not in aihf.DATA_SOURCES:
+            raise ValueError(f"Unknown data source {data_source!r}. Choose one of: {', '.join(aihf.DATA_SOURCES)}.")
         run_id = time.strftime("%Y%m%d-%H%M%S") + "-" + ticker.replace("/", "_").upper() + "-" + uuid.uuid4().hex[:4]
         self.store.create_run({
             "id": run_id, "ticker": ticker.upper(), "trade_date": trade_date, "analysts": staff, "depth": 0,
             "deep_model": model, "quick_model": model, "status": "queued", "created_at": time.time(),
             "engine": AIHF_ENGINE, "engine_version": aihf.version(), "provider": (aihf.model_key(model) or "").split("_")[0].lower(),
-            "purpose": purpose, "backtest_id": None, "memory": "off", "variant": variant,
+            "purpose": purpose, "backtest_id": None, "memory": "off", "variant": variant, "data_source": data_source,
         })
         self._cancel[run_id] = threading.Event()
-        meta = aihf.agent_meta(staff)
+        meta = aihf.agent_meta(staff, data_source)
         self.bus.emit(run_id, "run.queued", None, ticker=ticker.upper(), trade_date=trade_date, analysts=staff, depth=0,
                       deep_model=model, quick_model=model, purpose=purpose, backtest_id=None, memory="off", variant=variant,
                       provider=(aihf.model_key(model) or "").split("_")[0].lower(), engine=AIHF_ENGINE,
-                      agents=[a["id"] for a in meta], agent_meta=meta, stages=aihf.STAGES)
+                      agents=[a["id"] for a in meta], agent_meta=meta, stages=aihf.STAGES, data_source=data_source,
+                      data_label=aihf.DATA_SOURCES[data_source]["label"])
         self.pool.submit(self._execute, run_id)
         return run_id
 
@@ -158,39 +162,57 @@ class RunManager:
             self.bus.emit(run_id, "instrument.resolved", None, context=instrument_context)
             args = graph.propagator.get_graph_args(callbacks=[capture])
             args["stream_mode"] = ["updates", "messages"]
+            try:  # 0.6.0: the engine serves each run its own config while it runs
+                from tradingagents.dataflows.config import run_config as engine_run_config
+            except ImportError:
+                engine_run_config = None
 
             final_state = dict(state)
-            for mode, chunk in graph.graph.stream(state, **args):
-                if cancel.is_set():
-                    raise RunCancelled()
-                if mode == "messages":
-                    message, meta = chunk
-                    node = (meta or {}).get("langgraph_node")
-                    agent_id, kind = adapter.NODE_MAP.get(node, (None, None))
-                    text = _text_of(getattr(message, "content", ""))
-                    if agent_id and kind == "agent" and text and type(message).__name__.endswith("Chunk"):
-                        capture.add_delta(agent_id, text)
-                    continue
-                for node, update in (chunk or {}).items():
-                    if not isinstance(update, dict):
+            reported: dict[str, str] = {}  # last report shown per agent, so a report filed once is shown once
+            # Since 0.6.0 each analyst works in a graph of its own, whose tokens and report reach the stream only
+            # with subgraphs on; on older engines every step simply comes with an empty namespace.
+            with engine_run_config(config) if engine_run_config else contextlib.nullcontext():
+                for namespace, mode, chunk in graph.graph.stream(state, subgraphs=True, **args):
+                    if cancel.is_set():
+                        raise RunCancelled()
+                    if mode == "messages":
+                        message, meta = chunk
+                        agent_id = adapter.speaker(meta)
+                        text = _text_of(getattr(message, "content", ""))
+                        if agent_id and text and type(message).__name__.endswith("Chunk"):
+                            capture.add_delta(agent_id, text)
                         continue
-                    final_state.update(update)
-                    agent_id, kind = adapter.NODE_MAP.get(node, (None, None))
-                    if kind != "agent":
+                    if namespace:
+                        self._analyst_step(run_id, namespace, chunk, final_state, reported)
                         continue
-                    text = adapter.agent_text(agent_id, final_state)
-                    if text:
-                        self.bus.emit(run_id, "report.updated", agent_id, text=text)
-                    if agent_id == "research_manager":
-                        self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_research_plan(final_state.get("investment_plan", "")))
-                    elif agent_id == "trader":
-                        self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_trader_plan(final_state.get("trader_investment_plan", "")))
-                    elif agent_id == "portfolio_manager":
-                        self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_pm_decision(final_state.get("final_trade_decision", "")))
-                self._sync_totals(run_id, capture)
+                    for node, update in (chunk or {}).items():
+                        if not isinstance(update, dict):
+                            continue
+                        final_state.update(update)
+                        if node == "Memory Log" and update.get("past_context") and shared_memory:  # 0.6.0
+                            text = update["past_context"]
+                            self.bus.emit(run_id, "memory.context", "portfolio_manager", chars=len(text), preview=text[:1200])
+                        agent_id, kind = adapter.NODE_MAP.get(node, (None, None))
+                        if kind != "agent":
+                            continue
+                        text = adapter.agent_text(agent_id, final_state)
+                        if text and reported.get(agent_id) != text:
+                            reported[agent_id] = text
+                            self.bus.emit(run_id, "report.updated", agent_id, text=text)
+                        if agent_id == "research_manager":
+                            self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_research_plan(final_state.get("investment_plan", "")))
+                        elif agent_id == "trader":
+                            self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_trader_plan(final_state.get("trader_investment_plan", "")))
+                        elif agent_id == "portfolio_manager":
+                            self.bus.emit(run_id, "decision.structured", agent_id, **adapter.parse_pm_decision(final_state.get("final_trade_decision", "")))
+                    self._sync_totals(run_id, capture)
             capture.flush()
 
-            rating = graph.process_signal(final_state.get("final_trade_decision", ""))
+            try:
+                from tradingagents.agents.rating import run_rating  # 0.6.0 replaced process_signal
+                rating = run_rating(final_state)
+            except ImportError:
+                rating = graph.process_signal(final_state.get("final_trade_decision", ""))
             try:
                 graph._log_state(trade_date, final_state)
             except Exception as exc:
@@ -224,6 +246,24 @@ class RunManager:
             if config_token is not None:
                 CURRENT_CONFIG.reset(config_token)
             self._cancel.pop(run_id, None)
+
+    def _analyst_step(self, run_id: str, namespace: tuple, chunk, final_state: dict, reported: dict[str, str]) -> None:
+        """A step inside an analyst's own graph (0.6.0+): show its report as soon as the analyst files it.
+
+        The run's state takes the analysts' reports only when the slowest analyst has finished; the step
+        that writes a report arrives earlier, so the board fills as each analyst finishes.
+        """
+        outer = str(namespace[0]).split(":", 1)[0]
+        agent_id, kind = adapter.NODE_MAP.get(outer, (None, None))
+        if kind != "agent":
+            return
+        report_key = adapter.AGENT_BY_ID[agent_id]["text"][0]
+        for update in (chunk or {}).values():
+            text = update.get(report_key) if isinstance(update, dict) else None
+            if isinstance(text, str) and text.strip() and reported.get(agent_id) != text:
+                final_state[report_key] = text
+                reported[agent_id] = text
+                self.bus.emit(run_id, "report.updated", agent_id, text=text)
 
     def _execute_aihf(self, run_id: str, run: dict, cancel: threading.Event) -> None:
         self.store.update_run(run_id, status="running", started_at=time.time())

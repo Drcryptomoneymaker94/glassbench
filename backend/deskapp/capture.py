@@ -53,10 +53,11 @@ class RunCapture(BaseCallbackHandler):
     def on_chain_start(self, serialized, inputs, *, run_id, parent_run_id=None, metadata=None, **kwargs):
         name = kwargs.get("name")
         node = (metadata or {}).get("langgraph_node")
-        if not name or name != node or name not in adapter.NODE_MAP:
+        hit = adapter.resolve(metadata) if name and name == node else None
+        if not hit:
             return
-        agent, kind = adapter.NODE_MAP[name]
-        if kind == "clear":
+        agent, kind = hit
+        if kind in ("clear", "inner"):  # an analyst's inner turns belong to the node already open
             return
         visit = 0
         with self._lock:
@@ -89,8 +90,7 @@ class RunCapture(BaseCallbackHandler):
 
     # llm calls -----------------------------------------------------------------
     def on_chat_model_start(self, serialized, messages, *, run_id, metadata=None, **kwargs):
-        node = (metadata or {}).get("langgraph_node")
-        agent = adapter.NODE_MAP.get(node, (None,))[0]
+        agent = (adapter.resolve(metadata) or (None,))[0]
         params = kwargs.get("invocation_params") or {}
         model = params.get("model") or params.get("model_name") or (metadata or {}).get("ls_model_name") or "unknown"
         prompt_chars = sum(len(_text_of(getattr(m, "content", ""))) for batch in messages for m in batch)
@@ -139,8 +139,7 @@ class RunCapture(BaseCallbackHandler):
 
     # tool calls ----------------------------------------------------------------
     def on_tool_start(self, serialized, input_str, *, run_id, metadata=None, inputs=None, **kwargs):
-        node = (metadata or {}).get("langgraph_node")
-        agent = adapter.NODE_MAP.get(node, (None,))[0]
+        agent = (adapter.resolve(metadata) or (None,))[0]
         tool = (serialized or {}).get("name") or kwargs.get("name") or "tool"
         with self._lock:
             self._tools[run_id] = {"agent": agent, "tool": tool, "start": time.time()}

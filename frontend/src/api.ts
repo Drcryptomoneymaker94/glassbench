@@ -19,6 +19,7 @@ export type AihfMeta = {
   models?: { model_name: string; display_name: string; provider: string; key: string | null; present: boolean }[];
   default_model?: string;
   data_key?: { name: string; present: boolean };
+  data_sources?: { id: string; label: string; native: boolean; note: string; key: string | null; present: boolean }[];
   rating_rule?: string;
 };
 
@@ -51,6 +52,9 @@ export type Decision = {
   target_weight?: number;
   final_weight?: number;
   rating_rule?: string;
+  data_source?: string;
+  data_label?: string;
+  data_native?: boolean;
   clamps?: { limit: string; ticker: string | null; before: number; after: number }[];
   signals?: { analyst: string; strategy: string; signal: string | null; confidence: number | null; conviction: number; abstained: boolean }[];
   strategies?: { name: string; slice: number; conviction: number | null; weight: number; flat_reason: string | null }[];
@@ -73,6 +77,8 @@ export type Run = {
   backtest_id?: string | null;
   memory?: "shared" | "off";
   variant?: string;
+  /** AI Hedge Fund: where the numbers came from (empty or financial-datasets = native, yahoo = Glassbench's free adapter). */
+  data_source?: string;
   models_served?: string[] | null;
   created_at: number;
   started_at: number | null;
@@ -244,7 +250,7 @@ export const api = {
   run: (id: string) => fetch(`/api/runs/${id}`).then((r) => json<Run>(r)),
   files: (id: string) => fetch(`/api/runs/${id}/files`).then((r) => json<{ files: RunFile[] }>(r)).then((d) => d.files),
   cancel: (id: string) => fetch(`/api/runs/${id}/cancel`, { method: "POST" }).then((r) => json<unknown>(r)),
-  start: (body: { tickers: string[]; trade_date: string; analysts: string[]; depth: number; deep_model: string; quick_model: string; provider: string; engine?: string; strategy?: string | null; aihf_analysts?: string[] | null; aihf_model?: string }) =>
+  start: (body: { tickers: string[]; trade_date: string; analysts: string[]; depth: number; deep_model: string; quick_model: string; provider: string; engine?: string; strategy?: string | null; aihf_analysts?: string[] | null; aihf_model?: string; aihf_data?: string }) =>
     fetch("/api/runs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then((r) =>
       json<{ run_ids: string[] }>(r),
     ),

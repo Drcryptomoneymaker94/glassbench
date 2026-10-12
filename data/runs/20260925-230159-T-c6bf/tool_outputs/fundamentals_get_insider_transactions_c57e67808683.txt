@@ -1,0 +1,154 @@
+# Insider Transactions data for T
+# Rows are dated by transaction date. A trade becomes public when its Form 4 is filed, up to two business days later, so the newest rows may not have been known on this date.
+
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,126,3276.0,,Stock Award(Grant) at price 25.89 per share.,SABRINA SANDERS S,Officer,,2026-08-31,I
+1,1730,44792.0,,Stock Award(Grant) at price 25.89 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-08-31,I
+2,347,9000.0,,Stock Award(Grant) at price 25.89 per share.,LEE LORI M,Officer,,2026-08-31,I
+3,482,12500.0,,Stock Award(Grant) at price 25.89 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-08-31,I
+4,167,3901.0,,Stock Award(Grant) at price 23.25 per share.,SABRINA SANDERS S,Officer,,2026-07-31,I
+5,3487,81084.0,,Stock Award(Grant) at price 23.25 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-07-31,I
+6,499,11616.0,,Stock Award(Grant) at price 23.25 per share.,LEE LORI M,Officer,,2026-07-31,I
+7,2690,62544.0,,Stock Award(Grant) at price 23.25 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-07-31,I
+8,927,21574.0,,Stock Award(Grant) at price 23.25 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-07-31,I
+9,158,3276.0,,Stock Award(Grant) at price 20.70 per share.,SABRINA SANDERS S,Officer,,2026-06-30,I
+10,2003,41467.0,,Stock Award(Grant) at price 20.70 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-06-30,I
+11,417,8640.0,,Stock Award(Grant) at price 20.70 per share.,LEE LORI M,Officer,,2026-06-30,I
+12,603,12500.0,,Stock Award(Grant) at price 20.70 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-06-30,I
+13,132,3276.0,,Stock Award(Grant) at price 24.80 per share.,SABRINA SANDERS S,Officer,,2026-05-29,I
+14,1629,40417.0,,Stock Award(Grant) at price 24.80 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-05-29,I
+15,226,5616.0,,Stock Award(Grant) at price 24.80 per share.,LEE LORI M,Officer,,2026-05-29,I
+16,504,12500.0,,Stock Award(Grant) at price 24.80 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-05-29,I
+17,144,3781.0,,Stock Award(Grant) at price 26.13 per share.,SABRINA SANDERS S,Officer,,2026-04-30,I
+18,2866,74905.0,,Stock Award(Grant) at price 26.13 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-04-30,I
+19,304,7969.0,,Stock Award(Grant) at price 26.13 per share.,LEE LORI M,Officer,,2026-04-30,I
+20,2236,58436.0,,Stock Award(Grant) at price 26.13 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-04-30,I
+21,816,21347.0,,Stock Award(Grant) at price 26.13 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-04-30,I
+22,1588,46049.0,,Stock Award(Grant) at price 28.99 per share.,SABRINA SANDERS S,Officer,,2026-03-31,I
+23,121297,3516417.0,,Stock Award(Grant) at price 28.99 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-03-31,I
+24,193,5616.0,,Stock Award(Grant) at price 28.99 per share.,LEE LORI M,Officer,,2026-03-31,I
+25,13018,377400.0,,Stock Award(Grant) at price 28.99 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-03-31,I
+26,2094,0.0,,Stock Gift at price 0.00 per share.,LEE LORI M,Officer,,2026-03-10,D
+27,111,3120.0,,Stock Award(Grant) at price 28.01 per share.,SABRINA SANDERS S,Officer,,2026-02-27,I
+28,1442,40417.0,,Stock Award(Grant) at price 28.01 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-02-27,I
+29,200,5616.0,,Stock Award(Grant) at price 28.01 per share.,LEE LORI M,Officer,,2026-02-27,I
+30,278,7800.0,,Stock Award(Grant) at price 28.01 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-02-27,I
+31,352000,0.0,,Stock Gift at price 0.00 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-02-25,D
+32,199244,0.0,,Stock Gift at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-02-18,D
+33,60924,0.0,,Stock Gift at price 0.00 per share.,LEE LORI M,Officer,,2026-02-18,D
+34,126479,0.0,,Stock Gift at price 0.00 per share.,MCATEE DAVID R. II,General Counsel,,2026-02-18,D
+35,11795,,,,GILLESPIE EDWARD W,Officer,,2026-02-13,D
+36,10816,,,,LEGG JEREMY ALAN,Chief Technology Officer,,2026-02-13,D
+37,7632,,,,SABRINA SANDERS S,Officer,,2026-02-13,D
+38,11596,,,,CAKARIC DARCIE M.,Officer,,2026-02-13,D
+39,23379,,,,MCATEE DAVID R. II,General Counsel,,2026-02-13,D
+40,18703,,,,LEE LORI M,Officer,,2026-02-13,D
+41,30059,,,,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-02-13,D
+42,11795,,,,SMITH KENNY KELLYN,Officer,,2026-02-13,D
+43,65128,,,,STANKEY JOHN T,Chief Executive Officer,,2026-02-13,D
+44,28389,,,,DESROCHES PASCAL,Chief Financial Officer,,2026-02-13,D
+45,151,3963.0,,Stock Award(Grant) at price 26.21 per share.,SABRINA SANDERS S,Officer,,2026-01-30,I
+46,3021,79195.0,,Stock Award(Grant) at price 26.21 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-01-30,I
+47,331,8690.0,,Stock Award(Grant) at price 26.21 per share.,LEE LORI M,Officer,,2026-01-30,I
+48,2105,55183.0,,Stock Award(Grant) at price 26.21 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-01-30,I
+49,805,21124.0,,Stock Award(Grant) at price 26.21 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-01-30,I
+50,26350,0.0,,Stock Award(Grant) at price 0.00 per share.,SABRINA SANDERS S,Officer,,2026-01-29,I
+51,26350,0.0,,Stock Award(Grant) at price 0.00 per share.,SABRINA SANDERS S,Officer,,2026-01-29,I
+52,348750,0.0,,Stock Award(Grant) at price 0.00 per share.,DESROCHES PASCAL,Chief Financial Officer,,2026-01-29,I
+53,238313,0.0,,Stock Award(Grant) at price 0.00 per share.,LEE LORI M,Officer,,2026-01-29,I
+54,238313,0.0,,Stock Award(Grant) at price 0.00 per share.,LEE LORI M,Officer,,2026-01-29,I
+55,325500,0.0,,Stock Award(Grant) at price 0.00 per share.,MCATEE DAVID R. II,General Counsel,,2026-01-29,I
+56,418500,0.0,,Stock Award(Grant) at price 0.00 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-01-29,I
+57,102300,0.0,,Stock Award(Grant) at price 0.00 per share.,SMITH KENNY KELLYN,Officer,,2026-01-29,I
+58,102300,0.0,,Stock Award(Grant) at price 0.00 per share.,SMITH KENNY KELLYN,Officer,,2026-01-29,I
+59,151126,0.0,,Stock Award(Grant) at price 0.00 per share.,LEGG JEREMY ALAN,Chief Technology Officer,,2026-01-29,I
+60,767250,0.0,,Stock Award(Grant) at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-01-29,I
+61,158100,0.0,,Stock Award(Grant) at price 0.00 per share.,GILLESPIE EDWARD W,Officer,,2026-01-29,I
+62,96578,0.0,,Stock Gift at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2026-01-20,D
+63,34376,0.0,,Stock Gift at price 0.00 per share.,LEE LORI M,Officer,,2026-01-20,D
+64,30659,,,,GILLESPIE EDWARD W,Officer,,2026-01-15,D
+65,28110,,,,LEGG JEREMY ALAN,Chief Technology Officer,,2026-01-15,D
+66,16785,,,,SABRINA SANDERS S,Officer,,2026-01-15,D
+67,60768,,,,MCATEE DAVID R. II,General Counsel,,2026-01-15,D
+68,44491,,,,LEE LORI M,Officer,,2026-01-15,D
+69,78129,,,,MCELFRESH JEFFERY S.,Chief Operating Officer,,2026-01-15,D
+70,23234,,,,SMITH KENNY KELLYN,Officer,,2026-01-15,D
+71,28431,,,,ARROYO F. THADDEUS,Officer,,2026-01-15,D
+72,143236,,,,STANKEY JOHN T,Chief Executive Officer,,2026-01-15,D
+73,69777,,,,DESROCHES PASCAL,Chief Financial Officer,,2026-01-15,D
+74,201,5000.0,,Stock Award(Grant) at price 24.84 per share.,SABRINA SANDERS S,Officer,,2025-12-31,I
+75,1803,44792.0,,Stock Award(Grant) at price 24.84 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-12-31,I
+76,362,9000.0,,Stock Award(Grant) at price 24.84 per share.,LEE LORI M,Officer,,2025-12-31,I
+77,869,21600.0,,Stock Award(Grant) at price 24.84 per share.,ARROYO F. THADDEUS,Officer,,2025-12-31,I
+78,704,17500.0,,Stock Award(Grant) at price 24.84 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-12-31,I
+79,192,5000.0,,Stock Award(Grant) at price 26.02 per share.,SABRINA SANDERS S,Officer,,2025-11-28,I
+80,1721,44792.0,,Stock Award(Grant) at price 26.02 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-11-28,I
+81,345,9000.0,,Stock Award(Grant) at price 26.02 per share.,LEE LORI M,Officer,,2025-11-28,I
+82,830,21600.0,,Stock Award(Grant) at price 26.02 per share.,ARROYO F. THADDEUS,Officer,,2025-11-28,I
+83,672,17500.0,,Stock Award(Grant) at price 26.02 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-11-28,I
+84,1375,,,,LEGG JEREMY ALAN,Chief Technology Officer,,2025-11-28,D
+85,2717,,,,MCATEE DAVID R. II,General Counsel,,2025-11-28,D
+86,2174,,,,LEE LORI M,Officer,,2025-11-28,D
+87,1271,,,,ARROYO F. THADDEUS,Officer,,2025-11-28,D
+88,3494,,,,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-11-28,D
+89,7570,,,,STANKEY JOHN T,Chief Executive Officer,,2025-11-28,D
+90,3299,,,,DESROCHES PASCAL,Chief Financial Officer,,2025-11-28,D
+91,224,5557.0,,Stock Award(Grant) at price 24.75 per share.,SABRINA SANDERS S,Officer,,2025-10-31,I
+92,474,11746.0,,Stock Award(Grant) at price 24.75 per share.,LEE LORI M,Officer,,2025-10-31,I
+93,945,23405.0,,Stock Award(Grant) at price 24.75 per share.,ARROYO F. THADDEUS,Officer,,2025-10-31,I
+94,2577,63786.0,,Stock Award(Grant) at price 24.75 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-10-31,I
+95,844,20889.0,,Stock Award(Grant) at price 24.75 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-10-31,I
+96,121875,0.0,,Stock Gift at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-10-24,I
+97,143169,0.0,,Stock Gift at price 0.00 per share.,MCATEE DAVID R. II,General Counsel,,2025-10-23,I
+98,110,3120.0,,Stock Award(Grant) at price 28.24 per share.,SABRINA SANDERS S,Officer,,2025-09-30,I
+99,1586,44792.0,,Stock Award(Grant) at price 28.24 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-09-30,I
+100,318,9000.0,,Stock Award(Grant) at price 28.24 per share.,LEE LORI M,Officer,,2025-09-30,I
+101,764,21600.0,,Stock Award(Grant) at price 28.24 per share.,ARROYO F. THADDEUS,Officer,,2025-09-30,I
+102,619,17500.0,,Stock Award(Grant) at price 28.24 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-09-30,I
+103,106,3120.0,,Stock Award(Grant) at price 29.29 per share.,SABRINA SANDERS S,Officer,,2025-08-29,I
+104,1529,44792.0,,Stock Award(Grant) at price 29.29 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-08-29,I
+105,307,9000.0,,Stock Award(Grant) at price 29.29 per share.,LEE LORI M,Officer,,2025-08-29,I
+106,723,21180.0,,Stock Award(Grant) at price 29.29 per share.,ARROYO F. THADDEUS,Officer,,2025-08-29,I
+107,597,17500.0,,Stock Award(Grant) at price 29.29 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-08-29,I
+108,134,3694.0,,Stock Award(Grant) at price 27.41 per share.,SABRINA SANDERS S,Officer,,2025-07-31,I
+109,2918,80001.0,,Stock Award(Grant) at price 27.41 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-07-31,I
+110,417,11456.0,,Stock Award(Grant) at price 27.41 per share.,LEE LORI M,Officer,,2025-07-31,I
+111,745,20445.0,,Stock Award(Grant) at price 27.41 per share.,ARROYO F. THADDEUS,Officer,,2025-07-31,I
+112,2291,62812.0,,Stock Award(Grant) at price 27.41 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-07-31,I
+113,754,20680.0,,Stock Award(Grant) at price 27.41 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-07-31,I
+114,35700,0.0,,Stock Gift at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-07-29,I
+115,7250,0.0,,Stock Gift at price 0.00 per share.,LEE LORI M,Officer,,2025-07-29,I
+116,107,3120.0,,Stock Award(Grant) at price 28.94 per share.,SABRINA SANDERS S,Officer,,2025-06-30,I
+117,1457,42167.0,,Stock Award(Grant) at price 28.94 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-06-30,I
+118,266,7710.0,,Stock Award(Grant) at price 28.94 per share.,LEE LORI M,Officer,,2025-06-30,I
+119,665,19260.0,,Stock Award(Grant) at price 28.94 per share.,ARROYO F. THADDEUS,Officer,,2025-06-30,I
+120,604,17500.0,,Stock Award(Grant) at price 28.94 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-06-30,I
+121,112,3120.0,,Stock Award(Grant) at price 27.80 per share.,SABRINA SANDERS S,Officer,,2025-05-30,I
+122,1453,40417.0,,Stock Award(Grant) at price 27.80 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-05-30,I
+123,202,5616.0,,Stock Award(Grant) at price 27.80 per share.,LEE LORI M,Officer,,2025-05-30,I
+124,692,19260.0,,Stock Award(Grant) at price 27.80 per share.,ARROYO F. THADDEUS,Officer,,2025-05-30,I
+125,629,17500.0,,Stock Award(Grant) at price 27.80 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-05-30,I
+126,1500,41348.0,,Sale at price 27.56 per share.,SABRINA SANDERS S,Officer,,2025-05-28,D
+127,129,3597.0,,Stock Award(Grant) at price 27.70 per share.,SABRINA SANDERS S,Officer,,2025-04-30,I
+128,2674,74077.0,,Stock Award(Grant) at price 27.70 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-04-30,I
+129,2674,74077.0,,Stock Award(Grant) at price 27.70 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-04-30,I
+130,283,7863.0,,Stock Award(Grant) at price 27.70 per share.,LEE LORI M,Officer,,2025-04-30,I
+131,717,19869.0,,Stock Award(Grant) at price 27.70 per share.,ARROYO F. THADDEUS,Officer,,2025-04-30,I
+132,717,19869.0,,Stock Award(Grant) at price 27.70 per share.,ARROYO F. THADDEUS,Officer,,2025-04-30,I
+133,2071,57383.0,,Stock Award(Grant) at price 27.70 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-04-30,I
+134,2114,58583.0,,Stock Award(Grant) at price 27.70 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-04-30,I
+135,739,20475.0,,Stock Award(Grant) at price 27.70 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-04-30,I
+136,739,20475.0,,Stock Award(Grant) at price 27.70 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-04-30,I
+137,1486,42031.0,,Stock Award(Grant) at price 28.28 per share.,SABRINA SANDERS S,Officer,,2025-03-31,I
+138,118119,3340417.0,,Stock Award(Grant) at price 28.28 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-03-31,I
+139,182,5148.0,,Stock Award(Grant) at price 28.28 per share.,LEE LORI M,Officer,,2025-03-31,I
+140,681,19260.0,,Stock Award(Grant) at price 28.28 per share.,ARROYO F. THADDEUS,Officer,,2025-03-31,I
+141,12945,366100.0,,Stock Award(Grant) at price 28.28 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-03-31,I
+142,2401,0.0,,Stock Gift at price 0.00 per share.,LEE LORI M,Officer,,2025-03-17,D
+143,61103,0.0,,Stock Gift at price 0.00 per share.,MCATEE DAVID R. II,General Counsel,,2025-02-28,D
+144,108,2964.0,,Stock Award(Grant) at price 27.41 per share.,SABRINA SANDERS S,Officer,,2025-02-28,I
+145,1474,40417.0,,Stock Award(Grant) at price 27.41 per share.,DESROCHES PASCAL,Chief Financial Officer,,2025-02-28,I
+146,170,4680.0,,Stock Award(Grant) at price 27.41 per share.,LEE LORI M,Officer,,2025-02-28,I
+147,702,19260.0,,Stock Award(Grant) at price 27.41 per share.,ARROYO F. THADDEUS,Officer,,2025-02-28,I
+148,474,13000.0,,Stock Award(Grant) at price 27.41 per share.,MCELFRESH JEFFERY S.,Chief Operating Officer,,2025-02-28,I
+149,120419,0.0,,Stock Gift at price 0.00 per share.,STANKEY JOHN T,Chief Executive Officer,,2025-02-19,D

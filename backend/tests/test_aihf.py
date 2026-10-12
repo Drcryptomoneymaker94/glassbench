@@ -130,6 +130,37 @@ class FullRunTest(unittest.TestCase):
                     manager.pool.shutdown(wait=True)
                     store._conn.close()
 
+    def test_a_free_data_run_is_recorded_and_labelled_as_not_native(self):
+        from deskapp.runner import RunManager
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            runs_dir = Path(tmp) / "runs"
+            with mock.patch.object(events, "RUNS_DIR", runs_dir), mock.patch.object(aihf, "RUNS_DIR", runs_dir), \
+                    mock.patch.object(aihf, "AIHF_PRIVATE_DIR", Path(tmp) / "private"):
+                store = Store(Path(tmp) / "desk.db")
+                manager = RunManager(store, EventBus(store), workers=1)
+                manager.aihf_fixture = True
+                try:
+                    with self.assertRaises(ValueError):
+                        manager.submit_aihf("AAPL", "2026-09-11", "deep-value", None, "deepseek-flash", data_source="bloomberg")
+                    run_id = manager.submit_aihf("AAPL", "2026-09-11", "deep-value", None, "deepseek-flash", data_source="yahoo")
+                    deadline = time.time() + 180
+                    while store.get_run(run_id)["status"] in ("queued", "running") and time.time() < deadline:
+                        time.sleep(0.5)
+                    run = store.get_run(run_id)
+                    self.assertEqual(run["status"], "finished", run.get("error"))
+                    self.assertEqual(run["data_source"], "yahoo")
+                    self.assertEqual((run["decision"]["data_source"], run["decision"]["data_native"]), ("yahoo", False))
+                    evs = store.events_since(run_id)
+                    queued = evs[0]["payload"]
+                    self.assertEqual((queued["data_source"], queued["data_label"]), ("yahoo", "Yahoo Finance (free)"))
+                    self.assertIn("Fundamentals rebuilt from SEC EDGAR filings", queued["agent_meta"][0]["reads"])
+                    started = next(e["payload"] for e in evs if e["type"] == "engine.started")
+                    self.assertEqual(started["data_source"], "yahoo")  # the driver itself was told, not only the database
+                finally:
+                    manager.pool.shutdown(wait=True)
+                    store._conn.close()
+
 
 if __name__ == "__main__":
     unittest.main()

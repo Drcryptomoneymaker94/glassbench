@@ -1,0 +1,4 @@
+## Polymarket prediction markets: "Nvidia"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **DOJ fines Nvidia over Groq deal in 2026?** — Yes 12% ($559 volume, resolves 2027-01-01, 1-week -1.5pp)

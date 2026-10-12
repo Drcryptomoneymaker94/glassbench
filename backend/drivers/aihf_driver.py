@@ -22,6 +22,12 @@ the prompts that quote them go to --private-dir, which is never published. The
 event stream carries only derived facts: for a data call, the row count, the
 date span and the number of fields, never the values.
 
+--data picks where the numbers come from. financial-datasets is AI Hedge
+Fund's own client, as released. yahoo is Glassbench's free adapter
+(free_data.py next to this file): Yahoo Finance prices and earnings dates,
+SEC EDGAR statements. It is not native to AI Hedge Fund, and results can
+differ from a Financial Datasets run.
+
 --fixture swaps the data client and the LLM for canned test doubles. Tests use
 it to check the event stream offline; Glassbench never passes it for a run.
 """
@@ -31,6 +37,7 @@ from __future__ import annotations
 import argparse
 import contextvars
 import json
+import re
 import os
 import sys
 import time
@@ -179,11 +186,18 @@ class DataTap:
 
         self._out.mkdir(parents=True, exist_ok=True)
         digest = hashlib.sha1(json.dumps(shown, sort_keys=True, default=str).encode()).hexdigest()[:10]
-        rel = f"tool_outputs/{name.removeprefix('get_')}_{shown.get('ticker') or 'all'}_{digest}.json"
+        # The ticker comes from the request: keep only safe characters in the file name, and never write
+        # outside this run's folder whatever it contains.
+        ticker = re.sub(r"[^A-Za-z0-9^=-]", "_", str(shown.get("ticker") or "all"))[:20]
+        rel = f"tool_outputs/{name.removeprefix('get_')}_{ticker}_{digest}.json"
+        base = self._out.parent.resolve()
+        target = (base / rel).resolve()
+        if base not in target.parents:
+            raise ValueError(f"refusing to write outside the run folder: {rel}")
         rows = result if isinstance(result, list) else [result] if result is not None else []
         body = [r.model_dump(mode="json") if hasattr(r, "model_dump") else r for r in rows]
-        (self._out.parent / rel).write_text(json.dumps({"call": name, "args": shown, "rows": body}, indent=1, default=str),
-                                            encoding="utf-8")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps({"call": name, "args": shown, "rows": body}, indent=1, default=str), encoding="utf-8")
         return self._prefix + rel
 
 
@@ -384,6 +398,37 @@ def stage_events(record: dict, executed: bool) -> None:
     emit("agent.finished", "execution", duration=0)
 
 
+DATA_SOURCES = {"financial-datasets": "Financial Datasets (AI Hedge Fund's own client)",
+                "yahoo": "Yahoo Finance and SEC EDGAR (Glassbench's free adapter, not native)"}
+
+
+def run_once(fund, as_of: str, broker, data, universe: list[str]) -> tuple[dict, bool]:
+    """Assess as of the date, then fill at the next completed session close, as AI Hedge Fund's own cycle does.
+
+    2.5.0 split the old run_cycle into assess_fund and execute_decision, sequenced by `advance` over a
+    ledger. Glassbench runs one assessment at a time, so it sequences the two itself: the record is a
+    CycleRecord when a later session has closed, else the pending proposal in the shape 2.4.0 returned.
+    """
+    from datetime import date, timedelta
+
+    from hedge_fund.data.sessions import completed_through, session_closes
+    try:
+        from hedge_fund.pipeline.stages import assess_fund, execute_decision  # 2.5.0
+    except ImportError:
+        from hedge_fund.pipeline.run_cycle import assess_fund, execute_decision  # 2.4.0
+
+    as_of = min(date.fromisoformat(as_of).isoformat(), completed_through())
+    proposal = assess_fund(fund, as_of, data, universe)
+    start = (date.fromisoformat(as_of) + timedelta(days=1)).isoformat()
+    closes = session_closes(data, fund.spec.benchmark, start, completed_through())
+    if not closes:
+        return {"schema_version": 2, "status": "pending", "execution_policy": "next_close", "fund": fund.spec.name,
+                "as_of": as_of, "proposal": json.loads(proposal.model_dump_json()), "scheduled_execution_date": None,
+                "reason": "No later session has closed yet, so nothing was filled. Run again once it has."}, False
+    cycle = execute_decision(fund, proposal, min(closes), broker, data)
+    return json.loads(cycle.model_dump_json()), True
+
+
 def describe() -> int:
     """What this install offers, straight from its registries: analysts, library strategies, models."""
     import importlib.metadata as md
@@ -426,6 +471,8 @@ def main() -> int:
     parser.add_argument("--run-dir", required=True)
     parser.add_argument("--capital", type=float, default=100_000.0)
     parser.add_argument("--max-position", type=float, default=0.25)
+    parser.add_argument("--data", choices=sorted(DATA_SOURCES), default="financial-datasets",
+                        help="financial-datasets (native) or yahoo (Glassbench's free adapter, not native)")
     parser.add_argument("--data-cache", help="folder for AI Hedge Fund's data cache, so a fetch is never paid twice")
     parser.add_argument("--private-dir", help="where raw vendor data and prompts go, never published (default: the run folder)")
     parser.add_argument("--fixture", action="store_true", help="canned data and answers, for tests only")
@@ -435,16 +482,15 @@ def main() -> int:
     run_dir.mkdir(parents=True, exist_ok=True)
     os.environ["HEDGE_FUND_LLM_MODEL"] = args.model
     try:
-        if not args.fixture and not os.environ.get("FINANCIAL_DATASETS_API_KEY"):
+        if not args.fixture and args.data == "financial-datasets" and not os.environ.get("FINANCIAL_DATASETS_API_KEY"):
             raise RuntimeError("FINANCIAL_DATASETS_API_KEY is not set. AI Hedge Fund reads all prices and fundamentals from "
-                               "financialdatasets.ai; put the key in .env at the Glassbench repository root.")
+                               "financialdatasets.ai; put the key in .env at the Glassbench repository root, or pick the "
+                               "free Yahoo Finance data.")
 
         import importlib.metadata as md
         from hedge_fund.brokers import SimBroker
         from hedge_fund.fund import Fund
         from hedge_fund.llm import PromptCache
-        from hedge_fund.pipeline import run_cycle
-        from hedge_fund.pipeline.models import PendingRunResult
         import hedge_fund.signals.llm_agent as llm_agent
 
         real_cache = PromptCache
@@ -470,20 +516,31 @@ def main() -> int:
                               "kind": "llm" if hasattr(m, "_llm") else "quant"})
 
         emit("driver.started", None, aihf_version=md.version("aihf"), spec=json.loads(spec.model_dump_json()),
-             lanes=lanes, model=args.model, fixture=args.fixture)
+             lanes=lanes, model=args.model, fixture=args.fixture, data_source=args.data,
+             data_label=DATA_SOURCES[args.data])
 
         outputs = private / "tool_outputs"
         if args.fixture:
             data = DataTap(FixtureData(), outputs, prefix)
         else:
-            from hedge_fund.data import CachedDataClient, FDClient
+            from hedge_fund.data import CachedDataClient
 
-            # Every successful response is kept on disk and reused: a stock and date is paid for once.
-            cached = CachedDataClient(FDClient(), cache_dir=args.data_cache) if args.data_cache else CachedDataClient(FDClient())
+            if args.data == "yahoo":
+                sys.path.insert(0, str(Path(__file__).resolve().parent))
+                from free_data import FreeDataClient
+
+                # Its own cache folder: the cache keys on the call and its arguments, not on the source.
+                cache_dir = Path(args.data_cache) / "yahoo" if args.data_cache else None
+                source = FreeDataClient(cache_dir)
+            else:
+                from hedge_fund.data import FDClient
+
+                cache_dir, source = (Path(args.data_cache) if args.data_cache else None), FDClient()
+            # Every successful response is kept on disk and reused: a stock and date is fetched (and paid for) once.
+            cached = CachedDataClient(source, cache_dir=cache_dir) if cache_dir else CachedDataClient(source)
             data = DataTap(cached, outputs, prefix)
-        result = run_cycle(fund, args.date, SimBroker(cash=spec.capital), data, [args.ticker.upper()])
-        executed = not isinstance(result, PendingRunResult)
-        record = json.loads(result.model_dump_json())
+        record, executed = run_once(fund, args.date, SimBroker(cash=spec.capital), data, [args.ticker.upper()])
+        record["data_source"] = args.data
         (run_dir / "record.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
         stage_events(record, executed)
         emit("driver.finished", None, status="executed" if executed else "pending", record=record)

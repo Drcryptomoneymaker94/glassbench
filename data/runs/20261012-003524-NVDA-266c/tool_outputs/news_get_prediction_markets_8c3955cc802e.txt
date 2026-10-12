@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "Fed rate cut"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will no Fed rate cuts happen in 2026?** — Yes 96% ($8,846,832 volume, resolves 2027-01-01, 1-week -0.4pp)
+- **Will 11 Fed rate cuts happen in 2026?** — Yes 0% ($5,278,170 volume, resolves 2027-01-01)
+- **Will 10 Fed rate cuts happen in 2026?** — Yes 0% ($4,957,192 volume, resolves 2027-01-01)
+- **Will 9 Fed rate cuts happen in 2026?** — Yes 0% ($4,301,839 volume, resolves 2027-01-01)
+- **Will 6 Fed rate cuts happen in 2026?** — Yes 0% ($4,226,308 volume, resolves 2027-01-01, 1-week +0.1pp)
+- **Will 12 or more Fed rate cuts happen in 2026?** — Yes 0% ($3,981,506 volume, resolves 2027-01-01)

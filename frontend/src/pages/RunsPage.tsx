@@ -189,6 +189,7 @@ export default function RunsPage({ meta }: { meta: Meta }) {
                       <td style={{ fontWeight: 700 }}>
                         {r.ticker}
                         {r.purpose === "backtest" && <span className="tag-bt" title={`Backtest run · memory ${r.memory ?? "off"}`}>BT</span>}
+                        {r.data_source === "yahoo" && <span className="tag-variant" title="Free Yahoo Finance and SEC EDGAR data through Glassbench's adapter, not native to AI Hedge Fund">free data</span>}
                       </td>
                       <td className="num">{r.trade_date}</td>
                       <td title={versionTitle(r.engine_version, r.engine)}>
@@ -285,10 +286,14 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
   const [aihfModel, setAihfModel] = useState<string>(aihf?.default_model ?? "deepseek-flash");
   const aihfModelMeta = aihf?.models?.find((m) => m.model_name === aihfModel);
   const aihfLabel = (name: string) => aihf?.analysts?.find((a) => a.name === name)?.label ?? name;
+  const dataSources = aihf?.data_sources ?? [{ id: "financial-datasets", label: "Financial Datasets", native: true, note: "", key: "FINANCIAL_DATASETS_API_KEY", present: !!aihf?.data_key?.present }];
+  // Native data when its key is loaded; without it, the free route is the one that can run.
+  const [dataSource, setDataSource] = useState<string>(aihf?.data_key?.present || !aihf?.data_sources ? "financial-datasets" : "yahoo");
+  const dataMeta = dataSources.find((s) => s.id === dataSource) ?? dataSources[0];
   const aihfBlocked = !aihf?.installed
     ? aihf?.error ?? "AI Hedge Fund is not installed"
-    : !aihf.data_key?.present
-    ? "FINANCIAL_DATASETS_API_KEY is not loaded. AI Hedge Fund reads prices and fundamentals from financialdatasets.ai (the key is free, the data needs prepaid credits): put it in .env at the repository root, then restart Glassbench."
+    : dataMeta.key && !dataMeta.present
+    ? "FINANCIAL_DATASETS_API_KEY is not loaded. AI Hedge Fund reads prices and fundamentals from financialdatasets.ai (the key is free, the data needs prepaid credits): put it in .env at the repository root and restart Glassbench, or pick the free Yahoo Finance data."
     : aihfModelMeta && !aihfModelMeta.present
     ? `${aihfModelMeta.key} is not loaded for ${aihfModelMeta.display_name}.`
     : strategy === "custom" && !aihfAnalysts.length
@@ -312,7 +317,7 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
       const res = isAihf
         ? await api.start({
             tickers: list, trade_date: date, analysts: meta.analysts, depth: 1, quick_model: "deepseek-v4-flash", deep_model: "deepseek-v4-pro", provider: "deepseek",
-            engine, strategy: strategy === "custom" ? null : strategy, aihf_analysts: strategy === "custom" ? aihfAnalysts : null, aihf_model: aihfModel,
+            engine, strategy: strategy === "custom" ? null : strategy, aihf_analysts: strategy === "custom" ? aihfAnalysts : null, aihf_model: aihfModel, aihf_data: dataSource,
           })
         : await api.start({ tickers: list, trade_date: date, analysts, depth, quick_model: quick.trim(), deep_model: deep.trim(), provider });
       onStarted(res.run_ids);
@@ -369,6 +374,24 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
                 </select>
                 <span className="hint">Every LLM analyst runs on it; the earnings drift model uses no LLM</span>
               </div>
+            </div>
+            <div className="field">
+              <span className="label">Data</span>
+              <div className="seg" role="radiogroup" aria-label="Data source">
+                {dataSources.map((s) => (
+                  <button key={s.id} role="radio" aria-checked={dataSource === s.id} className={dataSource === s.id ? "on" : ""} title={s.note} onClick={() => setDataSource(s.id)}>
+                    {s.label}
+                    <small>{s.native ? "native" : "not native"}</small>
+                  </button>
+                ))}
+              </div>
+              {dataMeta.native ? (
+                <span className="hint">AI Hedge Fund's own data client, as released: prepaid credits at financialdatasets.ai, cached so nothing is paid twice</span>
+              ) : (
+                <div className="bt-note" role="note">
+                  <b>Not native to AI Hedge Fund.</b> Glassbench rebuilds the numbers itself: prices and earnings dates from Yahoo Finance, statements from SEC EDGAR filings, each dated by the day it was filed. Free, no key, but results might not be ideal and can differ from a Financial Datasets run.
+                </div>
+              )}
             </div>
             {strategy === "custom" && (
               <div className="field">
@@ -443,7 +466,7 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
         {error && <div className="error">{error}</div>}
         <div className="dialog-foot">
           <span className="muted" style={{ fontSize: 12 }}>
-            {isAihf ? `AI Hedge Fund ${aihf?.version ?? ""} · simulated broker · no orders are placed` : `${prov.label}${prov.key && !prov.present ? ` · ${prov.key} not loaded` : ""} · paper only · no orders are placed`}
+            {isAihf ? `AI Hedge Fund ${aihf?.version ?? ""} · ${dataMeta.native ? dataMeta.label : `${dataMeta.label}, not native`} · simulated broker · no orders are placed` : `${prov.label}${prov.key && !prov.present ? ` · ${prov.key} not loaded` : ""} · paper only · no orders are placed`}
           </span>
           <div style={{ display: "flex", gap: 8 }}>
             <button className="btn btn-ghost" onClick={onClose}>Cancel</button>

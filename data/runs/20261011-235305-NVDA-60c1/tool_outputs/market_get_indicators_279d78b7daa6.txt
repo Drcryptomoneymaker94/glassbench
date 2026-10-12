@@ -1,0 +1,66 @@
+## macd values from 2026-08-12 to 2026-10-11:
+
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 3.988534671997911
+2026-10-08: 4.489553114047311
+2026-10-07: 4.9415507364195435
+2026-10-06: 4.734877313504597
+2026-10-05: 4.221997312318848
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 3.5405844215608795
+2026-10-01: 3.1233540659553967
+2026-09-30: 2.86000361642661
+2026-09-29: 2.734781282320398
+2026-09-28: 2.65430049806551
+2026-09-27: N/A: Not a trading day (weekend or holiday)
+2026-09-26: N/A: Not a trading day (weekend or holiday)
+2026-09-25: 2.344970365820785
+2026-09-24: 2.3019341990227815
+2026-09-23: 2.263413189809711
+2026-09-22: 2.0866338373918722
+2026-09-21: 1.4885389096170627
+2026-09-20: N/A: Not a trading day (weekend or holiday)
+2026-09-19: N/A: Not a trading day (weekend or holiday)
+2026-09-18: 0.8552089142536943
+2026-09-17: 0.5547011072002022
+2026-09-16: 0.46140357070342475
+2026-09-15: 0.8895018207622911
+2026-09-14: 1.5991176711576145
+2026-09-13: N/A: Not a trading day (weekend or holiday)
+2026-09-12: N/A: Not a trading day (weekend or holiday)
+2026-09-11: 2.6047847749623827
+2026-09-10: 3.1041680124612583
+2026-09-09: 3.6892830642217973
+2026-09-08: 3.8672405888415256
+2026-09-07: N/A: Not a trading day (weekend or holiday)
+2026-09-06: N/A: Not a trading day (weekend or holiday)
+2026-09-05: N/A: Not a trading day (weekend or holiday)
+2026-09-04: 3.8286177208622405
+2026-09-03: 3.2527399105453583
+2026-09-02: 2.6646534269908955
+2026-09-01: 2.2861675278359144
+2026-08-31: 2.4787074940579146
+2026-08-30: N/A: Not a trading day (weekend or holiday)
+2026-08-29: N/A: Not a trading day (weekend or holiday)
+2026-08-28: 2.348712861329602
+2026-08-27: 2.4771349804569525
+2026-08-26: 1.5442413258591898
+2026-08-25: 2.1942914186117832
+2026-08-24: 2.6472964768038025
+2026-08-23: N/A: Not a trading day (weekend or holiday)
+2026-08-22: N/A: Not a trading day (weekend or holiday)
+2026-08-21: 3.651778902821661
+2026-08-20: 4.246110952193391
+2026-08-19: 4.726302294711843
+2026-08-18: 5.198245596893003
+2026-08-17: 5.503290156474975
+2026-08-16: N/A: Not a trading day (weekend or holiday)
+2026-08-15: N/A: Not a trading day (weekend or holiday)
+2026-08-14: 5.276609081554085
+2026-08-13: 4.895274353321071
+2026-08-12: 4.32310963524003
+
+
+MACD: Computes momentum via differences of EMAs. Usage: Look for crossovers and divergence as signals of trend changes. Tips: Confirm with other indicators in low-volatility or sideways markets.

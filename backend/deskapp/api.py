@@ -13,6 +13,7 @@ import json
 import zipfile
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
@@ -66,6 +67,8 @@ class RunRequest(BaseModel):
     strategy: str | None = None
     aihf_analysts: list[str] | None = None
     aihf_model: str = AIHF_DEFAULT_MODEL
+    # financial-datasets is AI Hedge Fund's own data; yahoo is Glassbench's free adapter (Yahoo Finance + SEC EDGAR).
+    aihf_data: Literal["financial-datasets", "yahoo"] = "financial-datasets"
 
     @field_validator("tickers")
     @classmethod
@@ -73,7 +76,8 @@ class RunRequest(BaseModel):
         cleaned = []
         for t in value:
             t = t.strip().upper()
-            if not t or len(t) > 15 or not all(c.isalnum() or c in ".-^=/" for c in t):
+            if (not t or len(t) > 15 or not all(c.isalnum() or c in ".-^=/" for c in t)
+                    or ".." in t or t[0] in "./"):  # dots and slashes appear in real symbols, never as a path
                 raise ValueError(f"Ticker '{t}' is not a valid symbol")
             if t not in cleaned:
                 cleaned.append(t)
@@ -141,15 +145,17 @@ def _create_aihf_runs(req: RunRequest) -> dict:
     info = aihf.describe()
     if not info.get("installed"):
         raise HTTPException(400, f"AI Hedge Fund is not available: {info.get('error')}")
-    if not os.environ.get("FINANCIAL_DATASETS_API_KEY"):
+    if req.aihf_data == "financial-datasets" and not os.environ.get("FINANCIAL_DATASETS_API_KEY"):
         raise HTTPException(400, "FINANCIAL_DATASETS_API_KEY is missing. AI Hedge Fund reads all its data from financialdatasets.ai "
-                                 "(the key is free, the data needs prepaid credits, about 2 cents a request): put it in .env at the repository root, then restart Glassbench.")
+                                 "(the key is free, the data needs prepaid credits, about 2 cents a request): put it in .env at the repository root, "
+                                 "then restart Glassbench. Or pick the free Yahoo Finance data.")
     model = req.aihf_model.strip()
     key = aihf.model_key(model)
     if key and not os.environ.get(key):
         raise HTTPException(400, f"{key} is missing for model {model}. Put it in .env at the repository root, then restart Glassbench.")
     try:
-        ids = [manager.submit_aihf(t, req.trade_date, req.strategy, req.aihf_analysts, model) for t in req.tickers]
+        ids = [manager.submit_aihf(t, req.trade_date, req.strategy, req.aihf_analysts, model, data_source=req.aihf_data)
+               for t in req.tickers]
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
     return {"run_ids": ids}
@@ -166,7 +172,7 @@ def list_runs(limit: int = 200):
 
 
 EXPORT_COLUMNS = [
-    "id", "ticker", "trade_date", "status", "purpose", "backtest_id", "memory", "variant", "models_served", "engine", "engine_version", "engine_adjusted", "provider", "rating", "research_recommendation", "trader_action", "entry_price",
+    "id", "ticker", "trade_date", "status", "purpose", "backtest_id", "memory", "variant", "data_source", "models_served", "engine", "engine_version", "engine_adjusted", "provider", "rating", "research_recommendation", "trader_action", "entry_price",
     "stop_loss", "price_target", "time_horizon", "analysts", "debate_rounds", "quick_model", "deep_model",
     "started_at", "duration_s", "llm_calls", "tool_calls", "tokens_in", "tokens_out", "cost_usd_est", "flags", "error",
 ]
@@ -179,7 +185,7 @@ def _export_row(run: dict) -> dict:
     return {
         "id": run["id"], "ticker": run["ticker"], "trade_date": run["trade_date"], "status": run["status"],
         "purpose": run.get("purpose") or "live", "backtest_id": run.get("backtest_id") or "", "memory": run.get("memory") or "shared",
-        "variant": run.get("variant") or "", "models_served": " ".join(run.get("models_served") or []),
+        "variant": run.get("variant") or "", "data_source": run.get("data_source") or "", "models_served": " ".join(run.get("models_served") or []),
         "engine": run.get("engine") or "", "engine_version": run.get("engine_version") or "", "engine_adjusted": engine_build(run.get("engine_version") or "")["adjusted"], "provider": run.get("provider") or "",
         "rating": run.get("rating") or "", "research_recommendation": research.get("recommendation") or "",
         "trader_action": trader.get("action") or "", "entry_price": trader.get("entry_price") or "",

@@ -74,7 +74,7 @@ export default function RunPage({ meta }: { meta: Meta }) {
             <h1>{run.ticker}</h1>
             <span className="subtitle">
               {aihfRun
-                ? `AI Hedge Fund · ${run.variant === "custom" || !run.variant ? "custom strategy" : run.variant} · ${analysts} analyst${analysts === 1 ? "" : "s"} · ${run.quickModel.replace("deepseek-", "")}`
+                ? `AI Hedge Fund · ${run.variant === "custom" || !run.variant ? "custom strategy" : run.variant} · ${analysts} analyst${analysts === 1 ? "" : "s"} · ${run.quickModel.replace("deepseek-", "")}${run.dataSource === "yahoo" ? " · Yahoo Finance data, not native" : ""}`
                 : `${analysts} analyst${analysts === 1 ? "" : "s"} · ${run.depth} debate round${run.depth === 1 ? "" : "s"} · ${run.quickModel.replace("deepseek-", "")} / ${run.deepModel.replace("deepseek-", "")}`}
             </span>
             {statusPill}

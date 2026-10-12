@@ -41,6 +41,24 @@ STAGE_AGENTS = [
      "reads": ["final weights", "the next completed session close"]},
 ]
 
+# Where an AI Hedge Fund run reads its numbers. Financial Datasets is the framework's own client; the free route is
+# Glassbench's adapter (drivers/free_data.py) and is labelled as not native wherever a run is shown.
+DATA_SOURCES = {
+    "financial-datasets": {
+        "label": "Financial Datasets", "native": True, "key": "FINANCIAL_DATASETS_API_KEY",
+        "note": "AI Hedge Fund's own data client, as released. Prepaid credits, about 2 cents a request; responses are cached.",
+        "reads": {"llm": ["Point-in-time fundamentals snapshot", "Company facts"], "quant": ["Earnings history", "Prices"]},
+    },
+    "yahoo": {
+        "label": "Yahoo Finance (free)", "native": False, "key": None,
+        "note": ("Not native to AI Hedge Fund: Glassbench's own adapter. Prices and earnings dates from Yahoo Finance, statements "
+                 "from SEC EDGAR filings dated by the day they were filed. Free, no key, but the figures are rebuilt by "
+                 "Glassbench and can differ from Financial Datasets, so results might not be ideal."),
+        "reads": {"llm": ["Fundamentals rebuilt from SEC EDGAR filings", "Sector and industry from Yahoo Finance"],
+                  "quant": ["Earnings surprises from Yahoo Finance", "Prices from Yahoo Finance"]},
+    },
+}
+
 # Glassbench's own mapping, shown with every run: AI Hedge Fund returns convictions and weights, not ratings.
 RATING_BANDS = [(0.5, "Buy"), (0.15, "Overweight"), (-0.15, "Hold"), (-0.5, "Underweight")]
 RATING_RULE = ("Glassbench maps the blended conviction to a rating so frameworks share one table: "
@@ -85,6 +103,9 @@ def meta_for_ui() -> dict:
         "models": [{**m, "present": bool(os.environ.get(m["key"])) if m.get("key") else True} for m in d["models"]],
         "default_model": "deepseek-flash",
         "data_key": {"name": "FINANCIAL_DATASETS_API_KEY", "present": bool(os.environ.get("FINANCIAL_DATASETS_API_KEY"))},
+        "data_sources": [{"id": sid, "label": s["label"], "native": s["native"], "note": s["note"], "key": s["key"],
+                          "present": bool(os.environ.get(s["key"])) if s["key"] else True}
+                         for sid, s in DATA_SOURCES.items()],
         "rating_rule": RATING_RULE,
     }
 
@@ -112,12 +133,13 @@ def model_key(model: str) -> str | None:
     return "ANTHROPIC_API_KEY"  # AI Hedge Fund sends unlisted ids to Anthropic
 
 
-def agent_meta(analysts: list[str]) -> list[dict]:
+def agent_meta(analysts: list[str], data_source: str = "financial-datasets") -> list[dict]:
     kinds = {a["name"]: a for a in describe().get("analysts", [])}
+    reads_by_kind = DATA_SOURCES.get(data_source, DATA_SOURCES["financial-datasets"])["reads"]
     out = []
     for name in analysts:
         llm = kinds.get(name, {}).get("kind", "llm") == "llm"
-        reads = (["Point-in-time fundamentals snapshot", "Company facts"] if llm else ["Earnings history", "Prices"])
+        reads = reads_by_kind["llm" if llm else "quant"]
         out.append({"id": name, "label": LABELS.get(name, name.title()), "name": NAMES.get(name, name),
                     "stage": "analysts", "role": "quick" if llm else "rule", "reads": reads, "analyst_key": name})
     return out + [{**a, "analyst_key": None} for a in STAGE_AGENTS]
@@ -196,9 +218,12 @@ def execute(manager, run_id: str, run: dict, cancel: threading.Event, fixture: b
             "--model", model, "--run-dir", str(run_dir), "--data-cache", str(AIHF_DATA_CACHE),
             "--private-dir", str(AIHF_PRIVATE_DIR / run_id)]
     argv += ["--strategy", variant] if variant != "custom" else ["--analysts", ",".join(run["analysts"])]
+    data_source = run.get("data_source") or "financial-datasets"
+    argv += ["--data", data_source]
     if fixture:
         argv.append("--fixture")
-    keys = {"FINANCIAL_DATASETS_API_KEY", model_key(model) or ""}
+    # Only the keys this run needs reach the child: the data key for Financial Datasets, SEC's contact address for the free route.
+    keys = {model_key(model) or "", "FINANCIAL_DATASETS_API_KEY" if data_source == "financial-datasets" else "SEC_EDGAR_EMAIL"}
 
     totals = {"tokens_in": 0, "tokens_out": 0, "cost_usd": 0.0, "llm_calls": 0, "tool_calls": 0, "flags": 0}
     served: set[str] = set()
@@ -226,7 +251,8 @@ def execute(manager, run_id: str, run: dict, cancel: threading.Event, fixture: b
                 type_, agent = line.pop("type", ""), line.pop("agent", None)
                 if type_ == "driver.started":
                     bus.emit(run_id, "engine.started", None, engine=AIHF_ENGINE, version=line.get("aihf_version"),
-                             model=line.get("model"), lanes=line.get("lanes"), spec=line.get("spec"))
+                             model=line.get("model"), lanes=line.get("lanes"), spec=line.get("spec"),
+                             data_source=line.get("data_source"), data_label=line.get("data_label"))
                     continue
                 if type_ == "driver.finished":
                     finished = line
@@ -267,12 +293,16 @@ def execute(manager, run_id: str, run: dict, cancel: threading.Event, fixture: b
                     proc.wait(timeout=10)
                 except subprocess.TimeoutExpired:
                     proc.kill()
+            proc.stdout.close()
     code = proc.wait()
     sync()
     if finished is None:
         raise RuntimeError(failure or f"AI Hedge Fund exited with code {code} before finishing; see aihf.log in the run folder")
     record = finished.get("record") or {}
     rating, decision = summarize(record, finished.get("status") == "executed", run["ticker"])
+    decision["data_source"] = data_source
+    decision["data_label"] = DATA_SOURCES.get(data_source, {}).get("label", data_source)
+    decision["data_native"] = DATA_SOURCES.get(data_source, {}).get("native", True)
     store.update_run(run_id, status="finished", finished_at=time.time(), rating=rating, decision=decision,
                      models_served=sorted(served))
     bus.emit(run_id, "run.finished", None, rating=rating, decision=decision, **totals)

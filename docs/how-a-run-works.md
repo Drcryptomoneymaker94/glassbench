@@ -2,6 +2,8 @@
 
 Reference notes from the first run, SPY on 2026-09-13, with all 4 analysts selected and DeepSeek as the provider (`deepseek-v4-flash` quick, `deepseek-v4-pro` deep). Repo: TauricResearch/TradingAgents, commit `be952b8` (v0.4.2).
 
+> Recorded on v0.4.2. Two things have changed since: from 0.5.2 the analysts run in parallel, and from 0.6.0 each analyst is a graph of its own (its model turns, its tools and a wrap-up turn) with its own message history, so the `Msg Clear` nodes in section 6 are gone and an analyst hands on only its report. Roles, debates and decision stages below are unchanged.
+
 ---
 
 ## 1. 12 agents in two groups
@@ -197,7 +199,7 @@ Reports enter twice: into the research debate (⑤ ⑥) and into the risk debate
 
 ---
 
-## 6. Inside an analyst: 3 nodes in one graph
+## 6. Inside an analyst: 3 nodes in one graph (up to 0.5.x)
 
 One single LangGraph `StateGraph` holds all 20 nodes. Each analyst is 3 of them plus one conditional edge:
 
