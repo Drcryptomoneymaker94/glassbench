@@ -4,7 +4,7 @@ it gives on the right.
     pip install playwright && playwright install chromium
     python assets/banner-src/make_banners.py [out_dir]
 
-banner_a.png (2000x800) is assets/banner.png. banner_b.png (2000x1100, the glass bench render in the middle) is an
+banner_a.png (2000x800) is assets/banner.png; og.png (1280x640) is the repo's social preview and the website's link card. banner_b.png (2000x1100, the glass bench render in the middle) is an
 alternative layout, rendered only when GLASSBENCH_HERO points at the render. Fonts load from Google Fonts:
 Schibsted Grotesk, JetBrains Mono, Instrument Serif (the website's). Change a chip in LEFT or RIGHT and rerun.
 """
@@ -118,8 +118,11 @@ GLOW = '<defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><fe
 
 
 # ------------------------------------------------------------------ A: the current layout, the diagram on the right
-def banner_a() -> str:
+def banner_a(og: bool = False) -> str:
+    """og=True: the same banner on a 2:1 canvas (2000x1000, square corners), for the GitHub social preview and the
+    link cards on X and the website (rendered at 1280x640)."""
     W, H = 2000, 800
+    HT, DY = (1000, 100) if og else (H, 0)
     cw, rw, chh, gap = 282, 302, 92, 26             # chips: left width, right width
     top = 150
     lx, rx = 846, 1648                              # left and right chip columns
@@ -145,8 +148,9 @@ def banner_a() -> str:
   </div>
 </div>"""
     return f"""<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>{BASE_CSS}</style></head><body>
-<div class="banner" style="height:{H}px;background:radial-gradient(1100px 700px at 72% 40%,#0f1630 0%,#070a14 55%,#04060b 100%)">
-  {stars(W, H, 260, 11, avoid=lambda x, y: x < 820)}
+<div class="banner" style="height:{HT}px;border-radius:{0 if og else 30}px;background:radial-gradient(1100px {700 + 2 * DY}px at 72% {40 if not og else 45}%,#0f1630 0%,#070a14 55%,#04060b 100%)">
+  {stars(W, HT, 300 if og else 260, 11, avoid=lambda x, y: x < 820)}
+  <div style="position:absolute;left:0;top:{DY}px;width:{W}px;height:{H}px">
   <div class="tile" style="position:absolute;left:88px;top:62px;width:58px;height:58px;border-radius:14px"><img src="{LOGO}" style="width:44px;height:44px"></div>
   <div class="kicker" style="left:96px;top:160px;font-size:25px">OPEN SOURCE · APACHE 2.0</div>
   <div class="word" style="left:90px;top:220px;font-size:124px">Glassbench</div>
@@ -157,6 +161,7 @@ def banner_a() -> str:
   <svg class="wires" width="{W}" height="{H}">{GLOW}{wires}</svg>
   {card}
   {chips}
+  </div>
 </div></body></html>"""
 
 
@@ -198,7 +203,7 @@ def banner_b() -> str:
 
 
 def main():
-    pages = {"banner_a": (banner_a(), 800)}
+    pages = {"banner_a": (banner_a(), 800), "og": (banner_a(og=True), 1000)}
     if HERO:
         pages["banner_b"] = (banner_b(), 1100)
     tmp = Path(tempfile.mkdtemp(prefix="glassbench-banner-"))   # the pages carry local file paths: never in the repo
@@ -207,12 +212,13 @@ def main():
         for name, (html, h) in pages.items():
             src = tmp / f"{name}.html"
             src.write_text(html, encoding="utf-8")
-            pg = b.new_page(viewport={"width": 2000, "height": h}, device_scale_factor=1)
+            og = name == "og"   # 1280x640, the size GitHub asks for a social preview
+            pg = b.new_page(viewport={"width": 2000, "height": h}, device_scale_factor=0.64 if og else 1)
             pg.goto(src.as_uri())
             pg.wait_for_load_state("networkidle")
             pg.evaluate("document.fonts.ready")
             pg.wait_for_timeout(400)
-            pg.screenshot(path=str(OUT / f"{name}.png"), omit_background=True, clip={"x": 0, "y": 0, "width": 2000, "height": h})
+            pg.screenshot(path=str(OUT / f"{name}.png"), omit_background=not og, clip={"x": 0, "y": 0, "width": 2000, "height": h})
             print(OUT / f"{name}.png")
         b.close()
 
