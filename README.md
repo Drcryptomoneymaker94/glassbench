@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://davidariasfinance.com/glassbench/"><img src="assets/banner.png" alt="Glassbench: watch AI trading agents think. Tested with TradingAgents v0.6.0 by Tauric Research and AI Hedge Fund v2.5.0 by virattt. Live committee, runs database, LLM benchmark, backtests, paper trading." width="100%"></a>
+  <a href="https://davidariasfinance.com/glassbench/"><img src="assets/banner.png" alt="Glassbench: connect and benchmark finance agent systems in one platform, then trade on them. Frameworks TradingAgents, AI Hedge Fund, Vibe Trading or your own system; front end, benchmark, backtesting and broker connection. Tested with TradingAgents v0.6.0 by Tauric Research and AI Hedge Fund v2.5.0 by virattt. Live committee, runs database, LLM benchmark, backtests, paper trading." width="100%"></a>
 </p>
 
 <p align="center">
