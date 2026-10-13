@@ -15,17 +15,15 @@
 
 ## What it is
 
-Glassbench is a UI and local workbench for LLM trading frameworks. Today it runs the official [TradingAgents](https://github.com/TauricResearch/TradingAgents) engine (v0.6.0, unmodified) and [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) (v2.5.0, unmodified), and records what their agents read, argued and decided, so you can judge the method yourself instead of trusting a rating.
+Glassbench connects finance agent systems to one platform, runs them on the same stock and date, and records what their agents read, argued and decided, so you can compare them and judge the method yourself instead of trusting a rating. It runs the official [TradingAgents](https://github.com/TauricResearch/TradingAgents) (v0.6.0) and [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) (v2.5.0) engines unmodified, each through one adapter. [Vibe Trading](https://github.com/HKUDS/Vibe-Trading) is the next adapter, and your own system plugs in the same way.
 
-For people curious about AI trading agents but unconvinced: every run is recorded, every flag is shown, every cost is counted.
+- **Front end, live and replay.** One card per agent, grouped by stage, with what it is reading, writing and concluding; open a card for every LLM call, every tool call with its result and the reasoning stream. A stage strip and a timeline show who ran when. An AI Hedge Fund run gets one lane per investor agent and the earnings drift model, then the blend, the risk limits and the simulated fill. Every run replays step by step.
+- **One database of every run.** Framework and version, provider and models, ticker, date, analysts, rating, entry, stop, target, horizon, tokens, tool calls, cost and flags, in SQLite. Filter on any of them, facet by model or variant, search the full text of every report and reasoning trace, export to CSV. This repository ships the author's database: [100 runs](#the-runs-database) on 14 tickers, 88 from TradingAgents and 12 from AI Hedge Fund.
+- **Benchmark models and frameworks.** Pick the provider and type any model id; DeepSeek is the default, and OpenAI, Anthropic, Google, xAI, Qwen, GLM, MiniMax, Mistral, Kimi, Groq, OpenRouter and a local Ollama are one key away. Each run records the model asked for and the model actually served, so two models, or two frameworks, on the same stock and date sit side by side with their cost. Named variants change how the agents are fed (prompt wording, SEC EDGAR statements as filed, point-in-time valuation) without touching the engine ([the valuation matched pair](docs/evaluation-valuation-pair.md)).
+- **Backtesting.** Weekly grids of runs with a budget cap, next-open fills and trading costs, against buy-and-hold, a moving-average rule and a shuffled-rating placebo ([the method](docs/backtest-method.md)).
+- **Broker connection.** `trade.py` turns a finished run into one bracket order on an Interactive Brokers paper account, the trader's stop and the portfolio manager's target attached, and links the order back to the run.
 
-- **Live run and replay.** Twelve agents in five stages (analysts, research debate, trader, risk committee, portfolio manager), one card per agent with what it is doing right now and what it concluded, the DeepSeek reasoning stream if you want it, and a timeline of every LLM and tool call. An AI Hedge Fund run gets the same page: one lane per investor agent and the earnings drift model, then the blend, the risk limits and the simulated fill.
-- **A database of every run.** Framework and version, models, ticker, date, rating, entry, stop, target, horizon, tokens, cost, flags. Filter by any of them, full-text search inside the logs, export to CSV. This repository ships the author's database as a courtesy: [77 runs](#the-runs-database) on 9 tickers, 69 from TradingAgents and 8 from AI Hedge Fund.
-- **Frameworks page.** A reference sheet per framework: how it decides, what it reads, what the evidence says, with an SVG of the mechanism.
-- **Backtests with an honest simulator.** Weekly grids, next-open fills, trading costs, buy-and-hold and moving-average baselines, a shuffled-rating placebo, and side-by-side variants of the same decisions.
-- **A trade at the broker.** `trade.py` turns a finished run into one bracket order on an Interactive Brokers paper account, with the trader's stop and the portfolio manager's target attached, and links the order back to the run that produced it.
-
-Nothing here is a ready system to trade with. See [Honest limits](#honest-limits).
+A frameworks page keeps a reference sheet per framework: how it decides, what it reads, what the evidence says. Nothing here is a ready system to trade with; see [Honest limits](#honest-limits).
 
 <p align="center">
   <img src="docs/img/glassbench-tour.gif" alt="A 30 second tour: runs from both frameworks, the New run dialog, a stored NVIDIA run replayed at about 75 times its real speed with the committee filling and the timeline growing, one agent's reasoning and the decision, the framework sheets with their diagrams, and the database with a filter and a log search" width="900">
@@ -33,22 +31,6 @@ Nothing here is a ready system to trade with. See [Honest limits](#honest-limits
 </p>
 
 > **Not investment advice.** Glassbench is a research and education tool. Every rating, price level and report in this repository and its database is output from language models, published so the method can be judged. None of it is a recommendation to buy, sell or hold any security, by the author or anyone else. Orders go to paper accounts only.
-
----
-
-## Highlights
-
-**The committee, live.** One card per agent, grouped by stage, with what it is reading, what it is writing and its one-line conclusion. Click a card for the full output: every LLM call, every tool call with its result, the reasoning stream. A stage strip shows where the run is, and a timeline shows who ran when and for how long. Every run can be replayed step by step afterwards.
-
-**A database of every run, not a log folder.** Runs from both frameworks share one table, with a switch on the Runs page to show all of them or one framework. Each run lands in SQLite with its framework and version, provider and models, ticker, date, analysts, debate depth, rating, entry, stop, target, horizon, tokens, tool calls, cost and flags. The Runs page filters on all of it; the Database page facets it (framework version, variant, quick and deep model, the model actually served, ticker, rating, horizon, purpose) and searches the full text of every report and every reasoning trace. Export any view to CSV. An AI Hedge Fund run also keeps each analyst's signal, confidence and reasoning, the blended conviction, the weight after risk limits and the simulated fill.
-
-**Benchmark LLMs on the same harness.** The framework is fixed; the models are yours to choose. Pick the provider and type any model id for the quick role (reads and debates) and the deep role (the two managers decide). DeepSeek is the default; OpenAI, Anthropic, Google, xAI, Qwen, GLM, MiniMax, Mistral, Kimi, Groq, OpenRouter and a local Ollama are one key away. Every run records which model was asked for and which was actually served, so two models on the same stock and date sit side by side in the same table with their cost.
-
-**Choose the agents.** One to four analysts, one to five debate rounds, and named variants that change how the agents are fed (prompt wording, SEC EDGAR statements as filed, point-in-time valuation) without touching the engine. Matched pairs of variants on the same cells are compared by reading what the agents wrote, not just by their ratings ([the valuation matched pair](docs/evaluation-valuation-pair.md)).
-
-**Backtest honestly.** Weekly grids of runs with a budget cap, replayed against buy-and-hold, a moving-average rule and a shuffled-rating placebo, with next-open fills and trading costs ([the method](docs/backtest-method.md)).
-
-**Then trade it, on paper.** `trade.py` sends the decision to an Interactive Brokers paper account as one bracket order, and the order stays linked to the run that produced it.
 
 ## Screenshots
 
@@ -73,7 +55,7 @@ Nothing here is a ready system to trade with. See [Honest limits](#honest-limits
 | Framework | Status | Notes |
 |---|---|---|
 | [TradingAgents](https://github.com/TauricResearch/TradingAgents) 0.6.0 | Connected | Engine runs untouched. Glassbench observes it through LangChain callbacks and reads its state; every node name and state key it depends on lives in one file, `backend/deskapp/adapter.py`, with tests. Optional variants (prompt wording, SEC EDGAR point-in-time valuation) are applied at runtime and never change the clone. Release 0.5.1 includes a fix and a bug report that came out of Glassbench runs ([#1370](https://github.com/TauricResearch/TradingAgents/pull/1370), [#1369](https://github.com/TauricResearch/TradingAgents/issues/1369)). Release 0.5.1 also rewrote its own Hold guidance ("conflicting arguments alone are not a reason to Hold"), the idea the prompt wording variant tested, so that variant applies to 0.4.0 and 0.5.0 only; on later releases Glassbench reports it as unavailable instead of editing text that is no longer there. Release 0.6.0 runs each analyst as a graph of its own, with its own message history, and reads statements from SEC EDGAR by default; Glassbench streams those inner graphs, so every analyst's tokens, tool calls and report still land on its own card. |
-| [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) 2.5.0 | Connected | Runs untouched in its own clone and virtual environment, because it pins other LangChain versions; `backend/drivers/aihf_driver.py` drives one cycle and streams it as events. Release 2.5.0 splits a cycle into two steps, assess at a close and execute at the next completed close, and Glassbench sequences them for one stock and date. Data comes from Financial Datasets, the framework's own client, or from [a free route Glassbench adds](#free-data-for-ai-hedge-fund), which is not native and is labelled on every run that uses it. Each investor agent and the earnings drift model is a lane, followed by the blend, the risk limits and the simulated execution. Every run keeps its own prompt cache, so a rerun asks the model again. AI Hedge Fund returns portfolio weights, and Glassbench maps the blended conviction to five tiers (0.50 or more Buy, 0.15 Overweight, above -0.15 Hold, above -0.50 Underweight, else Sell) so both frameworks share one table, and a run where most analysts abstained is REVIEW. |
+| [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) 2.5.0 | Connected | Runs untouched in its own clone and virtual environment, because it pins other LangChain versions; `backend/drivers/aihf_driver.py` drives one cycle and streams it as events. Release 2.5.0 splits a cycle into two steps, assess at a close and execute at the next completed close, and Glassbench sequences them for one stock and date. Data comes from Financial Datasets, the framework's own client, or from a free Yahoo Finance and SEC EDGAR route Glassbench adds, which is not native and is labelled on every run that uses it. Each investor agent and the earnings drift model is a lane, followed by the blend, the risk limits and the simulated execution. Every run keeps its own prompt cache, so a rerun asks the model again. AI Hedge Fund returns portfolio weights, and Glassbench maps the blended conviction to five tiers (0.50 or more Buy, 0.15 Overweight, above -0.15 Hold, above -0.50 Underweight, else Sell) so both frameworks share one table, and a run where most analysts abstained is REVIEW. |
 
 Every table's Framework column shows the framework and version only (`TradingAgents 0.6.0`, `AI Hedge Fund 2.5.0`). A build that contains changes on top of the release is labelled `adjusted`, with the changes listed in the tooltip.
 
@@ -113,21 +95,7 @@ py -3.11 -m venv .venv            # its own environment: it pins other LangChain
 cd ..
 ```
 
-It is found at `./ai-hedge-fund`, a sibling `../ai-hedge-fund`, or wherever `GLASSBENCH_AIHF_DIR` points. Its own prices and fundamentals come from [Financial Datasets](https://www.financialdatasets.ai): add `FINANCIAL_DATASETS_API_KEY` to `.env`. Its key is free and its data prepaid, about $0.02 a request, and a run takes four to six. Its entry plan returns the last twelve months only, and each investor agent needs four filed quarters, so on that plan pick a recent date. Without that key, pick **Yahoo Finance (free)** under Data, described below. Then choose AI Hedge Fund in **New run**: a library strategy or your own analysts, one model for all of them, and the data.
-
-### Free data for AI Hedge Fund
-
-<p align="center">
-  <img src="docs/img/aihf-free-data.png" alt="The New run dialog with AI Hedge Fund selected and the Data choice set to Yahoo Finance (free), showing the note that the route is not native to AI Hedge Fund" width="720">
-</p>
-
-In **New run**, the **Data** choice has a second option, **Yahoo Finance (free)**. It is not native to AI Hedge Fund: it is Glassbench's own adapter, `backend/drivers/free_data.py`, written against the framework's data protocol, so every analyst runs unchanged and nothing in the clone is edited. Results might not be ideal, and every run on this route says so on its run page, in its decision card and in the runs table.
-
-- Prices and earnings surprises come from Yahoo Finance, statements from SEC EDGAR. Each 10-Q and 10-K becomes one trailing twelve month row, dated by the day it was filed, so a row is visible only from the day it became public.
-- It costs nothing and needs no key. `SEC_EDGAR_EMAIL`, when set, goes to the SEC, which asks callers to identify themselves.
-- It reaches back through every filing, where the Financial Datasets entry plan returns twelve months, so investor agents that abstained for lack of four filed quarters have them.
-- Checked against Financial Datasets on six rows (NVIDIA, Apple and JPMorgan, two quarters each): margins, return on equity, earnings and book value per share, free cash flow per share, revenue growth and the current ratio agree to the third or fourth decimal where both report them. Two figures differ on purpose. Market cap is priced at the close of the filing day, within about 6% of Financial Datasets' figure. Debt counts the current portion of long-term debt once, where Financial Datasets' debt to equity came out higher.
-- Not served: news and insider trades (no 2.5.0 analyst reads them). Sector and industry are Yahoo's current profile, the same approximation the framework makes with Financial Datasets. Yahoo's earnings figures are the adjusted ones analysts estimate.
+It is found at `./ai-hedge-fund`, a sibling `../ai-hedge-fund`, or wherever `GLASSBENCH_AIHF_DIR` points. Its own prices and fundamentals come from [Financial Datasets](https://www.financialdatasets.ai): add `FINANCIAL_DATASETS_API_KEY` to `.env`. Its key is free and its data prepaid, about $0.02 a request, and a run takes four to six. Its entry plan returns the last twelve months only, and each investor agent needs four filed quarters, so on that plan pick a recent date. Without that key, pick **Yahoo Finance (free)** under Data: Glassbench's own adapter (Yahoo Finance prices, SEC EDGAR statements), not native to AI Hedge Fund, so results might not be ideal, and labelled on every run that uses it. Then choose AI Hedge Fund in **New run**: a library strategy or your own analysts, one model for all of them, and the data.
 
 **5. Start.**
 
@@ -263,7 +231,7 @@ Engine internals live in one place, `backend/deskapp/adapter.py`; `capture.py` t
 
 ## Roadmap
 
-- **Both data routes on the same cells.** AI Hedge Fund's free route now runs ([see above](#free-data-for-ai-hedge-fund)); next is running the same stocks and dates on both routes, several times each, to measure how much of a rating moves with the data rather than with the model's draw.
+- **Both data routes on the same cells.** AI Hedge Fund's free route (Yahoo Finance prices, SEC EDGAR statements) now runs; next is running the same stocks and dates on both routes, several times each, to measure how much of a rating moves with the data rather than with the model's draw.
 - **Transparency pack.** A grounding check of each report against the data it pulled, rerun dispersion (how often twin runs disagree), and a compare view.
 - **Scheduled sessions.** A watchlist run on a clock, with rules that turn ratings into orders only when several runs agree.
 - **More brokers and guardrails.** Alpaca paper orders next to Interactive Brokers, a kill switch, a cost budget.

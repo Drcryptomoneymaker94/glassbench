@@ -56,7 +56,7 @@ html,body{background:transparent}
 .tested .row{display:flex;align-items:stretch;gap:48px}
 .tested .sep{width:1.5px;background:#343a4a}
 .tested .n{font-weight:600;letter-spacing:-.02em;line-height:1}
-.tested .v{margin-top:14px;font-size:26px;color:#a9b0c0}
+.tested .v{margin-top:14px;font-size:27.5px;color:#a9b0c0}
 .tested .v b{font-family:var(--mono);font-weight:500;color:#dde2ec;margin-right:10px}
 .chip{position:absolute;display:flex;align-items:center;gap:16px;padding:0 20px;border-radius:14px;
   background:linear-gradient(180deg,rgba(26,32,52,.92),rgba(16,20,34,.92));border:1.5px solid rgba(150,170,255,.20);
@@ -66,7 +66,7 @@ html,body{background:transparent}
 .chip .t{font-weight:600;letter-spacing:-.01em;color:#f1f3f9;white-space:nowrap;line-height:1.1}
 .chip .s{font-family:var(--mono);color:#8f98b0;margin-top:5px;white-space:nowrap}
 .chip.dim .t{color:#cfd5e4}
-.colhead{position:absolute;font-family:var(--mono);font-size:17px;letter-spacing:.3em;color:#7f88a1}
+.colhead{position:absolute;font-family:var(--mono);font-size:18px;letter-spacing:.3em;color:#7f88a1}
 svg.wires{position:absolute;left:0;top:0;overflow:visible}
 .stars{position:absolute;inset:0}
 """
@@ -123,25 +123,25 @@ def banner_a(og: bool = False) -> str:
     link cards on X and the website (rendered at 1280x640)."""
     W, H = 2000, 800
     HT, DY = (1000, 100) if og else (H, 0)
-    cw, rw, chh, gap = 282, 302, 92, 26             # chips: left width, right width
-    top = 150
-    lx, rx = 846, 1648                              # left and right chip columns
-    cx0, cx1, cy0, cy1 = 1248, 1508, 168, 640       # the platform card
+    cw, rw, chh, gap = 302, 318, 106, 24            # chips: left width, right width (was 282, 302, 92, 26)
+    top = 140
+    lx, rx = 858, 1632                              # left and right chip columns
+    cx0, cx1, cy0, cy1 = 1250, 1526, 150, 650       # the platform card (was 1248, 1508, 168, 640)
     ys = [top + i * (chh + gap) + chh / 2 for i in range(4)]
     jin, jout = (cx0, (cy0 + cy1) / 2), (cx1, (cy0 + cy1) / 2)
     wires = "".join(wire(lx + cw, y, *jin, dashed=not LEFT[i][3]) for i, y in enumerate(ys))
     wires += "".join(wire(*jout, rx, y) for y in ys)
     wires += node(*jin) + node(*jout)
-    chips = "".join(chip(lx, y - chh / 2, cw, chh, ic, n, s, solid, name_px=24, sub_px=14) for (ic, n, s, solid), y in zip(LEFT, ys))
-    chips += "".join(chip(rx, y - chh / 2, rw, chh, ic, n, s, name_px=24, sub_px=14) for (ic, n, s), y in zip(RIGHT, ys))
+    chips = "".join(chip(lx, y - chh / 2, cw, chh, ic, n, s, solid, name_px=27, sub_px=15.5, icon_px=38) for (ic, n, s, solid), y in zip(LEFT, ys))
+    chips += "".join(chip(rx, y - chh / 2, rw, chh, ic, n, s, name_px=27, sub_px=15.5, icon_px=38) for (ic, n, s), y in zip(RIGHT, ys))
     card = f"""
 <div style="position:absolute;left:{cx0}px;top:{cy0}px;width:{cx1 - cx0}px;height:{cy1 - cy0}px;border-radius:20px;
   background:linear-gradient(160deg,rgba(40,52,92,.55),rgba(14,18,32,.85) 55%);border:1.5px solid rgba(170,190,255,.35);
-  box-shadow:0 0 60px rgba(90,110,255,.18),inset 0 1px 0 rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;padding-top:46px">
-  <div class="tile" style="width:84px;height:84px;border-radius:20px"><img src="{LOGO}" style="width:64px;height:64px"></div>
-  <div style="margin-top:22px;font-weight:700;font-size:40px;letter-spacing:-.03em">Glassbench</div>
-  <div style="margin-top:8px;font-family:var(--mono);font-size:15px;letter-spacing:.24em;color:#8f98b0">THE PLATFORM</div>
-  <div style="margin-top:34px;width:206px;font-family:var(--mono);font-size:16px;line-height:1.75;color:#c7cee0">
+  box-shadow:0 0 60px rgba(90,110,255,.18),inset 0 1px 0 rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;padding-top:50px">
+  <div class="tile" style="width:94px;height:94px;border-radius:22px"><img src="{LOGO}" style="width:72px;height:72px"></div>
+  <div style="margin-top:24px;font-weight:700;font-size:44px;letter-spacing:-.03em">Glassbench</div>
+  <div style="margin-top:8px;font-family:var(--mono);font-size:16px;letter-spacing:.24em;color:#8f98b0">THE PLATFORM</div>
+  <div style="margin-top:36px;width:228px;font-family:var(--mono);font-size:17.5px;line-height:1.75;color:#c7cee0">
     <div><span style="color:#6f7891">01</span>&nbsp; one adapter each</div>
     <div><span style="color:#6f7891">02</span>&nbsp; every call logged</div>
     <div><span style="color:#6f7891">03</span>&nbsp; one runs database</div>
@@ -152,12 +152,12 @@ def banner_a(og: bool = False) -> str:
   {stars(W, HT, 300 if og else 260, 11, avoid=lambda x, y: x < 820)}
   <div style="position:absolute;left:0;top:{DY}px;width:{W}px;height:{H}px">
   <div class="tile" style="position:absolute;left:88px;top:62px;width:58px;height:58px;border-radius:14px"><img src="{LOGO}" style="width:44px;height:44px"></div>
-  <div class="kicker" style="left:96px;top:160px;font-size:25px">OPEN SOURCE · APACHE 2.0</div>
-  <div class="word" style="left:90px;top:220px;font-size:124px">Glassbench</div>
-  <div class="tag" style="left:96px;top:380px;width:720px;font-size:36px">Connect and benchmark finance agent systems in one platform, then <i>trade on them.</i></div>
-  {tested(96, 548, 42)}
-  <div class="colhead" style="left:{lx + 4}px;top:104px">FRAMEWORKS</div>
-  <div class="colhead" style="left:{rx + 4}px;top:104px">WHAT YOU GET</div>
+  <div class="kicker" style="left:96px;top:156px;font-size:26px">OPEN SOURCE · APACHE 2.0</div>
+  <div class="word" style="left:88px;top:212px;font-size:132px">Glassbench</div>
+  <div class="tag" style="left:96px;top:378px;width:748px;font-size:38.5px">Connect and benchmark finance agent systems in one platform, then <i>trade on them.</i></div>
+  {tested(96, 552, 45)}
+  <div class="colhead" style="left:{lx + 4}px;top:96px">FRAMEWORKS</div>
+  <div class="colhead" style="left:{rx + 4}px;top:96px">WHAT YOU GET</div>
   <svg class="wires" width="{W}" height="{H}">{GLOW}{wires}</svg>
   {card}
   {chips}
