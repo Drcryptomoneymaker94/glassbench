@@ -1,0 +1,6 @@
+## FRED: Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index) (PCEPILFE)
+- Units: Index 2017=100
+- Frequency: Monthly (SA)
+- Window: 2026-09-28 to 2026-10-28
+
+No observations for PCEPILFE in this window at the 2026-10-28 vintage. The series may report less frequently than the window (try a longer look_back_days), or have no vintage published by then (unpublished as of 2026-10-28, or before ALFRED coverage begins).

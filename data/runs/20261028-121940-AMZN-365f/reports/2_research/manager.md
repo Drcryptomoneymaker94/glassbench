@@ -1,0 +1,15 @@
+**Recommendation**: Overweight
+
+**Rationale**: The debate presents a classic conflict between short-term technical weakness and long-term fundamental strength. While the Bear analyst correctly identifies that AMZN is currently in a distribution phase with negative momentum (MACD death cross, price below 10-EMA/50-SMA), their thesis relies heavily on the assumption that current CapEx spending will fail to generate returns or that macro headwinds will trigger a recession.
+
+The Bull analyst provides a more compelling structural argument for three key reasons:
+1. **Valuation Disconnect:** AMZN is trading at a P/E of ~20x with high ROE (30%) and expanding margins, which is significantly cheaper than pure-play AI peers. This margin of safety makes the downside risk limited unless a macro catastrophe occurs.
+2. **AI Demand Visibility:** The claim that AWS capacity is booked through 2027 provides tangible evidence of demand visibility, countering the bear's fear of "wasteful" CapEx. This suggests the spending is defensive moat-building rather than speculative gambling.
+3. **Technical Support Confluence:** The Bull’s identification of the $243–$245 zone (200-SMA + Bollinger Lower Band) as a high-probability bounce point offers a clear risk/reward entry. The Bear’s fear of a breakdown to $220 is speculative and ignores the strong institutional support likely to emerge at these levels, especially given the upcoming earnings catalyst.
+
+The Bear’s argument that insider selling is a major red flag is weakened by the Bull’s rebuttal that these are routine 10b5-1 plans, whereas the fundamental engine (AWS growth, advertising margins, FCF generation) remains robust. The market is pricing in a "wait-and-see" approach, creating an opportunity to accumulate at a discount before the Q3 earnings report potentially validates the AI thesis and re-rates the stock higher. Therefore, we recommend gradually increasing exposure, accepting short-term volatility for long-term alpha.)
+
+**Strategic Actions**: 1. **Accumulate on Dip:** Initiate or add to positions in AMZN as the price approaches the $245–$250 support zone (near the 200-SMA). This aligns with the Bull’s identified high-probability bounce area.
+2. **Position Sizing:** Increase allocation by 1.5x relative to standard entry size for this conviction level, as the risk/reward at these levels is heavily skewed to the upside (limited downside to $240 vs. significant upside to $275+).
+3. **Monitor Earnings Catalyst:** Maintain the position through the Q3 earnings report on Oct 29. If AMZN beats on AWS growth and confirms margin expansion, the AI CapEx thesis will likely be validated, driving a re-rate toward $275–$280.
+4. **Stop Loss Discipline:** Set a hard stop loss for any new entries at a daily close below $240. A break below this level invalidates the Bull’s structural support thesis and suggests a deeper correction is underway.)

@@ -1,0 +1,68 @@
+## Verified market data snapshot for META
+
+- Requested analysis date: 2026-10-28
+- Latest trading row used: 2026-10-27
+- Rows after the requested analysis date are excluded before verification.
+
+### Latest verified OHLCV row
+
+| Field | Value |
+|---|---:|
+| Open | 627.07 |
+| High | 628.46 |
+| Low | 619.21 |
+| Close | 620.19 |
+| Volume | 51263800 |
+
+### Verified technical indicators (latest row)
+
+| Indicator | Value |
+|---|---:|
+| close_10_ema | 670.29 |
+| close_50_sma | 665.43 |
+| close_200_sma | 631.43 |
+| rsi | 31.94 |
+| boll | 707.47 |
+| boll_ub | 788.58 |
+| boll_lb | 626.35 |
+| macd | -11.84 |
+| macds | 4.42 |
+| macdh | -16.26 |
+| atr | 24.62 |
+
+### Recent verified closes (last 30 rows)
+
+| Date | Close |
+|---|---:|
+| 2026-09-16 | 672.78 |
+| 2026-09-17 | 681.77 |
+| 2026-09-18 | 665.23 |
+| 2026-09-21 | 741.25 |
+| 2026-09-22 | 736.60 |
+| 2026-09-23 | 744.10 |
+| 2026-09-24 | 777.59 |
+| 2026-09-25 | 751.66 |
+| 2026-09-28 | 715.62 |
+| 2026-09-29 | 738.79 |
+| 2026-09-30 | 725.18 |
+| 2026-10-01 | 725.93 |
+| 2026-10-02 | 728.08 |
+| 2026-10-05 | 741.90 |
+| 2026-10-06 | 738.88 |
+| 2026-10-07 | 721.31 |
+| 2026-10-08 | 720.89 |
+| 2026-10-09 | 718.67 |
+| 2026-10-12 | 742.96 |
+| 2026-10-13 | 762.50 |
+| 2026-10-14 | 737.54 |
+| 2026-10-15 | 736.72 |
+| 2026-10-16 | 709.33 |
+| 2026-10-19 | 705.44 |
+| 2026-10-20 | 694.25 |
+| 2026-10-21 | 697.52 |
+| 2026-10-22 | 648.85 |
+| 2026-10-23 | 642.62 |
+| 2026-10-26 | 630.56 |
+| 2026-10-27 | 620.19 |
+
+Use this snapshot as the source of truth for exact OHLCV, price-level, and indicator-value claims. If another tool output conflicts with it, flag the discrepancy rather than inventing a reconciled number. Do not claim historical validation, support/resistance bounces, or exact percentage moves unless directly supported by tool output with concrete dates and prices.

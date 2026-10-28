@@ -48,7 +48,7 @@ export function versionTitle(engineVersion: string | undefined, engine?: string)
 }
 
 export function engineName(r: Pick<Run, "engine">): string {
-  return r.engine === "tradingagents" ? "TradingAgents" : r.engine === "ai_hedge_fund" ? "AI Hedge Fund" : r.engine || "unknown";
+  return r.engine === "tradingagents" ? "TradingAgents" : r.engine === "ai_hedge_fund" ? "AI Hedge Fund" : r.engine === "vibe_trading" ? "Vibe-Trading" : r.engine || "unknown";
 }
 
 export function engineLabel(r: Pick<Run, "engine" | "engine_version">): string {

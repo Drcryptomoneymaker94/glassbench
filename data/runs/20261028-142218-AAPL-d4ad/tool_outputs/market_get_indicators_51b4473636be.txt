@@ -1,0 +1,66 @@
+## atr values from 2026-08-29 to 2026-10-28:
+
+2026-10-28: 6.005479792417592
+2026-10-27: 6.357440339851157
+2026-10-26: 6.431860048235141
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 6.411232959096978
+2026-10-22: 6.444403880079197
+2026-10-21: 6.472435980680242
+2026-10-20: 6.476468484753001
+2026-10-19: 6.639274879613813
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 6.697680263983146
+2026-10-15: 6.646731371278723
+2026-10-14: 6.677249169069395
+2026-10-13: 6.743190849442521
+2026-10-12: 6.691897556160455
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 6.745890427067028
+2026-10-08: 6.517112673710405
+2026-10-07: 6.5822741541701
+2026-10-06: 6.6355248853803
+2026-10-05: 6.856718356130707
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 7.0333891867104725
+2026-10-01: 7.249803645634114
+2026-09-30: 7.252866121830724
+2026-09-29: 7.033855354008809
+2026-09-28: 6.828768712820784
+2026-09-27: N/A: Not a trading day (weekend or holiday)
+2026-09-26: N/A: Not a trading day (weekend or holiday)
+2026-09-25: 6.973290791541373
+2026-09-24: 6.96046587947244
+2026-09-23: 7.141269726421041
+2026-09-22: 7.205983721301987
+2026-09-21: 7.253367366179784
+2026-09-20: N/A: Not a trading day (weekend or holiday)
+2026-09-19: N/A: Not a trading day (weekend or holiday)
+2026-09-18: 7.304393559311403
+2026-09-17: 7.407809105790886
+2026-09-16: 7.349947986074079
+2026-09-15: 7.547636386595402
+2026-09-14: 7.764379149506587
+2026-09-13: N/A: Not a trading day (weekend or holiday)
+2026-09-12: N/A: Not a trading day (weekend or holiday)
+2026-09-11: 8.041638802383295
+2026-09-10: 7.8971484465870585
+2026-09-09: 7.627698796594957
+2026-09-08: 7.50290639633303
+2026-09-07: N/A: Not a trading day (weekend or holiday)
+2026-09-06: N/A: Not a trading day (weekend or holiday)
+2026-09-05: N/A: Not a trading day (weekend or holiday)
+2026-09-04: 7.633897787547349
+2026-09-03: 7.369581669341857
+2026-09-02: 7.421087012596523
+2026-09-01: 7.617324850704909
+2026-08-31: 7.236351623325238
+2026-08-30: N/A: Not a trading day (weekend or holiday)
+2026-08-29: N/A: Not a trading day (weekend or holiday)
+
+
+ATR: Averages true range to measure volatility. Usage: Set stop-loss levels and adjust position sizes based on current market volatility. Tips: It's a reactive measure, so use it as part of a broader risk management strategy.

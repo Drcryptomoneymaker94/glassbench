@@ -23,3 +23,8 @@ data/runs/*/events.jsonl
 ai-hedge-fund/
 data/aihf_private/
 data/aihf_data_cache/
+
+# Vibe-Trading: its clone, and each run's own Vibe-Trading home (raw sessions with local paths, memory, caches);
+# the run's events, reports and tool outputs stay in the database and the run folder.
+Vibe-Trading/
+data/runs/*/vt_home/

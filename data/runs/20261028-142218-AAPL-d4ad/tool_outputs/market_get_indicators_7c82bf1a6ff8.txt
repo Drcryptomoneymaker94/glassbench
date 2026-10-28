@@ -1,0 +1,66 @@
+## vwma values from 2026-08-29 to 2026-10-28:
+
+2026-10-28: 343.4034397912949
+2026-10-27: 343.13768317590205
+2026-10-26: 342.5149765714715
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 341.8591705669248
+2026-10-22: 340.8524226679091
+2026-10-21: 339.86807397961536
+2026-10-20: 338.96541118893134
+2026-10-19: 338.4305566422418
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 337.66623509586407
+2026-10-15: 337.07887914500725
+2026-10-14: 336.67023352162784
+2026-10-13: 335.9029745389864
+2026-10-12: 335.4360280716391
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 335.659102047538
+2026-10-08: 335.7980669797339
+2026-10-07: 335.555453935349
+2026-10-06: 335.49895854569047
+2026-10-05: 335.471544208119
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 335.3002212289914
+2026-10-01: 335.30028982042916
+2026-09-30: 335.3382400672216
+2026-09-29: 333.9885462111936
+2026-09-28: 332.0708122261533
+2026-09-27: N/A: Not a trading day (weekend or holiday)
+2026-09-26: N/A: Not a trading day (weekend or holiday)
+2026-09-25: 330.80261031455973
+2026-09-24: 329.8612616072461
+2026-09-23: 329.48217053155116
+2026-09-22: 328.85071641616594
+2026-09-21: 327.54531731238865
+2026-09-20: N/A: Not a trading day (weekend or holiday)
+2026-09-19: N/A: Not a trading day (weekend or holiday)
+2026-09-18: 326.36575304156315
+2026-09-17: 324.58039872765886
+2026-09-16: 323.3239206579481
+2026-09-15: 322.1472973439618
+2026-09-14: 321.2019660690736
+2026-09-13: N/A: Not a trading day (weekend or holiday)
+2026-09-12: N/A: Not a trading day (weekend or holiday)
+2026-09-11: 319.8157490663109
+2026-09-10: 317.9856479199751
+2026-09-09: 317.0380036282289
+2026-09-08: 317.14111950929214
+2026-09-07: N/A: Not a trading day (weekend or holiday)
+2026-09-06: N/A: Not a trading day (weekend or holiday)
+2026-09-05: N/A: Not a trading day (weekend or holiday)
+2026-09-04: 316.36768552235213
+2026-09-03: 315.2056776275535
+2026-09-02: 313.8868280780206
+2026-09-01: 312.4940531761889
+2026-08-31: 310.7964302218137
+2026-08-30: N/A: Not a trading day (weekend or holiday)
+2026-08-29: N/A: Not a trading day (weekend or holiday)
+
+
+VWMA: A moving average weighted by volume. Usage: Confirm trends by integrating price action with volume data. Tips: Watch for skewed results from volume spikes; use in combination with other volume analyses.

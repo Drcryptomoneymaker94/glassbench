@@ -212,3 +212,38 @@ def aihf_version() -> str:
             pass
         _AIHF_VERSION = f"{pkg}+{sha}" if sha else pkg
     return _AIHF_VERSION
+
+
+# ---------------------------------------------------------------------------
+# Vibe-Trading (HKUDS/Vibe-Trading): its own clone and virtual environment, driven as a subprocess like AI Hedge Fund.
+VT_ENGINE = "vibe_trading"
+# The clone: GLASSBENCH_VT_DIR, else ./Vibe-Trading inside the repo, else a sibling clone (same rule as the engine).
+VT_DIR = Path(os.environ["GLASSBENCH_VT_DIR"]).resolve() if os.environ.get("GLASSBENCH_VT_DIR") else _first_existing(REPO_DIR / "Vibe-Trading", REPO_DIR.parent / "Vibe-Trading")
+VT_PYTHON = VT_DIR / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+VT_DRIVER = BACKEND_DIR / "drivers" / "vt_driver.py"
+VT_MAX_ITERATIONS = 25   # the agent's ReAct loop; Vibe-Trading's own default is 50
+
+_VT_VERSION: str | None = None
+
+
+def vt_version() -> str:
+    """Package version plus the clone's commit, e.g. 0.1.18+bff6e76, read from the clone without importing it."""
+    global _VT_VERSION
+    if _VT_VERSION is None:
+        import re
+        import subprocess
+
+        pkg = "unknown"
+        try:
+            m = re.search(r'^version\s*=\s*"([^"]+)"', (VT_DIR / "pyproject.toml").read_text(encoding="utf-8"), re.M)
+            pkg = m.group(1) if m else pkg
+        except OSError:
+            pass
+        sha = ""
+        try:
+            sha = subprocess.run(["git", "-C", str(VT_DIR), "rev-parse", "--short", "HEAD"],
+                                 capture_output=True, text=True, timeout=5).stdout.strip()
+        except (OSError, subprocess.SubprocessError):
+            pass
+        _VT_VERSION = f"{pkg}+{sha}" if sha else pkg
+    return _VT_VERSION

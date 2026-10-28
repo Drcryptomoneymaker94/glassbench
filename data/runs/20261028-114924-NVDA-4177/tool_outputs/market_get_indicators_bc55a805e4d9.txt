@@ -1,0 +1,36 @@
+## macdh values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: -1.331127671926094
+2026-10-26: -1.7889655394192086
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: -2.1589251272182928
+2026-10-22: -2.048606737388119
+2026-10-21: -1.8295396109040398
+2026-10-20: -2.3292124430782573
+2026-10-19: -2.3867193666736606
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: -2.365557650606076
+2026-10-15: -1.8648248405772359
+2026-10-14: -1.2664560276403973
+2026-10-13: -0.6679052972054307
+2026-10-12: -0.4444568781410174
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 0.1185427797632097
+2026-10-08: 0.6491969167149576
+2026-10-07: 1.2634937682244627
+2026-10-06: 1.3726937873207827
+2026-10-05: 1.2029872329168274
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 0.822321150335827
+2026-10-01: 0.6106710822578556
+2026-09-30: 0.49998840323259675
+2026-09-29: 0.4997631698687095
+2026-09-28: 0.5442231780100011
+
+
+MACD Histogram: Shows the gap between the MACD line and its signal. Usage: Visualize momentum strength and spot divergence early. Tips: Can be volatile; complement with additional filters in fast-moving markets.

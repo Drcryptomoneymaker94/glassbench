@@ -1,0 +1,11 @@
+Action: Buy
+
+**Reasoning**: The investment plan dictates an "Overweight" stance, which translates to a Buy action. The technical market report confirms that MSFT is in a structurally bullish environment, trading well above the 200-day SMA ($435.93) and holding above the critical 50-day SMA ($510.15). Although short-term momentum has decelerated (indicated by the negative MACD histogram and declining 10-EMA), the RSI at 56.33 shows healthy normalization rather than weakness, and price is consolidating within a narrowing Bollinger Band range. The research plan explicitly advises accumulating shares on dips toward the $520–$525 range to leverage volatility compression before the upcoming earnings catalyst. The current close of $531.33 is slightly above this ideal entry zone but still within the consolidation structure; entering here allows participation in a potential breakout above the $546 resistance while maintaining a clear invalidation point below the dynamic support.
+
+**Entry Price**: 528.00
+*Note: The research plan suggests accumulating in the $520–$525 range. Since the current price ($531.33) is slightly higher, a limit order at $528.00 is placed just above the Bollinger Middle Band ($528.99) and below the current market price to secure an entry closer to the suggested dip zone without chasing the breakout.*
+
+**Stop Loss**: 508.00
+*Note: The research plan specifies a hard stop-loss at $510 (the 50-day SMA). To account for the moderate daily volatility indicated by an ATR of ~$10.95 and prevent being stopped out by minor wicks, the stop is placed slightly below the $510 level. This aligns with the technical support confluence of the 50-SMA and the Bollinger Lower Band ($511.95), providing a buffer of approximately 2-3 points.*
+
+**Position Sizing**: Allocate enough capital to increase portfolio weight by +1.5% to +2.5%. Given the ATR of ~$11, which implies roughly ±2% daily price swings, position size should be calculated such that a move against the stop-loss ($531.33 - $508.00 = $23.33 risk per share) does not exceed standard risk tolerance limits (e.g., 1-2% of total account equity).

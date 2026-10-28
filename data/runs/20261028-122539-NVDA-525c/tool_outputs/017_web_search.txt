@@ -1,0 +1,1 @@
+{"status": "ok", "query": "semiconductor stocks selloff October 2026 AI capex circular deals concerns Nasdaq", "backends": "duckduckgo, google, bing, brave, mojeek, yahoo", "results": [], "note": "No results found after trying the enabled search sources."}

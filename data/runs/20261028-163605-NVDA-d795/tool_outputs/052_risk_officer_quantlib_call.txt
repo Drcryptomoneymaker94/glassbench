@@ -1,0 +1,1 @@
+{"ok": true, "module": "risk", "function": "parametric_var", "result": 0.02893977269197488}

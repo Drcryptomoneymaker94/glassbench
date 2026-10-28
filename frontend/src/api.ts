@@ -23,6 +23,13 @@ export type AihfMeta = {
   rating_rule?: string;
 };
 
+export type VibeMeta = { installed: boolean; version?: string | null; providers: string[]; modes?: string[]; rating_rule?: string; dir?: string };
+
+export type VibeSession = {
+  kind: "session" | "swarm"; id: string; key: string; prompt: string; started: number; status?: string | null;
+  tool_calls?: number | null; answered: boolean; imported_run?: string | null;
+};
+
 export type Meta = {
   version: string;
   stages: Stage[];
@@ -36,7 +43,7 @@ export type Meta = {
   engine_builds?: Record<string, EngineBuild>;
   keys: { name: string; present: boolean; length: number }[];
   variants?: Record<string, { label: string; detail: string }>;
-  engines?: { ai_hedge_fund?: AihfMeta };
+  engines?: { ai_hedge_fund?: AihfMeta; vibe_trading?: VibeMeta };
 };
 
 export type Decision = {
@@ -73,7 +80,7 @@ export type Run = {
   engine: string;
   engine_version: string;
   provider: string;
-  purpose?: "live" | "backtest";
+  purpose?: "live" | "backtest" | "imported";
   backtest_id?: string | null;
   memory?: "shared" | "off";
   variant?: string;
@@ -250,9 +257,14 @@ export const api = {
   run: (id: string) => fetch(`/api/runs/${id}`).then((r) => json<Run>(r)),
   files: (id: string) => fetch(`/api/runs/${id}/files`).then((r) => json<{ files: RunFile[] }>(r)).then((d) => d.files),
   cancel: (id: string) => fetch(`/api/runs/${id}/cancel`, { method: "POST" }).then((r) => json<unknown>(r)),
-  start: (body: { tickers: string[]; trade_date: string; analysts: string[]; depth: number; deep_model: string; quick_model: string; provider: string; engine?: string; strategy?: string | null; aihf_analysts?: string[] | null; aihf_model?: string; aihf_data?: string }) =>
+  start: (body: { tickers: string[]; trade_date: string; analysts: string[]; depth: number; deep_model: string; quick_model: string; provider: string; engine?: string; strategy?: string | null; aihf_analysts?: string[] | null; aihf_model?: string; aihf_data?: string; vt_mode?: string }) =>
     fetch("/api/runs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then((r) =>
       json<{ run_ids: string[] }>(r),
+    ),
+  vibeSessions: () => fetch("/api/vibe-trading/sessions").then((r) => json<{ home: string; exists: boolean; sessions: VibeSession[] }>(r)),
+  vibeImport: (kind: "session" | "swarm", id: string) =>
+    fetch("/api/vibe-trading/import", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, id }) }).then((r) =>
+      json<{ run_id: string }>(r),
     ),
   search: (q: string) => fetch(`/api/search?q=${encodeURIComponent(q)}`).then((r) => json<SearchResult>(r)),
   settings: () => fetch("/api/settings").then((r) => json<DeskSettings>(r)),

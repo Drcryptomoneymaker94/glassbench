@@ -1,0 +1,30 @@
+# Company Fundamentals for META
+
+Name: Meta Platforms, Inc.
+Sector: Communication Services
+Industry: Internet Content & Information
+Market Cap: 1585722294272 USD
+PE Ratio (TTM): 21.159674
+Forward PE: 17.644096
+PEG Ratio: 0.82
+Price to Book: 5.819719
+EPS (TTM): 29.31 USD
+Forward EPS: 35.15 USD
+Dividend Yield: 0.33%
+Beta: 1.185
+52 Week High: 779.82 USD
+52 Week Low: 520.26 USD
+50 Day Average: 665.6532 USD
+200 Day Average: 632.28564 USD
+Revenue (TTM): 241605001216 USD
+Gross Profit: 195782000640 USD
+EBITDA: 116190003200 USD
+Net Income: 75249000448 USD
+Profit Margin: 0.31145
+Operating Margin: 0.35414
+Return on Equity: 0.32264
+Return on Assets: 0.14577
+Debt to Equity: 42.161% (0.42x)
+Current Ratio: 1.903
+Book Value: 106.567 USD
+Free Cash Flow: 16848499712 USD

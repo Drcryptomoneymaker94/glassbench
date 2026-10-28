@@ -1,0 +1,6 @@
+## FRED: Real Gross Domestic Product (GDPC1)
+- Units: Bil. of Chn. 2017 $
+- Frequency: Quarterly (SAAR)
+- Window: 2026-09-28 to 2026-10-28
+
+No observations for GDPC1 in this window at the 2026-10-28 vintage. The series may report less frequently than the window (try a longer look_back_days), or have no vintage published by then (unpublished as of 2026-10-28, or before ALFRED coverage begins).

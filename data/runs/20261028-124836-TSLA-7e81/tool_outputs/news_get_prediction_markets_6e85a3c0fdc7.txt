@@ -1,0 +1,4 @@
+## Polymarket prediction markets: "Tesla robotaxi"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will Tesla launch robotaxis in California by December 31?** — Yes 13% ($11,062 volume, resolves 2027-01-01, 1-week -2.5pp)

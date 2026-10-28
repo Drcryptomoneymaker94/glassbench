@@ -1,0 +1,22 @@
+# Insider Transactions data for GOOGL
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,396700,0.0,,Stock Gift at price 0.00 per share.,SHRIRAM KAVITARK RAM,Director,,2026-10-13,I
+1,673200,0.0,,Stock Gift at price 0.00 per share.,SERGEY BRIN,Director and Beneficial Owner of more than 10% of a Class of Security,,2026-08-07,D
+2,673200,,,,SERGEY BRIN,Director and Beneficial Owner of more than 10% of a Class of Security,,2026-08-07,D
+3,437500,0.0,,Stock Gift at price 0.00 per share.,SERGEY BRIN,Director and Beneficial Owner of more than 10% of a Class of Security,,2026-02-19,D
+4,600,184037.0,,Sale at price 306.11 - 307.77 per share.,HENNESSY JOHN L,Director,,2026-02-13,I
+5,600,202514.0,,Sale at price 335.13 - 339.75 per share.,HENNESSY JOHN L,Director,,2026-01-13,I
+6,39200,0.0,,Stock Gift at price 0.00 per share.,SHRIRAM KAVITARK RAM,Director,,2025-12-09,I
+7,243508,0.0,,Stock Gift at price 0.00 per share.,SHRIRAM KAVITARK RAM,Director,,2025-09-25,I
+8,26000,5330000.0,,Sale at price 205.00 per share.,SHRIRAM KAVITARK RAM,Director,,2025-08-15,D/I
+9,33566,6235220.0,,Sale at price 185.76 per share.,SHRIRAM KAVITARK RAM,Director,,2025-07-18,D/I
+10,19500,3412500.0,,Sale at price 175.00 per share.,SHRIRAM KAVITARK RAM,Director,,2025-05-22,D/I
+11,53066,9810567.0,,Sale at price 182.49 - 185.51 per share.,SHRIRAM KAVITARK RAM,Director,,2025-02-18,D/I
+12,26000,5330000.0,,Sale at price 205.00 per share.,SHRIRAM KAVITARK RAM,Director,,2025-01-31,D/I
+13,1500,284693.0,,Sale at price 187.90 - 190.40 per share.,HENNESSY JOHN L,Director,,2025-01-13,I
+14,65400,0.0,,Stock Gift at price 0.00 per share.,SHRIRAM KAVITARK RAM,Director,,2024-12-18,I
+15,1500,291336.0,,Sale at price 192.80 - 195.03 per share.,HENNESSY JOHN L,Director,,2024-12-12,I
+16,72500,13413721.0,,Sale at price 185.01 - 185.02 per share.,SHRIRAM KAVITARK RAM,Director,,2024-12-10,D/I
+17,1500,271125.0,,Sale at price 179.80 - 182.03 per share.,HENNESSY JOHN L,Director,,2024-11-12,I
+18,19500,3459495.0,,Sale at price 177.41 per share.,SHRIRAM KAVITARK RAM,Director,,2024-11-07,D/I
+19,19500,3525210.0,,Sale at price 180.78 per share.,SHRIRAM KAVITARK RAM,Director,,2024-10-30,D/I

@@ -1,0 +1,1 @@
+{"ok": true, "module": "risk", "function": "fit_gpd_tail", "result": {"threshold": -0.031663000000000004, "n_exceedances": 2, "exceedance_rate": 0.05, "shape_xi": -2.6548169789155347, "shape_stderr": 1.1701323074138106, "scale_sigma": 0.03246044720120023, "tail_type": "bounded"}}

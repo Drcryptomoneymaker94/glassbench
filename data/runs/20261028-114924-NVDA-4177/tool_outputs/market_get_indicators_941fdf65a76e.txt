@@ -1,0 +1,36 @@
+## atr values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 5.936566559733674
+2026-10-26: 6.11168678262785
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 6.059509359281315
+2026-10-22: 6.243316738631083
+2026-10-21: 5.89972520207446
+2026-10-20: 5.913550123718409
+2026-10-19: 5.9307460992808805
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 5.964650396581333
+2026-10-15: 6.011163092352013
+2026-10-14: 5.823560488052767
+2026-10-13: 5.588449380763558
+2026-10-12: 5.589099192279623
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 5.68210644685402
+2026-10-08: 5.749191745950966
+2026-10-07: 5.605283794317384
+2026-10-06: 5.816459423853215
+2026-10-05: 5.920033131787839
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 5.902342668442795
+2026-10-01: 5.81636869890294
+2026-09-30: 5.946090166201361
+2026-09-29: 6.006559532576826
+2026-09-28: 6.023217300857977
+
+
+ATR: Averages true range to measure volatility. Usage: Set stop-loss levels and adjust position sizes based on current market volatility. Tips: It's a reactive measure, so use it as part of a broader risk management strategy.

@@ -1,0 +1,36 @@
+## boll_lb values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 511.95018093165095
+2026-10-26: 508.677854194036
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 505.9378848558679
+2026-10-22: 505.00690966208776
+2026-10-21: 500.4156229985187
+2026-10-20: 496.7975697704124
+2026-10-19: 493.1152493187588
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 490.7225278949712
+2026-10-15: 487.0276784862315
+2026-10-14: 485.2745175534132
+2026-10-13: 482.15239187029607
+2026-10-12: 482.12069456268495
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 483.6211516513649
+2026-10-08: 483.6829198564034
+2026-10-07: 482.21388149535085
+2026-10-06: 482.0252568515689
+2026-10-05: 482.9777693987059
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 484.64142119093225
+2026-10-01: 485.44132625786744
+2026-09-30: 485.4941539614416
+2026-09-29: 486.07146142143534
+2026-09-28: 486.19940582217924
+
+
+Bollinger Lower Band: Typically 2 standard deviations below the middle line. Usage: Indicates potential oversold conditions. Tips: Use additional analysis to avoid false reversal signals.

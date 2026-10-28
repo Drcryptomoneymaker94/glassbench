@@ -1,0 +1,30 @@
+# Company Fundamentals for TSLA
+
+Name: Tesla, Inc.
+Sector: Consumer Cyclical
+Industry: Auto Manufacturers
+Market Cap: 1610579312640 USD
+PE Ratio (TTM): 447.7582
+Forward PE: 189.04938
+PEG Ratio: 4.57
+Price to Book: 18.038782
+EPS (TTM): 0.91 USD
+Forward EPS: 2.15531 USD
+Dividend Yield: 0.0%
+Beta: 1.916
+52 Week High: 498.83 USD
+52 Week Low: 297.38 USD
+50 Day Average: 366.1184 USD
+200 Day Average: 385.93875 USD
+Revenue (TTM): 103569997824 USD
+Gross Profit: 19974000640 USD
+EBITDA: 9838000128 USD
+Net Income: 3220000000 USD
+Profit Margin: 0.031070001
+Operating Margin: 0.053629998
+Return on Equity: 0.03844
+Return on Assets: 0.01345
+Debt to Equity: 18.295% (0.18x)
+Current Ratio: 1.739
+Book Value: 22.588 USD
+Free Cash Flow: 4967249920 USD

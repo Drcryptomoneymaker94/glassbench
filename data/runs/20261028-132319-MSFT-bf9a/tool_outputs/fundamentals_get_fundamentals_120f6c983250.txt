@@ -1,0 +1,30 @@
+# Company Fundamentals for MSFT
+
+Name: Microsoft Corporation
+Sector: Technology
+Industry: Software - Infrastructure
+Market Cap: 3945415311360 USD
+PE Ratio (TTM): 29.600557
+Forward PE: 22.428717
+PEG Ratio: 1.73
+Price to Book: 8.920172
+EPS (TTM): 17.95 USD
+Forward EPS: 23.68972 USD
+Dividend Yield: 0.74%
+Beta: 1.099
+52 Week High: 551.15 USD
+52 Week Low: 349.2 USD
+50 Day Average: 510.1912 USD
+200 Day Average: 437.0474 USD
+Revenue (TTM): 331839012864 USD
+Gross Profit: 225465008128 USD
+EBITDA: 194237005824 USD
+Net Income: 133748998144 USD
+Profit Margin: 0.40305
+Operating Margin: 0.45111
+Return on Equity: 0.34039003
+Return on Assets: 0.14088
+Debt to Equity: 29.118% (0.29x)
+Current Ratio: 1.23
+Book Value: 59.565 USD
+Free Cash Flow: 16545500160 USD

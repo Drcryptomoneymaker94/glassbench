@@ -1,0 +1,68 @@
+## Verified market data snapshot for TSLA
+
+- Requested analysis date: 2026-10-28
+- Latest trading row used: 2026-10-27
+- Rows after the requested analysis date are excluded before verification.
+
+### Latest verified OHLCV row
+
+| Field | Value |
+|---|---:|
+| Open | 397.76 |
+| High | 408.45 |
+| Low | 395.25 |
+| Close | 407.46 |
+| Volume | 45189400 |
+
+### Verified technical indicators (latest row)
+
+| Indicator | Value |
+|---|---:|
+| close_10_ema | 381.79 |
+| close_50_sma | 366.12 |
+| close_200_sma | 385.94 |
+| rsi | 65.48 |
+| boll | 374.31 |
+| boll_ub | 399.96 |
+| boll_lb | 348.65 |
+| macd | 6.25 |
+| macds | 3.66 |
+| macdh | 2.60 |
+| atr | 13.71 |
+
+### Recent verified closes (last 30 rows)
+
+| Date | Close |
+|---|---:|
+| 2026-09-16 | 358.08 |
+| 2026-09-17 | 366.20 |
+| 2026-09-18 | 364.27 |
+| 2026-09-21 | 375.30 |
+| 2026-09-22 | 378.90 |
+| 2026-09-23 | 380.12 |
+| 2026-09-24 | 377.94 |
+| 2026-09-25 | 372.11 |
+| 2026-09-28 | 357.45 |
+| 2026-09-29 | 352.84 |
+| 2026-09-30 | 354.81 |
+| 2026-10-01 | 354.11 |
+| 2026-10-02 | 370.59 |
+| 2026-10-05 | 378.73 |
+| 2026-10-06 | 380.68 |
+| 2026-10-07 | 377.81 |
+| 2026-10-08 | 375.00 |
+| 2026-10-09 | 382.70 |
+| 2026-10-12 | 378.03 |
+| 2026-10-13 | 375.23 |
+| 2026-10-14 | 367.16 |
+| 2026-10-15 | 362.44 |
+| 2026-10-16 | 354.72 |
+| 2026-10-19 | 368.06 |
+| 2026-10-20 | 373.71 |
+| 2026-10-21 | 386.47 |
+| 2026-10-22 | 374.58 |
+| 2026-10-23 | 372.22 |
+| 2026-10-26 | 391.62 |
+| 2026-10-27 | 407.46 |
+
+Use this snapshot as the source of truth for exact OHLCV, price-level, and indicator-value claims. If another tool output conflicts with it, flag the discrepancy rather than inventing a reconciled number. Do not claim historical validation, support/resistance bounces, or exact percentage moves unless directly supported by tool output with concrete dates and prices.

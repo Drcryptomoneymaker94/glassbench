@@ -1,0 +1,1 @@
+{"ok": false, "error": "'DCF_BASE_REQUIRED_FIELDS' is not a public function of 'valuation.dcf'; available: ['DCFResult', 'DiscountedCashFlow', 'FCFFYear', 'NetDebtBridgeResult', 'TerminalValueResult', 'WACCResult', 'discount_fcff', 'equity_bridge', 'fcff_bridge', 'run_dcf', 'sensitivity_grid', 'terminal_value', 'wacc']"}

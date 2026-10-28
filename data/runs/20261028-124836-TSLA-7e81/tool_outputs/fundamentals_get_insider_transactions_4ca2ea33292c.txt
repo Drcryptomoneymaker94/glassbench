@@ -1,0 +1,94 @@
+# Insider Transactions data for TSLA
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,2605,938419.0,,Sale at price 360.13 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2026-09-08,D
+1,6539,,,,TANEJA VAIBHAV,Chief Financial Officer,,2026-09-04,D
+2,303960630,7094441104.0,,Conversion of Exercise of derivative security at price 23.34 per share.,MUSK ELON REEVE,Chief Executive Officer,,2026-06-16,D
+3,2605,1047924.0,,Sale at price 402.20 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2026-06-08,D
+4,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2026-06-05,D
+5,3000,54880.0,,Conversion of Exercise of derivative security at price 18.22 - 18.44 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2026-05-13,D
+6,3000,1350000.0,,Sale at price 450.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2026-05-13,D
+7,26409,9985390.0,,Sale at price 369.01 - 384.28 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-04-30,D
+8,40948,613811.0,,Conversion of Exercise of derivative security at price 14.99 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-04-30,D
+9,20000,411400.0,,Conversion of Exercise of derivative security at price 20.57 per share.,ZHU XIAOTONG,Officer,,2026-03-31,D
+10,25809,9273888.0,,Sale at price 352.83 - 366.86 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-03-30,D
+11,40000,599600.0,,Conversion of Exercise of derivative security at price 14.99 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-03-30,D
+12,2264,899077.0,,Sale at price 397.03 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2026-03-06,D
+13,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2026-03-05,D
+14,25731,10692814.0,,Sale at price 412.46 - 418.89 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-02-25,D
+15,40000,599600.0,,Conversion of Exercise of derivative security at price 14.99 per share.,WILSON - THOMPSON KATHLEEN,Director,,2026-02-25,D
+16,60000,26723781.0,,Sale at price 435.86 - 457.88 per share.,MURDOCH JAMES RUPERT,Director,,2026-01-02,I
+17,210699,0.0,,Stock Gift at price 0.00 per share.,MUSK ELON REEVE,Chief Executive Officer,,2025-12-30,I
+18,15242,0.0,,Stock Gift at price 0.00 per share.,MUSK KIMBAL J,Director,,2025-12-09,D
+19,56820,25606501.0,,Sale at price 450.66 per share.,MUSK KIMBAL J,Director,,2025-12-09,D
+20,2637,1170635.0,,Sale at price 443.93 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-12-08,D
+21,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2025-12-05,D
+22,14785,0.0,,Stock Gift at price 0.00 per share.,MUSK KIMBAL J,Director,,2025-11-10,D
+23,60000,25360800.0,,Sale at price 422.68 per share.,MURDOCH JAMES RUPERT,Director,,2025-09-15,I
+24,2568732,999959042.0,,Purchase at price 371.90 - 396.36 per share.,MUSK ELON REEVE,Chief Executive Officer,,2025-09-12,I
+25,20000,7275100.0,,Sale at price 363.76 per share.,ZHU XIAOTONG,Officer,,2025-09-11,I
+26,2605,918137.0,,Sale at price 352.38 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-09-08,D
+27,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2025-09-05,D
+28,120000,42034320.0,,Sale at price 350.29 per share.,MURDOCH JAMES RUPERT,Director,,2025-08-26,I
+29,90000,1572300.0,,Conversion of Exercise of derivative security at price 17.47 per share.,MURDOCH JAMES RUPERT,Director,,2025-07-11,D
+30,6000,109320.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-07-08,D
+31,6000,1771545.0,,Sale at price 289.95 - 300.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-07-08,D
+32,15000,308550.0,,Conversion of Exercise of derivative security at price 20.57 per share.,ZHU XIAOTONG,Officer,,2025-06-12,D
+33,15000,4857105.0,,Sale at price 323.81 per share.,ZHU XIAOTONG,Officer,,2025-06-12,D
+34,2564,732573.0,,Sale at price 285.72 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-06-09,D
+35,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2025-06-05,D
+36,7000,127540.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-06-03,D
+37,7000,2396092.0,,Sale at price 333.77 - 350.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-06-03,D
+38,91588,32732230.0,,Sale at price 347.88 - 363.11 per share.,MUSK KIMBAL J,Director,,2025-05-27,D
+39,477572,170636358.0,,Sale at price 347.61 - 363.24 per share.,EHRENPREIS IRA MATTHEW,Director,,2025-05-27,D
+40,91588,2264971.0,,Conversion of Exercise of derivative security at price 24.73 per share.,MUSK KIMBAL J,Director,,2025-05-27,D
+41,761961,18170096.0,,Conversion of Exercise of derivative security at price 22.86 - 24.73 per share.,EHRENPREIS IRA MATTHEW,Director,,2025-05-27,D
+42,3000,54660.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-16,D
+43,3000,1050336.0,,Sale at price 350.11 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-16,D
+44,4000,72880.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-09,D
+45,4000,1200000.0,,Sale at price 300.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-09,D
+46,112395,2779528.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2025-05-06,D
+47,112395,30809625.0,,Sale at price 272.27 - 277.14 per share.,DENHOLM ROBYN M,Director,,2025-05-06,D
+48,4000,72880.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-01,D
+49,4000,1137599.0,,Sale at price 280.30 - 289.48 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-05-01,D
+50,112390,2779405.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2025-04-29,D
+51,112390,32096717.0,,Sale at price 280.61 - 288.61 per share.,DENHOLM ROBYN M,Director,,2025-04-29,D
+52,4000,1025232.0,,Purchase at price 256.31 per share.,GEBBIA JOSEPH,Director,,2025-04-24,I
+53,4000,72880.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-04-07,D
+54,4000,1000000.0,,Sale at price 250.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-04-07,D
+55,54776,13189403.0,,Sale at price 240.79 per share.,MURDOCH JAMES RUPERT,Director,,2025-03-10,D
+56,531787,12992693.0,,Conversion of Exercise of derivative security at price 23.85 - 24.73 per share.,MURDOCH JAMES RUPERT,Director,,2025-03-10,D
+57,2672,718111.0,,Sale at price 268.73 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-03-06,D
+58,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2025-03-05,D
+59,6000,109320.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-03-03,D
+60,112390,2779405.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2025-03-03,D
+61,112390,33672976.0,,Sale at price 292.75 - 303.59 per share.,DENHOLM ROBYN M,Director,,2025-03-03,D
+62,6000,1776112.0,,Sale at price 279.53 - 301.73 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-03-03,D
+63,75000,27590619.0,,Sale at price 367.87 - 368.43 per share.,MUSK KIMBAL J,Director,,2025-02-06,D
+64,7000,127540.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-02-03,D
+65,112390,2779405.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2025-02-03,D
+66,112390,43162564.0,,Sale at price 375.06 - 389.08 per share.,DENHOLM ROBYN M,Director,,2025-02-03,D
+67,7000,2681789.0,,Sale at price 375.05 - 387.76 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-02-03,D
+68,7000,127540.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-01-06,D
+69,100000,41162799.0,,Sale at price 402.84 - 426.14 per share.,WILSON - THOMPSON KATHLEEN,Director,,2025-01-06,D
+70,100000,1499000.0,,Conversion of Exercise of derivative security at price 14.99 per share.,WILSON - THOMPSON KATHLEEN,Director,,2025-01-06,D
+71,7000,2894918.0,,Sale at price 402.85 - 423.14 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2025-01-06,D
+72,268000,0.0,,Stock Gift at price 0.00 per share.,MUSK ELON REEVE,Chief Executive Officer,,2024-12-30,I
+73,25000,0.0,,Stock Gift at price 0.00 per share.,MUSK KIMBAL J,Director,,2024-12-11,D
+74,2605,975015.0,,Sale at price 374.21 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-12-06,D
+75,6538,,,,TANEJA VAIBHAV,Chief Financial Officer,,2024-12-05,D
+76,100000,35253875.0,,Sale at price 349.20 - 357.93 per share.,WILSON - THOMPSON KATHLEEN,Director,,2024-12-04,D
+77,100000,1499000.0,,Conversion of Exercise of derivative security at price 14.99 per share.,WILSON - THOMPSON KATHLEEN,Director,,2024-12-04,D
+78,7000,127540.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-12-02,D
+79,112390,2779405.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2024-12-02,D
+80,112390,39793301.0,,Sale at price 352.74 - 358.64 per share.,DENHOLM ROBYN M,Director,,2024-12-02,D
+81,7000,2481039.0,,Sale at price 352.70 - 359.94 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-12-02,D
+82,112390,2779405.0,,Conversion of Exercise of derivative security at price 24.73 per share.,DENHOLM ROBYN M,Director,,2024-11-15,D
+83,112390,35339810.0,,Sale at price 310.05 - 320.00 per share.,DENHOLM ROBYN M,Director,,2024-11-15,D
+84,12000,218640.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-11-11,D
+85,100000,34602454.0,,Sale at price 336.95 - 358.35 per share.,WILSON - THOMPSON KATHLEEN,Director,,2024-11-11,D
+86,100000,1504664.0,,Conversion of Exercise of derivative security at price 14.99 - 16.10 per share.,WILSON - THOMPSON KATHLEEN,Director,,2024-11-11,D
+87,12000,3802956.0,,Sale at price 300.00 - 350.00 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-11-11,D
+88,4000,72880.0,,Conversion of Exercise of derivative security at price 18.22 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-11-01,D
+89,60500,15138945.0,,Sale at price 247.32 - 253.78 per share.,MUSK KIMBAL J,Director,,2024-11-01,D
+90,15000,370950.0,,Conversion of Exercise of derivative security at price 24.73 per share.,MUSK KIMBAL J,Director,,2024-11-01,D
+91,4000,1007040.0,,Sale at price 251.76 per share.,TANEJA VAIBHAV,Chief Financial Officer,,2024-11-01,D

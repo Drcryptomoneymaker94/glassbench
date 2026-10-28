@@ -1,0 +1,152 @@
+# Insider Transactions data for AMZN
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,1000,251500.0,,Sale at price 251.50 per share.,HERRINGTON DOUGLAS J,Officer,,2026-10-01,D
+1,1000,254770.0,,Sale at price 254.77 per share.,HERRINGTON DOUGLAS J,Officer,,2026-09-01,D
+2,415580,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2026-08-26,D
+3,15430,4004345.0,,Sale at price 257.70 - 260.45 per share.,ZAPOLSKY DAVID A.,Officer,,2026-08-24,D
+4,14541,3766920.0,,Sale at price 257.60 - 260.34 per share.,GARMAN MATTHEW S,Officer,,2026-08-21,D
+5,6362,1647810.0,,Sale at price 257.77 - 260.33 per share.,HERRINGTON DOUGLAS J,Officer,,2026-08-21,D
+6,6172,1606633.0,,Sale at price 260.31 per share.,OLSAVSKY BRIAN T.,Chief Financial Officer,,2026-08-21,D
+7,20000,5180213.0,,Sale at price 257.63 - 260.39 per share.,JASSY ANDREW R.,Chief Executive Officer,,2026-08-21,D
+8,2343,606854.0,,Sale at price 257.77 - 260.33 per share.,REYNOLDS SHELLEY L,Officer,,2026-08-21,D
+9,18176,,,,GARMAN MATTHEW S,Officer,,2026-08-21,D
+10,15430,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2026-08-21,D
+11,15905,,,,HERRINGTON DOUGLAS J,Officer,,2026-08-21,D
+12,50000,,,,JASSY ANDREW R.,Chief Executive Officer,,2026-08-21,D
+13,2343,,,,REYNOLDS SHELLEY L,Officer,,2026-08-21,D
+14,15430,,,,ZAPOLSKY DAVID A.,Officer,,2026-08-21,D
+15,3741,982993.0,,Sale at price 262.05 - 265.09 per share.,HERRINGTON DOUGLAS J,Officer,,2026-08-17,D
+16,9352,,,,HERRINGTON DOUGLAS J,Officer,,2026-08-14,D
+17,22000,0.0,,Stock Gift at price 0.00 per share.,HERRINGTON DOUGLAS J,Officer,,2026-08-06,D
+18,1000,278390.0,,Sale at price 278.39 per share.,HERRINGTON DOUGLAS J,Officer,,2026-08-03,D
+19,1209649,346453514.0,,Sale at price 286.41 per share.,BEZOS JEFFREY P,Officer and Director,,2026-08-03,D
+20,1000,239770.0,,Sale at price 239.77 per share.,HERRINGTON DOUGLAS J,Officer,,2026-07-01,D
+21,1000,266190.0,,Sale at price 266.19 per share.,HERRINGTON DOUGLAS J,Officer,,2026-06-01,D
+22,15450,4117252.0,,Sale at price 261.96 - 268.53 per share.,ZAPOLSKY DAVID A.,Officer,,2026-05-22,D
+23,15467,4073956.0,,Sale at price 261.93 - 265.64 per share.,GARMAN MATTHEW S,Officer,,2026-05-21,D
+24,6370,1671439.0,,Sale at price 261.88 - 263.85 per share.,HERRINGTON DOUGLAS J,Officer,,2026-05-21,D
+25,20000,5268342.0,,Sale at price 261.95 - 265.61 per share.,JASSY ANDREW R.,Chief Executive Officer,,2026-05-21,D
+26,2363,620003.0,,Sale at price 261.83 - 263.99 per share.,REYNOLDS SHELLEY L,Officer,,2026-05-21,D
+27,18196,,,,GARMAN MATTHEW S,Officer,,2026-05-21,D
+28,15450,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2026-05-21,D
+29,15925,,,,HERRINGTON DOUGLAS J,Officer,,2026-05-21,D
+30,50000,,,,JASSY ANDREW R.,Chief Executive Officer,,2026-05-21,D
+31,2363,,,,REYNOLDS SHELLEY L,Officer,,2026-05-21,D
+32,15450,,,,ZAPOLSKY DAVID A.,Officer,,2026-05-21,D
+33,11475,3013973.0,,Sale at price 261.79 - 263.57 per share.,GARMAN MATTHEW S,Officer,,2026-05-15,D
+34,3742,982602.0,,Sale at price 261.74 - 263.57 per share.,HERRINGTON DOUGLAS J,Officer,,2026-05-15,D
+35,1602,,,,NOOYI INDRA K,Director,,2026-05-15,D
+36,1984,,,,NG ANDREW YAN-TAK,Director,,2026-05-15,D
+37,9353,,,,HERRINGTON DOUGLAS J,Officer,,2026-05-15,D
+38,13500,,,,GARMAN MATTHEW S,Officer,,2026-05-15,D
+39,28500,7828150.0,,Sale at price 265.65 - 275.00 per share.,HERRINGTON DOUGLAS J,Officer,,2026-05-04,D
+40,31352,8621800.0,,Sale at price 275.00 per share.,JASSY ANDREW R.,Chief Executive Officer,,2026-05-04,D
+41,1253797,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2026-05-04,D
+42,3706,1011812.0,,Sale at price 273.02 per share.,RUBINSTEIN JONATHAN J,Director,,2026-04-30,D
+43,3849,1000740.0,,Sale at price 260.00 per share.,RUBINSTEIN JONATHAN J,Director,,2026-04-24,D
+44,31000,7905000.0,,Sale at price 255.00 per share.,JASSY ANDREW R.,Chief Executive Officer,,2026-04-17,D
+45,20500,5022500.0,,Sale at price 245.00 per share.,HERRINGTON DOUGLAS J,Officer,,2026-04-14,D
+46,1000,210500.0,,Sale at price 210.50 per share.,HERRINGTON DOUGLAS J,Officer,,2026-04-01,D
+47,1000,204250.0,,Sale at price 204.25 per share.,HERRINGTON DOUGLAS J,Officer,,2026-03-02,D
+48,17749,3645614.0,,Sale at price 204.15 - 208.02 per share.,ZAPOLSKY DAVID A.,Officer,,2026-02-24,D
+49,17751,3642842.0,,Sale at price 204.14 - 208.05 per share.,GARMAN MATTHEW S,Officer,,2026-02-23,D
+50,6835,1406785.0,,Sale at price 204.63 - 208.25 per share.,HERRINGTON DOUGLAS J,Officer,,2026-02-23,D
+51,19872,4077378.0,,Sale at price 204.25 - 207.96 per share.,JASSY ANDREW R.,Chief Executive Officer,,2026-02-23,D
+52,2695,554892.0,,Sale at price 204.60 - 207.98 per share.,REYNOLDS SHELLEY L,Officer,,2026-02-23,D
+53,20883,,,,GARMAN MATTHEW S,Officer,,2026-02-20,D
+54,17749,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2026-02-20,D
+55,17087,,,,HERRINGTON DOUGLAS J,Officer,,2026-02-20,D
+56,49680,,,,JASSY ANDREW R.,Chief Executive Officer,,2026-02-20,D
+57,2695,,,,REYNOLDS SHELLEY L,Officer,,2026-02-20,D
+58,17749,,,,ZAPOLSKY DAVID A.,Officer,,2026-02-20,D
+59,4784,948990.0,,Sale at price 196.75 - 200.08 per share.,HERRINGTON DOUGLAS J,Officer,,2026-02-17,D
+60,2677,,,,GORELICK JAMIE S,Director,,2026-02-13,D
+61,1816,,,,WEEKS WENDELL P.,Director,,2026-02-13,D
+62,11959,,,,HERRINGTON DOUGLAS J,Officer,,2026-02-13,D
+63,900,183492.0,,Sale at price 203.88 per share.,ALEXANDER KEITH BRIAN,Director,,2026-02-12,D
+64,1000,208000.0,,Sale at price 208.00 per share.,HERRINGTON DOUGLAS J,Officer,,2026-02-11,D
+65,2500,583050.0,,Sale at price 233.22 per share.,HERRINGTON DOUGLAS J,Officer,,2025-12-01,D
+66,20670,4559466.0,,Sale at price 215.86 - 222.49 per share.,ZAPOLSKY DAVID A.,Officer,,2025-11-24,D
+67,17768,3853946.0,,Sale at price 215.83 - 219.48 per share.,GARMAN MATTHEW S,Officer,,2025-11-21,D
+68,6835,1479098.0,,Sale at price 216.05 - 217.52 per share.,HERRINGTON DOUGLAS J,Officer,,2025-11-21,D
+69,19872,4310952.0,,Sale at price 215.82 - 219.46 per share.,JASSY ANDREW R.,Chief Executive Officer,,2025-11-21,D
+70,2695,583222.0,,Sale at price 216.07 - 217.57 per share.,REYNOLDS SHELLEY L,Officer,,2025-11-21,D
+71,17750,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-11-21,D
+72,17087,,,,HERRINGTON DOUGLAS J,Officer,,2025-11-21,D
+73,20903,,,,GARMAN MATTHEW S,Officer,,2025-11-21,D
+74,49680,,,,JASSY ANDREW R.,Chief Executive Officer,,2025-11-21,D
+75,2695,,,,REYNOLDS SHELLEY L,Officer,,2025-11-21,D
+76,17750,,,,ZAPOLSKY DAVID A.,Officer,,2025-11-21,D
+77,1237,280317.0,,Sale at price 226.61 per share.,HUTTENLOCHER DANIEL P,Director,,2025-11-20,D
+78,4784,1113263.0,,Sale at price 231.63 - 234.38 per share.,HERRINGTON DOUGLAS J,Officer,,2025-11-17,D
+79,900,209700.0,,Sale at price 233.00 per share.,ALEXANDER KEITH BRIAN,Director,,2025-11-17,D
+80,2473,,,,STONESIFER PATRICIA Q,Director,,2025-11-14,D
+81,2473,,,,RUBINSTEIN JONATHAN J,Director,,2025-11-14,D
+82,2605,,,,SMITH BRAD D,Director,,2025-11-14,I
+83,2605,,,,ALEXANDER KEITH BRIAN,Director,,2025-11-14,D
+84,11959,,,,HERRINGTON DOUGLAS J,Officer,,2025-11-14,D
+85,2042,,,,COOPER EDITH W.,Director,,2025-11-14,D
+86,2473,,,,HUTTENLOCHER DANIEL P,Director,,2025-11-14,D
+87,42610,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-11-14,D
+88,1013128,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-11-07,D
+89,7944,0.0,,Stock Gift at price 0.00 per share.,GORELICK JAMIE S,Director,,2025-11-07,D
+90,24500,6139260.0,,Sale at price 250.03 - 255.44 per share.,HERRINGTON DOUGLAS J,Officer,,2025-11-03,D
+91,8173,2043495.0,,Sale at price 250.03 per share.,RUBINSTEIN JONATHAN J,Director,,2025-10-31,D
+92,2500,542750.0,,Sale at price 217.10 per share.,HERRINGTON DOUGLAS J,Officer,,2025-10-01,D
+93,2500,558725.0,,Sale at price 223.49 per share.,HERRINGTON DOUGLAS J,Officer,,2025-09-02,D
+94,421693,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-08-28,D
+95,20670,4595798.0,,Sale at price 221.34 - 222.76 per share.,ZAPOLSKY DAVID A.,Officer,,2025-08-22,D
+96,17785,3940677.0,,Sale at price 221.37 - 221.85 per share.,GARMAN MATTHEW S,Officer,,2025-08-21,D
+97,6835,1514783.0,,Sale at price 221.26 - 222.74 per share.,HERRINGTON DOUGLAS J,Officer,,2025-08-21,D
+98,17750,3953635.0,,Sale at price 222.74 per share.,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-08-21,D
+99,19872,4403259.0,,Sale at price 221.42 - 221.91 per share.,JASSY ANDREW R.,Chief Executive Officer,,2025-08-21,D
+100,2715,601755.0,,Sale at price 221.35 - 222.23 per share.,REYNOLDS SHELLEY L,Officer,,2025-08-21,D
+101,17750,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-08-21,D
+102,20923,,,,GARMAN MATTHEW S,Officer,,2025-08-21,D
+103,17087,,,,HERRINGTON DOUGLAS J,Officer,,2025-08-21,D
+104,49680,,,,JASSY ANDREW R.,Chief Executive Officer,,2025-08-21,D
+105,2715,,,,REYNOLDS SHELLEY L,Officer,,2025-08-21,D
+106,17750,,,,ZAPOLSKY DAVID A.,Officer,,2025-08-21,D
+107,4784,1111410.0,,Sale at price 231.78 - 233.72 per share.,HERRINGTON DOUGLAS J,Officer,,2025-08-15,D
+108,11959,,,,HERRINGTON DOUGLAS J,Officer,,2025-08-15,D
+109,100020,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-08-14,D
+110,8970,0.0,,Stock Gift at price 0.00 per share.,HERRINGTON DOUGLAS J,Officer,,2025-08-08,D
+111,2500,542500.0,,Sale at price 217.00 per share.,HERRINGTON DOUGLAS J,Officer,,2025-08-01,D
+112,4154098,954275370.0,,Sale at price 228.48 - 233.08 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-24,D
+113,6612707,1509959637.0,,Sale at price 227.55 - 229.54 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-22,D
+114,733195,166449709.0,,Sale at price 227.02 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-15,D
+115,6715424,1512356060.0,,Sale at price 224.55 - 226.44 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-14,D
+116,485205,108682627.0,,Sale at price 223.88 - 224.02 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-09,D
+117,2974445,665864143.0,,Sale at price 223.73 - 223.92 per share.,BEZOS JEFFREY P,Officer and Director,,2025-07-07,D
+118,2500,550144.0,,Sale at price 219.17 - 220.90 per share.,HERRINGTON DOUGLAS J,Officer,,2025-07-01,D
+119,3324926,736683388.0,,Sale at price 221.41 - 223.56 per share.,BEZOS JEFFREY P,Officer and Director,,2025-06-30,D
+120,24410,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-06-03,D
+121,2500,512450.0,,Sale at price 204.98 per share.,HERRINGTON DOUGLAS J,Officer,,2025-06-02,D
+122,20670,4175442.0,,Sale at price 200.75 - 203.42 per share.,ZAPOLSKY DAVID A.,Officer,,2025-05-22,D
+123,20923,4211791.0,,Sale at price 200.75 - 203.21 per share.,GARMAN MATTHEW S,Chief Executive Officer,,2025-05-21,D
+124,6843,1373851.0,,Sale at price 200.76 - 201.36 per share.,HERRINGTON DOUGLAS J,Chief Executive Officer,,2025-05-21,D
+125,17750,3577868.0,,Sale at price 201.57 per share.,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-05-21,D
+126,19872,4000320.0,,Sale at price 200.75 - 202.81 per share.,JASSY ANDREW R.,Chief Executive Officer,,2025-05-21,D
+127,2695,541129.0,,Sale at price 200.73 - 201.48 per share.,REYNOLDS SHELLEY L,Officer,,2025-05-21,D
+128,17750,,,,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-05-21,D
+129,17107,,,,HERRINGTON DOUGLAS J,Chief Executive Officer,,2025-05-21,D
+130,20923,,,,GARMAN MATTHEW S,Chief Executive Officer,,2025-05-21,D
+131,49680,,,,JASSY ANDREW R.,Chief Executive Officer,,2025-05-21,D
+132,2695,,,,REYNOLDS SHELLEY L,Officer,,2025-05-21,D
+133,17750,,,,ZAPOLSKY DAVID A.,Officer,,2025-05-21,D
+134,4864,0.0,,Stock Gift at price 0.00 per share.,HERRINGTON DOUGLAS J,Officer,,2025-05-20,D
+135,4784,980971.0,,Sale at price 204.58 - 206.03 per share.,HERRINGTON DOUGLAS J,Chief Executive Officer,,2025-05-15,D
+136,2120,,,,NOOYI INDRA K,Director,,2025-05-15,D
+137,1984,,,,NG ANDREW YAN-TAK,Director,,2025-05-15,D
+138,11960,,,,HERRINGTON DOUGLAS J,Chief Executive Officer,,2025-05-15,D
+139,609402,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-05-14,D
+140,1000,210680.0,,Sale at price 210.68 per share.,ALEXANDER KEITH BRIAN,Director,,2025-05-12,D
+141,2500,476675.0,,Sale at price 190.67 per share.,HERRINGTON DOUGLAS J,Officer,,2025-05-01,D
+142,2500,469975.0,,Sale at price 187.99 per share.,HERRINGTON DOUGLAS J,Officer,,2025-04-01,D
+143,296182,0.0,,Stock Gift at price 0.00 per share.,BEZOS JEFFREY P,Officer and Director,,2025-03-04,D
+144,2500,532925.0,,Sale at price 213.17 per share.,HERRINGTON DOUGLAS J,Chief Executive Officer,,2025-03-03,D
+145,25060,5469364.0,,Sale at price 217.50 - 223.16 per share.,ZAPOLSKY DAVID A.,Officer,,2025-02-24,D
+146,15240,3363292.0,,Sale at price 219.05 - 222.79 per share.,GARMAN MATTHEW S,Officer,,2025-02-21,D
+147,6104,1357967.0,,Sale at price 221.52 - 223.14 per share.,HERRINGTON DOUGLAS J,Officer,,2025-02-21,D
+148,14620,3262307.0,,Sale at price 223.14 per share.,OLSAVSKY BRIAN T.,Chief Financial Officer,,2025-02-21,D
+149,20784,4586006.0,,Sale at price 219.10 - 222.88 per share.,JASSY ANDREW R.,Chief Executive Officer,,2025-02-21,D

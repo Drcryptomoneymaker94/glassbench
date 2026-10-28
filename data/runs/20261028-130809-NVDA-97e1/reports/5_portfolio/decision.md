@@ -1,0 +1,9 @@
+**Rating**: Buy
+
+**Executive Summary**: Initiate a new position in NVDA at current levels with 0.8x baseline allocation, using a stop-loss at $206.30 (Bollinger Lower Band) to manage downside risk. Monitor for confirmation of reversal via price closing above $214 with rising volume, RSI > 50, and MACD histogram stabilization before increasing exposure. Maintain a long-term hold posture given the structural dominance in AI infrastructure.
+
+**Investment Thesis**: The bull case for NVDA is decisively stronger: structural dominance in AI infrastructure is validated by Meta's $95B fund raise, OpenAI's reliance on NVIDIA's ecosystem, and SK Hynix's HBM sell-out through 2029. The PEG of 0.26 and Forward P/E of 13.69 reflect appropriate pricing for hypergrowth, not overvaluation. While technical indicators show short-term bearish momentum (MACD negative, RSI declining), the long-term trend remains intact—price is above the 200 SMA ($203.69) and VWMA ($220.06) confirms accumulation at higher levels. The conservative analyst's concerns about rate hikes and sentiment extremes are acknowledged but outweighed by the fundamental moat and demand tailwinds. The neutral analyst’s balanced approach—waiting for confluence near $212–214 with volume, RSI > 50, and MACD stabilization—is adopted as the optimal execution framework. Entry at current levels is justified with reduced sizing (0.8x) and a wider stop-loss ($206.30) to preserve capital while capturing upside. The risk of missing out is outweighed by the greater danger of being stopped out in a deeper correction. If NVDA breaks below $206.30 with volume or fails to show reversal signals, reassess the thesis.
+
+**Price Target**: not provided
+
+**Time Horizon**: 12-24 months

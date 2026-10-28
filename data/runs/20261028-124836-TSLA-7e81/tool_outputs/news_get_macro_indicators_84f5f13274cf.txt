@@ -1,0 +1,12 @@
+## FRED: Federal Funds Effective Rate (FEDFUNDS)
+- Units: %
+- Frequency: Monthly (NSA)
+- Window: 2026-07-30 to 2026-10-28
+
+**Latest:** 3.75 (2026-09-01) | **Change from 2026-07-01 to 2026-09-01:** +0.12 (+3.31%), from 3.63
+
+| Date | Value |
+| --- | --- |
+| 2026-07-01 | 3.63 |
+| 2026-08-01 | 3.63 |
+| 2026-09-01 | 3.75 |

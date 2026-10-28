@@ -1,0 +1,36 @@
+## close_200_sma values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 435.93044128417966
+2026-10-26: 435.6550839233398
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 435.36756362915037
+2026-10-22: 435.1471243286133
+2026-10-21: 434.9191911315918
+2026-10-20: 434.60378646850586
+2026-10-19: 434.29422897338867
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 434.02948471069334
+2026-10-15: 433.8062690734863
+2026-10-14: 433.5292152404785
+2026-10-13: 433.2839422607422
+2026-10-12: 432.9914093017578
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 432.70456314086914
+2026-10-08: 432.43852798461916
+2026-10-07: 432.239761505127
+2026-10-06: 431.99560607910155
+2026-10-05: 431.7146983337402
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 431.4557322692871
+2026-10-01: 431.22721542358397
+2026-09-30: 431.04078186035156
+2026-09-29: 430.87839248657224
+2026-09-28: 430.71130783081054
+
+
+200 SMA: A long-term trend benchmark. Usage: Confirm overall market trend and identify golden/death cross setups. Tips: It reacts slowly; best for strategic trend confirmation rather than frequent trading entries.

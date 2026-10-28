@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "Apple AAPL"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will Apple (AAPL) hit (HIGH) $376 in November?** — Yes 49% ($9,467 volume, resolves 2026-12-01)
+- **Will Apple (AAPL) hit (LOW) $328 in November?** — Yes 47% ($9,467 volume, resolves 2026-12-01)
+- **Will Apple (AAPL) hit (HIGH) $352 in October?** — Yes 38% ($9,371 volume, resolves 2026-11-01, 1-week +8.5pp)
+- **Will Apple (AAPL) hit (HIGH) $360 in October?** — Yes 8% ($8,977 volume, resolves 2026-11-01, 1-week -3.0pp)
+- **Will Apple (AAPL) hit (LOW) $320 in October?** — Yes 4% ($5,705 volume, resolves 2026-11-01, 1-week -11.4pp)
+- **Will Apple (AAPL) hit (LOW) $312 in October?** — Yes 3% ($4,410 volume, resolves 2026-11-01, 1-week -4.4pp)

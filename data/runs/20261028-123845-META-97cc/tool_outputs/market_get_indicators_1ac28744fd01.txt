@@ -1,0 +1,36 @@
+## boll values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 707.4660003662109
+2026-10-26: 713.3959991455079
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 717.6489990234375
+2026-10-22: 723.1009979248047
+2026-10-21: 729.5380004882812
+2026-10-20: 731.8669982910156
+2026-10-19: 733.9844970703125
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 735.7749969482422
+2026-10-15: 733.5697479248047
+2026-10-14: 730.8223480224609
+2026-10-13: 727.5843017578125
+2026-10-12: 722.9448760986328
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 719.0506317138672
+2026-10-08: 715.4930847167968
+2026-10-07: 711.6421783447265
+2026-10-06: 708.2354034423828
+2026-10-05: 701.9412139892578
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 695.6603942871094
+2026-10-01: 689.7663146972657
+2026-09-30: 683.0889373779297
+2026-09-29: 675.7341247558594
+2026-09-28: 667.3890594482422
+
+
+Bollinger Middle: A 20 SMA serving as the basis for Bollinger Bands. Usage: Acts as a dynamic benchmark for price movement. Tips: Combine with the upper and lower bands to effectively spot breakouts or reversals.

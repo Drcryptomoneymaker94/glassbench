@@ -1,0 +1,1 @@
+{"ok": true, "module": "risk", "function": "max_drawdown_analysis", "result": {"max_drawdown": 0.18235544217687072, "peak_date": 12, "trough_date": 41, "recovery_date": null, "recovered": false, "peak_to_trough_periods": 29, "trough_to_recovery_periods": null, "underwater_days": null, "recovery_days": null}}

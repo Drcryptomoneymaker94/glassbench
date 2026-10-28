@@ -7,7 +7,8 @@ from __future__ import annotations
 
 from . import adapter
 from .aihf import installed as aihf_installed
-from .settings import aihf_version, engine_version
+from .settings import aihf_version, engine_version, vt_version
+from .vibe import installed as vt_installed
 
 # Written explanations for TradingAgents agents; structure (stage, role, reads) comes from the adapter.
 TA_AGENT_NOTES = {
@@ -228,7 +229,89 @@ AI_HEDGE_FUND = {
     ],
 }
 
-FRAMEWORKS = [TRADINGAGENTS, AI_HEDGE_FUND]
+VIBE_TRADING = {
+    "id": "vibe_trading",
+    "name": "Vibe-Trading",
+    "org": "HKUDS",
+    "version": None,
+    "status": "planned",
+    "tagline": "A research agent with a large tool catalogue, and swarm presets such as an investment committee.",
+    "summary": (
+        "Vibe-Trading is a general trading research agent driven by natural language. One ReAct loop decides which tools to "
+        "call from a catalogue of over a hundred (market data, statements, filings, options, news, web search, finance maths, "
+        "backtests, broker connections), and swarm presets run several agents on one question. Glassbench runs its "
+        "investment committee preset by default, with the preset's own prompts: a bull and a bear researcher in parallel, "
+        "a chief risk officer who reviews both, and a portfolio manager who decides. A second mode runs one research agent "
+        "on a fixed Glassbench prompt. Vibe-Trading has no rating scale, so the portfolio manager is asked to close with a "
+        "JSON block that maps to the shared five tiers."
+    ),
+    "links": [
+        {"label": "GitHub", "url": "https://github.com/HKUDS/Vibe-Trading"},
+        {"label": "Committee preset", "url": "https://github.com/HKUDS/Vibe-Trading/blob/main/agent/src/swarm/presets/investment_committee.yaml"},
+    ],
+    "facts": [
+        {"label": "GitHub stars", "value": "37k", "note": "October 2026"},
+        {"label": "Licence", "value": "MIT"},
+        {"label": "Language", "value": "Python"},
+        {"label": "Data", "value": "free by default", "note": "Yahoo Finance, SEC XBRL, Yahoo news, DuckDuckGo search; keyed vendors optional"},
+        {"label": "Date input", "value": "none", "note": "its prompt carries today's date; past dates are flagged as not point in time"},
+        {"label": "Tools in a Glassbench run", "value": "read-only data tools and quantlib_call", "note": "no shell, file access, backtests (they run generated code) or broker tools"},
+    ],
+    "flow": {
+        "stages": [
+            {"id": "data", "label": "Data", "mode": "tools", "nodes": [
+                {"id": "prices", "label": "Prices, indicators, options", "kind": "data", "sub": "Yahoo"},
+                {"id": "fund", "label": "Statements, flows, reports", "kind": "data", "sub": "SEC XBRL, Yahoo"},
+                {"id": "newsd", "label": "News", "kind": "data", "sub": "Yahoo"},
+            ]},
+            {"id": "research", "label": "Bull and bear", "mode": "parallel", "nodes": [
+                {"id": "bull_advocate", "label": "Bull researcher", "kind": "quick"},
+                {"id": "bear_advocate", "label": "Bear researcher", "kind": "quick"},
+            ]},
+            {"id": "risk", "label": "Risk", "mode": "sequential", "nodes": [
+                {"id": "risk_officer", "label": "Chief risk officer", "kind": "quick", "sub": "sizing, stops, hedges"},
+            ]},
+            {"id": "pm", "label": "Decision", "mode": "sequential", "nodes": [
+                {"id": "portfolio_manager", "label": "Portfolio manager", "kind": "quick", "sub": "long, short, wait or hedge"},
+                {"id": "decision", "label": "Closing JSON block", "kind": "rule", "sub": "mapped to five tiers"},
+            ]},
+        ],
+        "edges": [["prices", "bull_advocate"], ["fund", "bull_advocate"], ["newsd", "bull_advocate"],
+                  ["prices", "bear_advocate"], ["fund", "bear_advocate"], ["newsd", "bear_advocate"],
+                  ["bull_advocate", "risk_officer"], ["bear_advocate", "risk_officer"], ["risk_officer", "portfolio_manager"],
+                  ["portfolio_manager", "decision"]],
+        "notes": [
+            "The committee is Vibe-Trading's own investment_committee preset, run by its own swarm runtime. Glassbench adds one paragraph to each prompt (no shell here, compute with quantlib_call) and the closing block to the portfolio manager's.",
+            "The preset tells the bear and the risk officer to compute VaR and drawdowns in bash; here they reach the same src.quantlib functions through quantlib_call, which calls exported functions of allowlisted modules and nothing else.",
+            "Each agent picks its own tools and order, so two runs on the same stock can read different data.",
+            "Each run gets its own Vibe-Trading home in the run folder, so memory, sessions and swarm records never carry over between runs.",
+            "Vibe-Trading has no rating scale. When the closing block has no rating, its action is mapped (long Overweight, short Underweight, wait or hedge Hold).",
+            "Vibe-Trading's own grounding check withholds figures it cannot match to the session's tool data, printing (omitted) in their place; Glassbench counts them as a flag.",
+        ],
+    },
+    "agents": [
+        {"id": "bull_advocate", "name": "Bull-side researcher", "stage": "research", "role": "quick", "reads": ["prices, statements, flows, news"],
+         "what": "Builds the long case from technicals, fundamentals and sentiment, with targets and what would break it.", "tools": "data tools, quantlib_call"},
+        {"id": "bear_advocate", "name": "Bear-side researcher", "stage": "research", "role": "quick", "reads": ["prices, statements, options, news"],
+         "what": "Builds the short case: topping patterns, valuation premium, deterioration, VaR and drawdown.", "tools": "data tools, quantlib_call"},
+        {"id": "risk_officer", "name": "Chief risk officer", "stage": "risk", "role": "quick", "reads": ["both reports", "prices, options"],
+         "what": "Scores both sides, sizes the position, sets stops and prices the hedge.", "tools": "data tools, options pricing, quantlib_call"},
+        {"id": "portfolio_manager", "name": "Portfolio manager", "stage": "pm", "role": "quick", "reads": ["the risk review with both reports"],
+         "what": "Rules on the arguments and gives the action, entry, targets, stop, horizon and confidence.", "tools": "skills, quantlib_call"},
+        {"id": "decision", "name": "Closing decision", "stage": "pm", "role": "rule", "reads": ["the portfolio manager's JSON block"],
+         "what": "Glassbench reads the rating, entry, stop, target, horizon and confidence from the block.", "tools": None},
+    ],
+    "data": [
+        {"source": "Yahoo Finance", "used_for": "prices, indicators, options, profile, news", "point_in_time": "no date input: current data"},
+        {"source": "SEC XBRL", "used_for": "fundamentals and statements", "point_in_time": "as filed"},
+        {"source": "DuckDuckGo search, web pages", "used_for": "single-agent mode only", "point_in_time": "no: present-day results"},
+    ],
+    "evidence": [
+        {"claim": "No published evaluation of its trading decisions", "source": "README", "note": ""},
+    ],
+}
+
+FRAMEWORKS = [TRADINGAGENTS, AI_HEDGE_FUND, VIBE_TRADING]
 
 
 def frameworks(run_counts: dict[str, int]) -> list[dict]:
@@ -240,5 +323,8 @@ def frameworks(run_counts: dict[str, int]) -> list[dict]:
         elif fw["id"] == "ai_hedge_fund":
             item["version"] = aihf_version()
             item["status"] = "connected" if aihf_installed() else "planned"
+        elif fw["id"] == "vibe_trading":
+            item["version"] = vt_version() if vt_installed() else None
+            item["status"] = "connected" if vt_installed() else "planned"
         out.append(item)
     return out

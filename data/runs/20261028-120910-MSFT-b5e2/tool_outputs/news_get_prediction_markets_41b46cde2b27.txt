@@ -1,0 +1,4 @@
+## Polymarket prediction markets: "MSFT earnings AI cloud"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will Microsoft (MSFT) beat quarterly earnings?** — Yes 83% ($4,862 volume, resolves 2026-10-28, 1-week +5.5pp)

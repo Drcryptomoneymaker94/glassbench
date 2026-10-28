@@ -11,13 +11,13 @@ import traceback
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 
-from . import adapter, aihf
-from .capture import CURRENT_CAPTURE, EngineLogCapture, RunCapture, _text_of
+from . import adapter, aihf, vibe
+from .capture import CURRENT_CAPTURE, EngineLogCapture, RunCapture, _text_of, install_local_usage
 from .events import EventBus
 from .reasoning import install_reasoning_tap
 from .runconfig import CURRENT_CONFIG, install_run_config
 from .variants import ensure_available, install_variants
-from .settings import AIHF_ENGINE, BACKTESTS_DIR, MAX_CONCURRENT_RUNS, RUNS_DIR, engine_config, engine_version
+from .settings import AIHF_ENGINE, BACKTESTS_DIR, MAX_CONCURRENT_RUNS, RUNS_DIR, VT_ENGINE, engine_config, engine_version
 from .store import Store
 
 log = logging.getLogger("deskapp.runner")
@@ -38,6 +38,7 @@ class RunManager:
         logging.getLogger("tradingagents").addHandler(self._log_capture)
         install_reasoning_tap()
         install_variants()
+        install_local_usage()
 
     def submit(self, ticker: str, trade_date: str, analysts: list[str], depth: int, deep_model: str, quick_model: str,
                purpose: str = "live", backtest_id: str | None = None, memory: str = "shared", variant: str = "",
@@ -80,6 +81,29 @@ class RunManager:
         self.pool.submit(self._execute, run_id)
         return run_id
 
+    def submit_vibe(self, ticker: str, trade_date: str, model: str, provider: str = "ollama", mode: str = "committee",
+                    purpose: str = "live") -> str:
+        """Queue one Vibe-Trading analysis on one model with read-only tools: its investment committee, or one agent."""
+        if provider not in vibe.PROVIDERS:
+            raise ValueError(f"Vibe-Trading runs on {', '.join(vibe.PROVIDERS)} for now, not {provider!r}.")
+        if mode not in vibe.MODES:
+            raise ValueError(f"Unknown Vibe-Trading mode {mode!r}. Choose one of: {', '.join(vibe.MODES)}.")
+        layout = vibe.LAYOUTS[mode]
+        run_id = time.strftime("%Y%m%d-%H%M%S") + "-" + ticker.replace("/", "_").upper() + "-" + uuid.uuid4().hex[:4]
+        self.store.create_run({
+            "id": run_id, "ticker": ticker.upper(), "trade_date": trade_date, "analysts": ["vibe"], "depth": 0,
+            "deep_model": model, "quick_model": model, "status": "queued", "created_at": time.time(),
+            "engine": VT_ENGINE, "engine_version": vibe.version(), "provider": provider,
+            "purpose": purpose, "backtest_id": None, "memory": "off", "variant": mode,
+        })
+        self._cancel[run_id] = threading.Event()
+        self.bus.emit(run_id, "run.queued", None, ticker=ticker.upper(), trade_date=trade_date, analysts=["vibe"], depth=0,
+                      deep_model=model, quick_model=model, purpose=purpose, backtest_id=None, memory="off", variant=mode,
+                      provider=provider, engine=VT_ENGINE, agents=[a["id"] for a in layout["agents"]],
+                      agent_meta=layout["agents"], stages=layout["stages"])
+        self.pool.submit(self._execute, run_id)
+        return run_id
+
     def cancel(self, run_id: str) -> bool:
         flag = self._cancel.get(run_id)
         if flag is None:
@@ -103,6 +127,9 @@ class RunManager:
 
         if run.get("engine") == AIHF_ENGINE:
             self._execute_aihf(run_id, run, cancel)
+            return
+        if run.get("engine") == VT_ENGINE:
+            self._execute_foreign(vibe.execute, run_id, run, cancel)
             return
 
         run_dir = RUNS_DIR / run_id
@@ -266,10 +293,14 @@ class RunManager:
                 self.bus.emit(run_id, "report.updated", agent_id, text=text)
 
     def _execute_aihf(self, run_id: str, run: dict, cancel: threading.Event) -> None:
+        self._execute_foreign(lambda m, r_id, r, c: aihf.execute(m, r_id, r, c, fixture=self.aihf_fixture), run_id, run, cancel)
+
+    def _execute_foreign(self, execute, run_id: str, run: dict, cancel: threading.Event) -> None:
+        """A framework driven as a subprocess (AI Hedge Fund, Vibe-Trading): same start, cancel and failure handling."""
         self.store.update_run(run_id, status="running", started_at=time.time())
         self.bus.emit(run_id, "run.started", None, ticker=run["ticker"], trade_date=run["trade_date"])
         try:
-            aihf.execute(self, run_id, run, cancel, fixture=self.aihf_fixture)
+            execute(self, run_id, run, cancel)
         except RunCancelled:
             self._finish_cancelled(run_id, None)
         except Exception as exc:

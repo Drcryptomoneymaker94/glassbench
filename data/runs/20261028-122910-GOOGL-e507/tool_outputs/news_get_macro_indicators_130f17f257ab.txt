@@ -1,0 +1,10 @@
+## FRED: Unemployment Rate (UNRATE)
+- Units: %
+- Frequency: Monthly (SA)
+- Window: 2026-09-28 to 2026-10-28
+
+**Latest:** 4.2 (2026-09-01) | **Change from 2026-09-01 to 2026-09-01:** +0.00 (+0.00%), from 4.2
+
+| Date | Value |
+| --- | --- |
+| 2026-09-01 | 4.2 |

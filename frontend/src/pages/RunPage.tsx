@@ -73,7 +73,9 @@ export default function RunPage({ meta }: { meta: Meta }) {
           <div className="titlerow">
             <h1>{run.ticker}</h1>
             <span className="subtitle">
-              {aihfRun
+              {run.engine === "vibe_trading"
+                ? `Vibe-Trading · ${run.variant === "committee" ? "investment committee" : run.variant === "imported" ? "imported from its own app" : "one research agent"} · ${run.quickModel.replace("deepseek-", "")}`
+                : aihfRun
                 ? `AI Hedge Fund · ${run.variant === "custom" || !run.variant ? "custom strategy" : run.variant} · ${analysts} analyst${analysts === 1 ? "" : "s"} · ${run.quickModel.replace("deepseek-", "")}${run.dataSource === "yahoo" ? " · Yahoo Finance data, not native" : ""}`
                 : `${analysts} analyst${analysts === 1 ? "" : "s"} · ${run.depth} debate round${run.depth === 1 ? "" : "s"} · ${run.quickModel.replace("deepseek-", "")} / ${run.deepModel.replace("deepseek-", "")}`}
             </span>

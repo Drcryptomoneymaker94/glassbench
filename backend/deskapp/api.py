@@ -20,7 +20,7 @@ from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
-from . import __version__, adapter, aihf, brokers
+from . import __version__, adapter, aihf, brokers, vibe, vibe_import
 from .events import TERMINAL_EVENTS, EventBus
 from .keys import key_status, load_keys
 from . import simulate as sim
@@ -28,7 +28,7 @@ from .backtest import BacktestManager, sample_evenly, weekly_dates
 from .runner import RunManager
 from .frameworks import frameworks as framework_sheets
 from .variants import VARIANTS
-from .settings import AIHF_DEFAULT_MODEL, AIHF_ENGINE, AIHF_PRIVATE_DIR, ANALYST_KEYS, DB_PATH, FRONTEND_DIST, MODELS, PRICING, PROVIDERS, RUNS_DIR, default_trade_date, engine_build, engine_version
+from .settings import AIHF_DEFAULT_MODEL, AIHF_ENGINE, AIHF_PRIVATE_DIR, ANALYST_KEYS, DB_PATH, FRONTEND_DIST, MODELS, PRICING, PROVIDERS, RUNS_DIR, VT_ENGINE, default_trade_date, engine_build, engine_version
 from .store import TERMINAL_STATUSES, Store
 
 store = Store(DB_PATH)
@@ -69,6 +69,8 @@ class RunRequest(BaseModel):
     aihf_model: str = AIHF_DEFAULT_MODEL
     # financial-datasets is AI Hedge Fund's own data; yahoo is Glassbench's free adapter (Yahoo Finance + SEC EDGAR).
     aihf_data: Literal["financial-datasets", "yahoo"] = "financial-datasets"
+    # Vibe-Trading runs: engine="vibe_trading", its investment committee (default) or one research agent.
+    vt_mode: Literal["committee", "single"] = "committee"
 
     @field_validator("tickers")
     @classmethod
@@ -109,7 +111,7 @@ def meta():
         "engine_builds": {v: engine_build(v) for v in {engine_version(), *store.engine_versions()}},
         "variants": VARIANTS,
         "keys": key_status(),
-        "engines": {AIHF_ENGINE: aihf.meta_for_ui()},
+        "engines": {AIHF_ENGINE: aihf.meta_for_ui(), VT_ENGINE: vibe.meta_for_ui()},
     }
 
 
@@ -127,8 +129,10 @@ def list_frameworks():
 def create_runs(req: RunRequest):
     if req.engine == AIHF_ENGINE:
         return _create_aihf_runs(req)
+    if req.engine == VT_ENGINE:
+        return _create_vibe_runs(req)
     if req.engine != "tradingagents":
-        raise HTTPException(400, f"Unknown framework {req.engine!r}. Choose tradingagents or {AIHF_ENGINE}.")
+        raise HTTPException(400, f"Unknown framework {req.engine!r}. Choose tradingagents, {AIHF_ENGINE} or {VT_ENGINE}.")
     provider = PROVIDERS.get(req.provider)
     if provider is None:
         raise HTTPException(400, f"Unknown provider {req.provider!r}. Choose one of: {', '.join(PROVIDERS)}.")
@@ -139,6 +143,45 @@ def create_runs(req: RunRequest):
     ids = [manager.submit(t, req.trade_date, req.analysts, req.depth, req.deep_model.strip(), req.quick_model.strip(), provider=req.provider)
            for t in req.tickers]
     return {"run_ids": ids}
+
+
+def _create_vibe_runs(req: RunRequest) -> dict:
+    if not vibe.installed():
+        raise HTTPException(400, "Vibe-Trading is not installed: clone it next to Glassbench (./Vibe-Trading) with its own .venv, "
+                                 "or point GLASSBENCH_VT_DIR at the clone, then restart Glassbench.")
+    key = vibe.PROVIDERS.get(req.provider, "unsupported")
+    if key == "unsupported":
+        raise HTTPException(400, f"Vibe-Trading runs on {', '.join(vibe.PROVIDERS)} for now, not {req.provider!r}.")
+    if key and not os.environ.get(key):
+        raise HTTPException(400, f"{key} is missing. Put it in .env at the repository root, then restart Glassbench.")
+    if not req.quick_model.strip():
+        raise HTTPException(400, "A model id is required: Vibe-Trading runs one agent on one model.")
+    try:
+        ids = [manager.submit_vibe(t, req.trade_date, req.quick_model.strip(), provider=req.provider, mode=req.vt_mode)
+               for t in req.tickers]
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {"run_ids": ids}
+
+
+class VibeImport(BaseModel):
+    kind: Literal["session", "swarm"]
+    id: str = Field(min_length=1, max_length=120, pattern=r"^[A-Za-z0-9_.\-]+$")
+
+
+@app.get("/api/vibe-trading/sessions")
+def vibe_sessions():
+    """Sessions and swarm runs found in Vibe-Trading's own home folder, and which are already imported."""
+    return vibe_import.list_sessions(store)
+
+
+@app.post("/api/vibe-trading/import")
+def vibe_import_one(req: VibeImport):
+    try:
+        run_id = (vibe_import.import_session if req.kind == "session" else vibe_import.import_swarm)(manager, req.id)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {"run_id": run_id}
 
 
 def _create_aihf_runs(req: RunRequest) -> dict:

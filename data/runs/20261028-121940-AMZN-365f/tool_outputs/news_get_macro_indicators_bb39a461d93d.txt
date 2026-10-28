@@ -1,0 +1,12 @@
+## FRED: Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL)
+- Units: Index 1982-1984=100
+- Frequency: Monthly (SA)
+- Window: 2026-07-30 to 2026-10-28
+
+**Latest:** 336.298 (2026-09-01) | **Change from 2026-07-01 to 2026-09-01:** +3.49 (+1.05%), from 332.813
+
+| Date | Value |
+| --- | --- |
+| 2026-07-01 | 332.813 |
+| 2026-08-01 | 334.131 |
+| 2026-09-01 | 336.298 |

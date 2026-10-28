@@ -17,6 +17,30 @@ from .settings import estimate_cost
 
 PREVIEW_CHARS = 700
 DELTA_FLUSH_SECONDS = 0.25
+_LOCAL_USAGE_INSTALLED = False
+
+
+def install_local_usage() -> None:
+    """Token usage for local servers (Ollama, llama.cpp, LM Studio) reached through the engine's "ollama" provider.
+
+    Streamed calls to a custom base_url carry no usage unless stream_usage is on, so every local call recorded 0 tokens
+    (checked 2026-10-27 against llama-server: usage_metadata None without it, input, output and cache_read with it).
+    Runtime only, the engine stays unmodified."""
+    global _LOCAL_USAGE_INSTALLED
+    if _LOCAL_USAGE_INSTALLED:
+        return
+    from tradingagents.llm_clients import openai_client
+
+    get_llm = openai_client.OpenAIClient.get_llm
+
+    def get_llm_with_usage(self):
+        llm = get_llm(self)
+        if self.provider == "ollama":
+            llm.stream_usage = True
+        return llm
+
+    openai_client.OpenAIClient.get_llm = get_llm_with_usage
+    _LOCAL_USAGE_INSTALLED = True
 
 
 def _text_of(content: Any) -> str:

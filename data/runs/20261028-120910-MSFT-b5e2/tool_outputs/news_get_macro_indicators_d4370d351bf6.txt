@@ -1,0 +1,11 @@
+## FRED: Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index) (PCEPILFE)
+- Units: Index 2017=100
+- Frequency: Monthly (SA)
+- Window: 2026-07-30 to 2026-10-28
+
+**Latest:** 130.455 (2026-08-01) | **Change from 2026-07-01 to 2026-08-01:** +0.32 (+0.25%), from 130.133
+
+| Date | Value |
+| --- | --- |
+| 2026-07-01 | 130.133 |
+| 2026-08-01 | 130.455 |

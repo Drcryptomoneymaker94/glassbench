@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "Fed rate cut October 2026"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Fed rate cut by December 2026 meeting?** — Yes 3% ($428,815 volume, resolves 2027-01-29, 1-week +0.1pp)
+- **Fed rate cut by October 2026 meeting?** — Yes 0% ($236,833 volume, resolves 2027-01-29, 1-week -0.1pp)
+- **Fed rate cut by January 2027 meeting?** — Yes 10% ($7,653 volume, resolves 2027-02-08, 1-week +5.3pp)
+- **Fed rate cut by March 2027 meeting?** — Yes 14% ($2,169 volume, resolves 2027-04-08)
+- **Fed rate cut by July 2027 meeting?** — Yes 46% ($127 volume, resolves 2027-08-08, 1-week -4.0pp)
+- **Fed rate cut by April 2027 meeting?** — Yes 32% ($51 volume, resolves 2027-05-08, 1-week -1.0pp)

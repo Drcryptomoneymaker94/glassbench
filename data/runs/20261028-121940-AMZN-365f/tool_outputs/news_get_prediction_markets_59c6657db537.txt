@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "Amazon AI cloud AWS"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will Anthropic have the best AI model at the end of October 2026?** — Yes 3% ($911,541 volume, resolves 2026-10-31, 1-week -14.3pp)
+- **Will Google have the best AI model at the end of October 2026?** — Yes 96% ($869,159 volume, resolves 2026-10-31, 1-week +14.3pp)
+- **Will OpenAI have the best AI model at the end of October 2026?** — Yes 0% ($488,295 volume, resolves 2026-10-31, 1-week -0.7pp)
+- **Will Anthropic have the best AI model at the end of December 2026?** — Yes 56% ($441,208 volume, resolves 2026-12-31, 1-week +7.0pp)
+- **Will Google have the best AI model at the end of December 2026?** — Yes 34% ($424,020 volume, resolves 2026-12-31, 1-week -7.0pp)
+- **Will Meta have the best AI model at the end of October 2026?** — Yes 0% ($422,869 volume, resolves 2026-11-01, 1-week -0.2pp)

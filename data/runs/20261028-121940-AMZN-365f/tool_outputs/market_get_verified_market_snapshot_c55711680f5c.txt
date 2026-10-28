@@ -1,0 +1,68 @@
+## Verified market data snapshot for AMZN
+
+- Requested analysis date: 2026-10-28
+- Latest trading row used: 2026-10-27
+- Rows after the requested analysis date are excluded before verification.
+
+### Latest verified OHLCV row
+
+| Field | Value |
+|---|---:|
+| Open | 250.43 |
+| High | 254.68 |
+| Low | 248.71 |
+| Close | 253.10 |
+| Volume | 34408700 |
+
+### Verified technical indicators (latest row)
+
+| Indicator | Value |
+|---|---:|
+| close_10_ema | 253.88 |
+| close_50_sma | 255.21 |
+| close_200_sma | 243.34 |
+| rsi | 48.58 |
+| boll | 254.90 |
+| boll_ub | 265.39 |
+| boll_lb | 244.41 |
+| macd | -0.38 |
+| macds | 0.27 |
+| macdh | -0.65 |
+| atr | 6.41 |
+
+### Recent verified closes (last 30 rows)
+
+| Date | Close |
+|---|---:|
+| 2026-09-16 | 245.96 |
+| 2026-09-17 | 251.19 |
+| 2026-09-18 | 253.71 |
+| 2026-09-21 | 258.45 |
+| 2026-09-22 | 254.98 |
+| 2026-09-23 | 249.27 |
+| 2026-09-24 | 249.38 |
+| 2026-09-25 | 249.67 |
+| 2026-09-28 | 246.15 |
+| 2026-09-29 | 246.67 |
+| 2026-09-30 | 249.15 |
+| 2026-10-01 | 248.23 |
+| 2026-10-02 | 251.52 |
+| 2026-10-05 | 251.40 |
+| 2026-10-06 | 256.29 |
+| 2026-10-07 | 259.92 |
+| 2026-10-08 | 254.06 |
+| 2026-10-09 | 262.43 |
+| 2026-10-12 | 259.53 |
+| 2026-10-13 | 258.58 |
+| 2026-10-14 | 254.08 |
+| 2026-10-15 | 254.76 |
+| 2026-10-16 | 250.00 |
+| 2026-10-19 | 262.45 |
+| 2026-10-20 | 262.63 |
+| 2026-10-21 | 262.37 |
+| 2026-10-22 | 250.38 |
+| 2026-10-23 | 248.00 |
+| 2026-10-26 | 249.09 |
+| 2026-10-27 | 253.10 |
+
+Use this snapshot as the source of truth for exact OHLCV, price-level, and indicator-value claims. If another tool output conflicts with it, flag the discrepancy rather than inventing a reconciled number. Do not claim historical validation, support/resistance bounces, or exact percentage moves unless directly supported by tool output with concrete dates and prices.

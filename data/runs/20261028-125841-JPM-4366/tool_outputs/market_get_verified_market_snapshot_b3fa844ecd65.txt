@@ -1,0 +1,68 @@
+## Verified market data snapshot for JPM
+
+- Requested analysis date: 2026-10-28
+- Latest trading row used: 2026-10-27
+- Rows after the requested analysis date are excluded before verification.
+
+### Latest verified OHLCV row
+
+| Field | Value |
+|---|---:|
+| Open | 337.04 |
+| High | 337.51 |
+| Low | 334.50 |
+| Close | 335.79 |
+| Volume | 4711400 |
+
+### Verified technical indicators (latest row)
+
+| Indicator | Value |
+|---|---:|
+| close_10_ema | 334.66 |
+| close_50_sma | 343.15 |
+| close_200_sma | 319.85 |
+| rsi | 48.58 |
+| boll | 333.28 |
+| boll_ub | 338.65 |
+| boll_lb | 327.91 |
+| macd | -1.86 |
+| macds | -2.62 |
+| macdh | 0.77 |
+| atr | 6.04 |
+
+### Recent verified closes (last 30 rows)
+
+| Date | Close |
+|---|---:|
+| 2026-09-16 | 347.19 |
+| 2026-09-17 | 347.58 |
+| 2026-09-18 | 347.93 |
+| 2026-09-21 | 350.29 |
+| 2026-09-22 | 338.31 |
+| 2026-09-23 | 335.85 |
+| 2026-09-24 | 336.88 |
+| 2026-09-25 | 341.36 |
+| 2026-09-28 | 334.92 |
+| 2026-09-29 | 333.32 |
+| 2026-09-30 | 329.19 |
+| 2026-10-01 | 331.53 |
+| 2026-10-02 | 330.73 |
+| 2026-10-05 | 330.73 |
+| 2026-10-06 | 331.28 |
+| 2026-10-07 | 329.58 |
+| 2026-10-08 | 331.42 |
+| 2026-10-09 | 332.99 |
+| 2026-10-12 | 334.30 |
+| 2026-10-13 | 331.43 |
+| 2026-10-14 | 335.28 |
+| 2026-10-15 | 335.53 |
+| 2026-10-16 | 339.72 |
+| 2026-10-19 | 333.53 |
+| 2026-10-20 | 335.26 |
+| 2026-10-21 | 335.19 |
+| 2026-10-22 | 336.54 |
+| 2026-10-23 | 331.58 |
+| 2026-10-26 | 334.04 |
+| 2026-10-27 | 335.79 |
+
+Use this snapshot as the source of truth for exact OHLCV, price-level, and indicator-value claims. If another tool output conflicts with it, flag the discrepancy rather than inventing a reconciled number. Do not claim historical validation, support/resistance bounces, or exact percentage moves unless directly supported by tool output with concrete dates and prices.

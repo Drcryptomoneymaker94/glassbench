@@ -1,0 +1,1 @@
+{"ok": true, "module": "risk", "function": "historical_var", "result": 0.0059}

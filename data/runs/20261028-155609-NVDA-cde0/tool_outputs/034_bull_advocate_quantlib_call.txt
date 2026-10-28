@@ -1,0 +1,1 @@
+{"ok": false, "error": "max_drawdown_analysis() got an unexpected keyword argument 'equity_curve'", "signature": "(equity: 'pd.Series | np.ndarray | Sequence[float]') -> 'dict'"}

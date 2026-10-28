@@ -1,0 +1,36 @@
+## rsi values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 46.30530333458663
+2026-10-26: 44.13666166112691
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 38.10626168664227
+2026-10-22: 39.07776508162898
+2026-10-21: 47.938939280940204
+2026-10-20: 40.929914620383755
+2026-10-19: 41.51496074041551
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 37.558176717384896
+2026-10-15: 40.203290967618265
+2026-10-14: 43.97935058547086
+2026-10-13: 52.02906900775909
+2026-10-12: 49.40904749569877
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 53.02739879485482
+2026-10-08: 54.530715362248785
+2026-10-07: 64.4070613678982
+2026-10-06: 67.27190513410088
+2026-10-05: 67.0101577022031
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 63.011079684164294
+2026-10-01: 60.21556912285574
+2026-09-30: 57.840981158444684
+2026-09-29: 56.70904523604835
+2026-09-28: 58.7755702733496
+
+
+RSI: Measures momentum to flag overbought/oversold conditions. Usage: Apply 70/30 thresholds and watch for divergence to signal reversals. Tips: In strong trends, RSI may remain extreme; always cross-check with trend analysis.

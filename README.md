@@ -7,6 +7,7 @@
   <a href="https://youtu.be/Bvucb9BpJ1U"><img src="https://img.shields.io/badge/Watch_the_video-13_min-FF0000?logo=youtube&logoColor=white" alt="Watch the video"></a>
   <a href="https://github.com/TauricResearch/TradingAgents"><img src="https://img.shields.io/badge/Engine-TradingAgents_0.6.0-1a1d1b?logo=github" alt="TradingAgents 0.6.0"></a>
   <a href="https://github.com/virattt/ai-hedge-fund"><img src="https://img.shields.io/badge/Engine-AI_Hedge_Fund_2.5.0-1a1d1b?logo=github" alt="AI Hedge Fund 2.5.0"></a>
+  <a href="https://github.com/HKUDS/Vibe-Trading"><img src="https://img.shields.io/badge/Engine-Vibe--Trading_0.1.18-1a1d1b?logo=github" alt="Vibe-Trading 0.1.18"></a>
   <a href="https://arxiv.org/abs/2412.20138"><img src="https://img.shields.io/badge/Paper-arXiv_2412.20138-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-2e4bc9" alt="Apache 2.0"></a>
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" alt="Python 3.11+">
@@ -15,10 +16,10 @@
 
 ## What it is
 
-Glassbench connects finance agent systems to one platform, runs them on the same stock and date, and records what their agents read, argued and decided, so you can compare them and judge the method yourself instead of trusting a rating. It runs the official [TradingAgents](https://github.com/TauricResearch/TradingAgents) (v0.6.0) and [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) (v2.5.0) engines unmodified, each through one adapter. [Vibe Trading](https://github.com/HKUDS/Vibe-Trading) is the next adapter, and your own system plugs in the same way.
+Glassbench connects finance agent systems to one platform, runs them on the same stock and date, and records what their agents read, argued and decided, so you can compare them and judge the method yourself instead of trusting a rating. It runs the official [TradingAgents](https://github.com/TauricResearch/TradingAgents) (v0.6.0), [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) (v2.5.0) and [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) (v0.1.18) engines unmodified, each through one adapter, and your own system plugs in the same way.
 
 - **Front end, live and replay.** One card per agent, grouped by stage, with what it is reading, writing and concluding; open a card for every LLM call, every tool call with its result and the reasoning stream. A stage strip and a timeline show who ran when. An AI Hedge Fund run gets one lane per investor agent and the earnings drift model, then the blend, the risk limits and the simulated fill. Every run replays step by step.
-- **One database of every run.** Framework and version, provider and models, ticker, date, analysts, rating, entry, stop, target, horizon, tokens, tool calls, cost and flags, in SQLite. Filter on any of them, facet by model or variant, search the full text of every report and reasoning trace, export to CSV. This repository ships the author's database: [100 runs](#the-runs-database) on 14 tickers, 88 from TradingAgents and 12 from AI Hedge Fund.
+- **One database of every run.** Framework and version, provider and models, ticker, date, analysts, rating, entry, stop, target, horizon, tokens, tool calls, cost and flags, in SQLite. Filter on any of them, facet by model or variant, search the full text of every report and reasoning trace, export to CSV. This repository ships the author's database: [117 runs](#the-runs-database) on 15 tickers, 101 from TradingAgents, 12 from AI Hedge Fund and 4 from Vibe-Trading.
 - **Benchmark models and frameworks.** Pick the provider and type any model id; DeepSeek is the default, and OpenAI, Anthropic, Google, xAI, Qwen, GLM, MiniMax, Mistral, Kimi, Groq, OpenRouter and a local Ollama are one key away. Each run records the model asked for and the model actually served, so two models, or two frameworks, on the same stock and date sit side by side with their cost. Named variants change how the agents are fed (prompt wording, SEC EDGAR statements as filed, point-in-time valuation) without touching the engine ([the valuation matched pair](docs/evaluation-valuation-pair.md)).
 - **Backtesting.** Weekly grids of runs with a budget cap, next-open fills and trading costs, against buy-and-hold, a moving-average rule and a shuffled-rating placebo ([the method](docs/backtest-method.md)).
 - **Broker connection.** `trade.py` turns a finished run into one bracket order on an Interactive Brokers paper account, the trader's stop and the portfolio manager's target attached, and links the order back to the run.
@@ -35,6 +36,7 @@ A frameworks page keeps a reference sheet per framework: how it decides, what it
 ## New
 
 - **Local models, Oct 2026.** TradingAgents on two open-weight models served by llama.cpp on one desktop (Qwen3-30B-A3B and Qwen3.6-35B-A3B), 12 stocks each at no API cost, their ratings set beside DeepSeek's on the same stocks and date. Ratings, speed and every report in [results/local-models](results/local-models/), plus how to point Glassbench at a local server.
+- **Vibe-Trading, Oct 2026.** A third framework: Vibe-Trading's own investment committee (bull, bear, risk officer, portfolio manager) or one research agent, with read-only tools and no shell, on DeepSeek or a local model. Sessions run in its own app can be imported.
 - **Harness Arena, Oct 2026.** Five AI books on Alpaca paper accounts for two sessions: Claude Code and dsh crossed with Haiku and DeepSeek on one prompt, against TradingAgents. Code, daily reports and a luck test in [arena/](arena/).
 
 ## Screenshots
@@ -61,12 +63,13 @@ A frameworks page keeps a reference sheet per framework: how it decides, what it
 |---|---|---|
 | [TradingAgents](https://github.com/TauricResearch/TradingAgents) 0.6.0 | Connected | Engine runs untouched. Glassbench observes it through LangChain callbacks and reads its state; every node name and state key it depends on lives in one file, `backend/deskapp/adapter.py`, with tests. Optional variants (prompt wording, SEC EDGAR point-in-time valuation) are applied at runtime and never change the clone. Release 0.5.1 includes a fix and a bug report that came out of Glassbench runs ([#1370](https://github.com/TauricResearch/TradingAgents/pull/1370), [#1369](https://github.com/TauricResearch/TradingAgents/issues/1369)). Release 0.5.1 also rewrote its own Hold guidance ("conflicting arguments alone are not a reason to Hold"), the idea the prompt wording variant tested, so that variant applies to 0.4.0 and 0.5.0 only; on later releases Glassbench reports it as unavailable instead of editing text that is no longer there. Release 0.6.0 runs each analyst as a graph of its own, with its own message history, and reads statements from SEC EDGAR by default; Glassbench streams those inner graphs, so every analyst's tokens, tool calls and report still land on its own card. |
 | [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) 2.5.0 | Connected | Runs untouched in its own clone and virtual environment, because it pins other LangChain versions; `backend/drivers/aihf_driver.py` drives one cycle and streams it as events. Release 2.5.0 splits a cycle into two steps, assess at a close and execute at the next completed close, and Glassbench sequences them for one stock and date. Data comes from Financial Datasets, the framework's own client, or from a free Yahoo Finance and SEC EDGAR route Glassbench adds, which is not native and is labelled on every run that uses it. Each investor agent and the earnings drift model is a lane, followed by the blend, the risk limits and the simulated execution. Every run keeps its own prompt cache, so a rerun asks the model again. AI Hedge Fund returns portfolio weights, and Glassbench maps the blended conviction to five tiers (0.50 or more Buy, 0.15 Overweight, above -0.15 Hold, above -0.50 Underweight, else Sell) so both frameworks share one table, and a run where most analysts abstained is REVIEW. |
+| [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) 0.1.18 | Connected | Runs untouched in its own clone and virtual environment; `backend/drivers/vt_driver.py` builds its agents and streams them as events. By default Glassbench runs Vibe-Trading's own investment committee preset with its own prompts: bull and bear researchers in parallel, a chief risk officer, then a portfolio manager. Glassbench adds one paragraph to each prompt and asks the portfolio manager for a closing JSON block. A second mode runs one research agent on a fixed prompt. Research only: shell tools are off and every agent gets an allowlist of read-only data tools plus `quantlib_call`, Vibe-Trading's shell-free gate to its finance maths, so no file access, no backtests (they run generated code) and no broker tools. Each run gets its own Vibe-Trading home in the run folder. Vibe-Trading has no date input and no rating scale: runs dated in the past are flagged as not point in time, and the closing block maps to the five tiers (a stated rating, else long Overweight, short Underweight, wait or hedge Hold). Sessions run in Vibe-Trading's own app can be imported, tagged as imported and kept apart from controlled runs. |
 
-Every table's Framework column shows the framework and version only (`TradingAgents 0.6.0`, `AI Hedge Fund 2.5.0`). A build that contains changes on top of the release is labelled `adjusted`, with the changes listed in the tooltip.
+Every table's Framework column shows the framework and version only (`TradingAgents 0.6.0`, `AI Hedge Fund 2.5.0`, `Vibe-Trading 0.1.18`). A build that contains changes on top of the release is labelled `adjusted`, with the changes listed in the tooltip.
 
 ## Quick start
 
-You need Python 3.11 or newer, Node 22 or newer, Git, and an API key for one LLM provider. DeepSeek is the default and costs about $0.06 per full run; eleven other providers and local Ollama are listed in `.env.example`.
+You need Python 3.11 or newer, Node 22 or newer, Git, and an API key for one LLM provider, or a model running on your own machine (see Local models, under step 6). DeepSeek is the default and costs about $0.06 per full run; eleven other providers and local Ollama are listed in `.env.example`.
 
 **1. Clone Glassbench and the engine.**
 
@@ -102,7 +105,20 @@ cd ..
 
 It is found at `./ai-hedge-fund`, a sibling `../ai-hedge-fund`, or wherever `GLASSBENCH_AIHF_DIR` points. Its own prices and fundamentals come from [Financial Datasets](https://www.financialdatasets.ai): add `FINANCIAL_DATASETS_API_KEY` to `.env`. Its key is free and its data prepaid, about $0.02 a request, and a run takes four to six. Its entry plan returns the last twelve months only, and each investor agent needs four filed quarters, so on that plan pick a recent date. Without that key, pick **Yahoo Finance (free)** under Data: Glassbench's own adapter (Yahoo Finance prices, SEC EDGAR statements), not native to AI Hedge Fund, so results might not be ideal, and labelled on every run that uses it. Then choose AI Hedge Fund in **New run**: a library strategy or your own analysts, one model for all of them, and the data.
 
-**5. Start.**
+**5. Optional: Vibe-Trading.**
+
+```powershell
+git clone https://github.com/HKUDS/Vibe-Trading.git
+cd Vibe-Trading
+py -3.11 -m venv .venv            # its own environment
+.\.venv\Scripts\python.exe -m pip install --require-hashes -r requirements-lock.txt
+.\.venv\Scripts\python.exe -m pip install --no-deps -e .
+cd ..
+```
+
+It is found at `./Vibe-Trading`, a sibling `../Vibe-Trading`, or wherever `GLASSBENCH_VT_DIR` points. On Windows, keep Glassbench in a short folder or turn on long paths: a committee's working files sit about 135 characters below the run folder. It runs on DeepSeek or on a local model (below). Choose Vibe-Trading in **New run**, then its investment committee or one research agent, and a model. Sessions you ran in Vibe-Trading's own app come in through **Import from Vibe-Trading** on the Vibe-Trading tab, which reads `~/.vibe-trading` or wherever `GLASSBENCH_VT_HOME` points.
+
+**6. Start.**
 
 ```powershell
 .\glassbench.ps1                  # Mac or Linux: ./glassbench.sh
@@ -117,12 +133,16 @@ cd backend
 python -m deskapp run NVDA --analysts market,news,fundamentals
 ```
 
+**Local models, no API key.** Glassbench also runs on a model served from your own machine: Ollama, LM Studio, llama.cpp's `llama-server` or any server with an OpenAI compatible `/v1` endpoint. Set `OLLAMA_BASE_URL` in `.env` to that address (Ollama's default, `http://localhost:11434/v1`, needs nothing), choose **Ollama (local)** in **New run** and type the model id the server serves as both models. Tokens, calls and reports are recorded as for any provider, at a cost of $0. Setup, speed and a comparison with DeepSeek are in [results/local-models](results/local-models/).
+
 ## The runs database
 
-`data/desk.db` is SQLite, and this repository ships the author's own database as a courtesy: 100 runs on 14 tickers (NVDA, AAPL, MSFT, INTC, PFE, JPM, KO, MCD, O, T, TSLA, XOM, AMZN, GOOGL), September and October 2026.
+`data/desk.db` is SQLite, and this repository ships the author's own database as a courtesy: 117 runs on 15 tickers (NVDA, AAPL, MSFT, INTC, PFE, JPM, KO, MCD, O, T, TSLA, XOM, AMZN, GOOGL, META), September and October 2026.
 
 - **TradingAgents, 88 runs** on 0.4.0, 0.5.0, 0.5.1 and 0.6.0, with DeepSeek V4 Flash as the quick model and V4 Pro as the deep model. They include the two Microsoft runs from the video that disagree on the same day, the NVIDIA run that became a paper order, a weekly backtest pilot, matched pairs of variants, and a batch of twin runs on eight stocks (25 September 2026) in which seven runs failed when the DeepSeek balance ran out; they stay in the database as failed. Each run's reports, tool outputs and final state are under `data/runs/<run_id>/`.
+- **TradingAgents on local models, 13 runs** on 0.6.0, 28 October 2026, served by llama.cpp on one desktop at no API cost, memory off: 8 on Qwen3.6-35B-A3B (NVIDIA, Apple, Microsoft, Amazon, Alphabet, Meta, Tesla, JPMorgan), 3 on Qwen3-30B-A3B-Instruct-2507 and 2 on the dense Qwen3.8-27B. A run took about 10 minutes on the two mixture-of-experts models and about 50 on the dense one. Setup and speed are in [results/local-models](results/local-models/).
 - **AI Hedge Fund, 12 runs** with DeepSeek V4.1 Flash. Nine on 2.4.0: four complete cycles on four companies and four strategies (NVIDIA, Apple, JPMorgan and Tesla, late August to mid September 2026), one more on NVIDIA in October, and four that show the limits of the entry data plan: two dates older than its twelve months fail, and on two others the investor agents had fewer than four filed quarters and abstained. Three on 2.5.0, all NVIDIA on 8 October 2026 with Deep Value: one on Financial Datasets (Hold) and two on the free route (Overweight both times), labelled as free data. One draw per route at most, so the ratings show that the routes can disagree, not why.
+- **Vibe-Trading, 4 runs** on 0.1.18, all NVIDIA on 28 October 2026. One research agent on DeepSeek V4 Flash (Buy). Three investment committees on local Qwen3.6-35B-A3B: the first two failed and stay in the database as failed (a reply that ran to 84k tokens with queued requests timing out behind it, then a researcher whose context filled), and they set the local settings the driver now uses (replies capped at 4,096 tokens, one agent at a time, at most 10 steps each). The third finished at Underweight in 28 minutes at no API cost; the same committee on DeepSeek, outside this database, said Buy.
 
 AI Hedge Fund runs publish derived outputs only: each analyst's signal and reasoning, the blend, the weights and the simulated fill (`record.json`). Financial Datasets responses and the prompts that quote them stay out of the repository, because its licence allows sharing only what is derived from the data; the event log records each data call as a row count and a date span. Runs on the free route are published the same way.
 
@@ -198,8 +218,10 @@ glassbench/
 ├── backend/deskapp/
 │   ├── adapter.py      every TradingAgents node name, state key and parser (the one file to fix after an engine update)
 │   ├── capture.py      LangChain callbacks and engine warnings turned into events
-│   ├── runner.py       runs the graph with streaming, memory and reports; hands AI Hedge Fund runs to aihf.py
+│   ├── runner.py       runs the graph with streaming, memory and reports; hands AI Hedge Fund and Vibe-Trading runs to their adapters
 │   ├── aihf.py         AI Hedge Fund: what the clone offers, the subprocess runner, costs, the rating mapping
+│   ├── vibe.py         Vibe-Trading: committee and single-agent layouts, the subprocess runner, the closing block's rating
+│   ├── vibe_import.py  sessions and swarm runs from Vibe-Trading's own app, imported on their original timeline
 │   ├── runconfig.py    one engine config per run (the engine keeps a process-wide one)
 │   ├── variants.py     runtime variants: prompt wording, SEC EDGAR statements and valuation
 │   ├── edgar.py        point-in-time fundamentals from SEC EDGAR
@@ -211,8 +233,8 @@ glassbench/
 │   ├── store.py        SQLite, events, full-text index
 │   ├── api.py          REST and Server-Sent Events (replay, then live)
 │   └── settings.py     paths, models, price table, engine config
-├── backend/drivers/    aihf_driver.py: one AI Hedge Fund cycle inside its own environment, printed as events
-├── backend/tests/      adapter, backtest, simulator, variants, run config, AI Hedge Fund
+├── backend/drivers/    aihf_driver.py and vt_driver.py: one AI Hedge Fund cycle or one Vibe-Trading analysis inside its own environment, printed as events
+├── backend/tests/      adapter, backtest, simulator, variants, run config, AI Hedge Fund, Vibe-Trading
 ├── frontend/src/       React and TypeScript (Vite)
 ├── data/               the runs database and the run files
 ├── results/            local-models/: TradingAgents on local models, ratings, speed, reports

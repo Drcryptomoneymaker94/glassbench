@@ -1,0 +1,152 @@
+# Insider Transactions data for JPM
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,2500,882026.0,,Sale at price 352.81 per share.,LEOPOLD ROBIN,Officer,,2026-09-10,D
+1,2500,903518.0,,Sale at price 361.41 per share.,LEOPOLD ROBIN,Officer,,2026-08-11,D
+2,166,0.0,,Stock Gift at price 0.00 per share.,FRIEDMAN STACEY R.,General Counsel,,2026-07-27,D
+3,864,0.0,,Stock Gift at price 0.00 per share.,PETNO DOUGLAS B,Officer,,2026-07-24,D
+4,122,40000.0,,Stock Award(Grant) at price 327.33 per share.,ROMETTY VIRGINIA M,Director,,2026-06-30,D
+5,137,45000.0,,Stock Award(Grant) at price 327.33 per share.,HOBSON MELLODY L,Director,,2026-06-30,D
+6,171,56250.0,,Stock Award(Grant) at price 327.33 per share.,BURKE STEPHEN B,Director,,2026-06-30,D
+7,122,40000.0,,Stock Award(Grant) at price 327.33 per share.,NOVAKOVIC PHEBE N,Director,,2026-06-30,D
+8,5467,1808121.0,,Sale at price 330.73 per share.,FRIEDMAN STACEY R.,General Counsel,,2026-06-22,D
+9,5468,1641856.0,,Sale at price 300.27 per share.,FRIEDMAN STACEY R.,General Counsel,,2026-05-20,D
+10,5659,1697983.0,,Sale at price 300.05 per share.,PETNO DOUGLAS B,Officer,,2026-05-15,D
+11,6648,1983527.0,,Sale at price 298.36 per share.,ERDOES MARY E.,Officer,,2026-05-15,D
+12,6427,1917531.0,,Sale at price 298.36 per share.,LAKE MARIANNE,Officer,,2026-05-15,I
+13,3165,949658.0,,Sale at price 300.05 per share.,BEER LORI A,Chief Technology Officer,,2026-05-15,D
+14,135027,0.0,,Stock Gift at price 0.00 per share.,PETNO DOUGLAS B,Officer,,2026-05-14,D
+15,3022,935032.0,,Sale at price 309.41 per share.,BARNUM JEREMY,Chief Financial Officer,,2026-05-05,D
+16,4070,1259356.0,,Sale at price 309.42 per share.,BACON ASHLEY,Officer,,2026-05-05,D
+17,4919,1522037.0,,Sale at price 309.42 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2026-05-05,D
+18,5611,1720064.0,,Sale at price 306.55 per share.,BARNUM JEREMY,Chief Financial Officer,,2026-04-15,D
+19,12345,3784554.0,,Sale at price 306.57 per share.,ERDOES MARY E.,Officer,,2026-04-15,D
+20,5660,1735219.0,,Sale at price 306.58 per share.,PETNO DOUGLAS B,Officer,,2026-04-15,D
+21,6427,1970304.0,,Sale at price 306.57 per share.,LAKE MARIANNE,Officer,,2026-04-15,I
+22,7558,2316931.0,,Sale at price 306.55 per share.,BACON ASHLEY,Officer,,2026-04-15,D
+23,9136,2800713.0,,Sale at price 306.56 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2026-04-15,D
+24,130488,40002010.0,,Sale at price 306.56 per share.,DIMON JAMES,Chief Executive Officer,,2026-04-15,D
+25,3166,970660.0,,Sale at price 306.59 per share.,BEER LORI A,Chief Technology Officer,,2026-04-15,D
+26,135,40000.0,,Stock Award(Grant) at price 294.16 per share.,ROMETTY VIRGINIA M,Director,,2026-03-31,D
+27,152,45000.0,,Stock Award(Grant) at price 294.16 per share.,HOBSON MELLODY L,Director,,2026-03-31,D
+28,191,56250.0,,Stock Award(Grant) at price 294.16 per share.,BURKE STEPHEN B,Director,,2026-03-31,D
+29,135,40000.0,,Stock Award(Grant) at price 294.16 per share.,NOVAKOVIC PHEBE N,Director,,2026-03-31,D
+30,72965,,,,ROHRBAUGH TROY L,Officer,,2026-03-25,D
+31,24894,,,,LEOPOLD ROBIN,Officer,,2026-03-25,D
+32,57514,,,,PIEPSZAK JENNIFER A,Chief Operating Officer,,2026-03-25,D
+33,38629,,,,BARNUM JEREMY,Chief Financial Officer,,2026-03-25,D
+34,28327,,,,BEER LORI A,Chief Technology Officer,,2026-03-25,D
+35,320473,,,,DIMON JAMES,Chief Executive Officer,,2026-03-25,D
+36,57514,,,,LAKE MARIANNE,Officer,,2026-03-25,D
+37,47213,,,,BACON ASHLEY,Officer,,2026-03-25,D
+38,48929,,,,FRIEDMAN STACEY R.,General Counsel,,2026-03-25,D
+39,84983,,,,ERDOES MARY E.,Officer,,2026-03-25,D
+40,50647,,,,PETNO DOUGLAS B,Officer,,2026-03-25,D
+41,433,127761.0,,Sale at price 295.06 per share.,LEOPOLD ROBIN,Officer,,2026-03-23,D
+42,50000,15355670.0,,Sale at price 307.11 per share.,ROHRBAUGH TROY L,Officer,,2026-02-19,D
+43,432,132684.0,,Sale at price 307.14 per share.,LEOPOLD ROBIN,Officer,,2026-02-19,D
+44,69512,21353561.0,,Sale at price 307.19 per share.,DIMON JAMES,Chief Executive Officer,,2026-02-19,I
+45,2892,886157.0,,Sale at price 306.42 per share.,BARNUM JEREMY,Chief Financial Officer,,2026-02-17,D
+46,5731,1756046.0,,Sale at price 306.41 per share.,ERDOES MARY E.,Officer,,2026-02-17,D
+47,3487,1068429.0,,Sale at price 306.40 per share.,PETNO DOUGLAS B,Officer,,2026-02-17,D
+48,3907,1197158.0,,Sale at price 306.41 per share.,LAKE MARIANNE,Officer,,2026-02-17,I
+49,3404,1042985.0,,Sale at price 306.40 per share.,FRIEDMAN STACEY R.,General Counsel,,2026-02-17,I
+50,2047,627207.0,,Sale at price 306.40 per share.,BEER LORI A,Chief Technology Officer,,2026-02-17,D
+51,132,0.0,,Stock Gift at price 0.00 per share.,LEOPOLD ROBIN,Officer,,2026-02-03,I
+52,811,0.0,,Stock Gift at price 0.00 per share.,PETNO DOUGLAS B,Officer,,2026-01-21,D
+53,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,WEINBERGER MARK A,Director,,2026-01-20,D
+54,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,ROMETTY VIRGINIA M,Director,,2026-01-20,D
+55,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,GORSKY ALEX,Director,,2026-01-20,D
+56,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,DAVIS ALICIA BOLER,Director,,2026-01-20,D
+57,90000,0.0,,Stock Gift at price 0.00 per share.,DIMON JAMES,Chief Executive Officer,,2026-01-20,D
+58,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,HOBSON MELLODY L,Director,,2026-01-20,D
+59,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,BURKE STEPHEN B,Director,,2026-01-20,D
+60,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,BAMMANN LINDA B.,Director,,2026-01-20,D
+61,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,NOVAKOVIC PHEBE N,Director,,2026-01-20,D
+62,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,SMITH BRAD D,Director,,2026-01-20,D
+63,913,280000.0,,Stock Award(Grant) at price 306.50 per share.,BUCK MICHELE G,Director,,2026-01-20,D
+64,5732,1792878.0,,Sale at price 312.78 per share.,ERDOES MARY E.,Officer,,2026-01-16,D
+65,3487,1090728.0,,Sale at price 312.80 per share.,PETNO DOUGLAS B,Officer,,2026-01-16,D
+66,3908,1222353.0,,Sale at price 312.78 per share.,LAKE MARIANNE,Chief Executive Officer,,2026-01-16,I
+67,3404,1064758.0,,Sale at price 312.80 per share.,FRIEDMAN STACEY R.,General Counsel,,2026-01-16,I
+68,7364,2303393.0,,Sale at price 312.79 per share.,BACON ASHLEY,Officer,,2026-01-16,D
+69,8571,2680888.0,,Sale at price 312.79 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2026-01-16,D
+70,2893,904890.0,,Sale at price 312.79 per share.,BARNUM JEREMY,Chief Financial Officer,,2026-01-16,D
+71,2047,640295.0,,Sale at price 312.80 per share.,BEER LORI A,Chief Technology Officer,,2026-01-16,D
+72,14742,,,,LEOPOLD ROBIN,Officer,,2026-01-13,D
+73,33918,,,,PIEPSZAK JENNIFER A,Chief Operating Officer,,2026-01-13,D
+74,14746,,,,KORABLINA ELENA A,Officer,,2026-01-13,D
+75,24882,,,,BARNUM JEREMY,Chief Financial Officer,,2026-01-13,D
+76,42788,,,,ROHRBAUGH TROY L,Officer,,2026-01-13,D
+77,17165,,,,BEER LORI A,Chief Technology Officer,,2026-01-13,D
+78,33918,,,,LAKE MARIANNE,Chief Executive Officer,,2026-01-13,D
+79,28908,,,,BACON ASHLEY,Officer,,2026-01-13,D
+80,29442,,,,FRIEDMAN STACEY R.,General Counsel,,2026-01-13,D
+81,50138,,,,ERDOES MARY E.,Officer,,2026-01-13,D
+82,29976,,,,PETNO DOUGLAS B,Chief Executive Officer,,2026-01-13,D
+83,112,36304.0,,Stock Award(Grant) at price 322.22 per share.,ROMETTY VIRGINIA M,Director,,2025-12-31,D
+84,139,45000.0,,Stock Award(Grant) at price 322.22 per share.,HOBSON MELLODY L,Director,,2025-12-31,D
+85,174,56250.0,,Stock Award(Grant) at price 322.22 per share.,BURKE STEPHEN B,Director,,2025-12-31,D
+86,116,37500.0,,Stock Award(Grant) at price 322.22 per share.,NOVAKOVIC PHEBE N,Director,,2025-12-31,D
+87,9500,0.0,,Stock Gift at price 0.00 per share.,ROHRBAUGH TROY L,Officer,,2025-11-12,D
+88,966,301311.0,,Sale at price 311.92 per share.,LEOPOLD ROBIN,Officer,,2025-11-07,D
+89,6468,0.0,,Stock Gift at price 0.00 per share.,ERDOES MARY E.,Officer,,2025-11-05,D
+90,809,0.0,,Stock Gift at price 0.00 per share.,PETNO DOUGLAS B,Chief Executive Officer,,2025-11-04,D
+91,1707,,,,KORABLINA ELENA A,Officer,,2025-10-24,D
+92,110,35000.0,,Stock Award(Grant) at price 315.43 per share.,ROMETTY VIRGINIA M,Director,,2025-09-30,D
+93,134,42500.0,,Stock Award(Grant) at price 315.43 per share.,HOBSON MELLODY L,Director,,2025-09-30,D
+94,178,56250.0,,Stock Award(Grant) at price 315.43 per share.,BURKE STEPHEN B,Director,,2025-09-30,D
+95,118,37500.0,,Stock Award(Grant) at price 315.43 per share.,NOVAKOVIC PHEBE N,Director,,2025-09-30,D
+96,9500,2830472.0,,Sale at price 297.94 per share.,BAMMANN LINDA B.,Director,,2025-09-02,D
+97,1682,0.0,,Stock Gift at price 0.00 per share.,PETNO DOUGLAS B,Officer,,2025-07-25,D
+98,120,35000.0,,Stock Award(Grant) at price 289.91 per share.,ROMETTY VIRGINIA M,Director,,2025-06-30,D
+99,155,45000.0,,Stock Award(Grant) at price 289.91 per share.,HOBSON MELLODY L,Director,,2025-06-30,D
+100,194,56250.0,,Stock Award(Grant) at price 289.91 per share.,BURKE STEPHEN B,Director,,2025-06-30,D
+101,129,37500.0,,Stock Award(Grant) at price 289.91 per share.,NOVAKOVIC PHEBE N,Director,,2025-06-30,D
+102,5201,1390972.0,,Sale at price 267.44 per share.,BACON ASHLEY,Officer,,2025-06-12,D
+103,6128,1608424.0,,Sale at price 262.47 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2025-06-05,D
+104,9429,2505410.0,,Sale at price 265.71 per share.,FRIEDMAN STACEY R.,General Counsel,,2025-05-20,D/I
+105,12274,3278087.0,,Sale at price 267.08 per share.,LAKE MARIANNE,Officer,,2025-05-16,D
+106,5873,1568605.0,,Sale at price 267.09 per share.,BEER LORI A,Chief Technology Officer,,2025-05-16,D
+107,10141,2706562.0,,Sale at price 266.89 per share.,PETNO DOUGLAS B,Officer,,2025-05-15,D
+108,37812,0.0,,Stock Gift at price 0.00 per share.,DIMON JAMES,Chief Executive Officer,,2025-05-14,I
+109,14055,3689941.0,,Sale at price 262.54 per share.,ERDOES MARY E.,Officer,,2025-05-13,D
+110,5202,1365656.0,,Sale at price 262.53 per share.,BACON ASHLEY,Officer,,2025-05-13,D
+111,12500,3288444.0,,Sale at price 263.08 per share.,ROHRBAUGH TROY L,Officer,,2025-05-12,D
+112,6129,1536931.0,,Sale at price 250.76 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2025-05-06,D
+113,40014,10034435.0,,Sale at price 250.77 per share.,BARNUM JEREMY,Chief Financial Officer,,2025-05-06,D
+114,9500,2375000.0,,Sale at price 250.00 per share.,BAMMANN LINDA B.,Director,,2025-05-06,D
+115,500,0.0,,Stock Gift at price 0.00 per share.,BAMMANN LINDA B.,Director,,2025-05-05,D
+116,133639,31495692.0,,Sale at price 235.68 per share.,DIMON JAMES,Chief Executive Officer,,2025-04-14,D
+117,142,35000.0,,Stock Award(Grant) at price 245.30 per share.,ROMETTY VIRGINIA M,Director,,2025-03-31,D
+118,183,45000.0,,Stock Award(Grant) at price 245.30 per share.,HOBSON MELLODY L,Director,,2025-03-31,D
+119,229,56250.0,,Stock Award(Grant) at price 245.30 per share.,BURKE STEPHEN B,Director,,2025-03-31,D
+120,152,37500.0,,Stock Award(Grant) at price 245.30 per share.,NOVAKOVIC PHEBE N,Director,,2025-03-31,D
+121,23084,,,,LEOPOLD ROBIN,Officer,,2025-03-25,D
+122,50150,,,,PIEPSZAK JENNIFER A,Chief Operating Officer,,2025-03-25,D
+123,29632,,,,BARNUM JEREMY,Chief Financial Officer,,2025-03-25,D
+124,67664,,,,ROHRBAUGH TROY L,Chief Executive Officer,,2025-03-25,D
+125,26269,,,,BEER LORI A,Chief Technology Officer,,2025-03-25,D
+126,297186,,,,DIMON JAMES,Chief Executive Officer,,2025-03-25,D
+127,104384,,,,PINTO DANIEL E,President,,2025-03-25,D
+128,50150,,,,LAKE MARIANNE,Chief Executive Officer,,2025-03-25,D
+129,42190,,,,BACON ASHLEY,Officer,,2025-03-25,D
+130,42190,,,,FRIEDMAN STACEY R.,General Counsel,,2025-03-25,D
+131,62888,,,,ERDOES MARY E.,Officer,,2025-03-25,D
+132,45373,,,,PETNO DOUGLAS B,Officer,,2025-03-25,D
+133,25000,6175485.0,,Sale at price 247.02 per share.,ROHRBAUGH TROY L,Officer,,2025-03-24,D
+134,1250,308652.0,,Sale at price 246.92 per share.,LEOPOLD ROBIN,Officer,,2025-03-24,D
+135,4272,1055314.0,,Sale at price 247.03 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2025-03-24,D
+136,2052,506698.0,,Sale at price 246.93 per share.,BEER LORI A,Chief Technology Officer,,2025-03-24,D
+137,37500,10118869.0,,Sale at price 269.84 per share.,ROHRBAUGH TROY L,Officer,,2025-02-20,D
+138,1250,337610.0,,Sale at price 270.09 per share.,LEOPOLD ROBIN,Officer,,2025-02-20,D
+139,4273,1153078.0,,Sale at price 269.85 per share.,PIEPSZAK JENNIFER A,Chief Operating Officer,,2025-02-20,D
+140,866361,233776513.0,,Sale at price 269.84 per share.,DIMON JAMES,Chief Executive Officer,,2025-02-20,I
+141,2053,554054.0,,Sale at price 269.88 per share.,BEER LORI A,Chief Technology Officer,,2025-02-20,D
+142,5277,1468971.0,,Sale at price 278.37 per share.,ERDOES MARY E.,Officer,,2025-02-18,D
+143,3490,971646.0,,Sale at price 278.41 per share.,PETNO DOUGLAS B,Officer,,2025-02-18,D
+144,4232,1178009.0,,Sale at price 278.36 per share.,LAKE MARIANNE,Chief Executive Officer,,2025-02-18,I
+145,3303,919371.0,,Sale at price 278.34 per share.,FRIEDMAN STACEY R.,General Counsel,,2025-02-18,D
+146,188,0.0,,Stock Gift at price 0.00 per share.,LEOPOLD ROBIN,Officer,,2025-02-10,I
+147,185936,0.0,,Stock Gift at price 0.00 per share.,DIMON JAMES,Chief Executive Officer,,2025-01-31,I
+148,1011,265000.0,,Stock Award(Grant) at price 261.88 per share.,COMBS TODD A.,Director,,2025-01-21,D
+149,1011,265000.0,,Stock Award(Grant) at price 261.88 per share.,WEINBERGER MARK A,Director,,2025-01-21,D

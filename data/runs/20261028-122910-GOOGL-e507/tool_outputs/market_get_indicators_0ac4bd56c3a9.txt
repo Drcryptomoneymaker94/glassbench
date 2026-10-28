@@ -1,0 +1,36 @@
+## boll_ub values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 363.85957555957043
+2026-10-26: 362.8336188229358
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 360.53800126188924
+2026-10-22: 358.0067288882552
+2026-10-21: 355.24525928175154
+2026-10-20: 354.80623451723574
+2026-10-19: 355.37859551478743
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 356.70546628295426
+2026-10-15: 356.8608753045474
+2026-10-14: 356.70807833057563
+2026-10-13: 356.6092860484098
+2026-10-12: 355.5880546757339
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 355.04128109957946
+2026-10-08: 354.53782527487135
+2026-10-07: 355.2148759230183
+2026-10-06: 355.4759163241847
+2026-10-05: 355.04815312303083
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 354.6974294176358
+2026-10-01: 354.62914880011806
+2026-09-30: 354.6772421619393
+2026-09-29: 354.65688975884507
+2026-09-28: 354.625692170318
+
+
+Bollinger Upper Band: Typically 2 standard deviations above the middle line. Usage: Signals potential overbought conditions and breakout zones. Tips: Confirm signals with other tools; prices may ride the band in strong trends.

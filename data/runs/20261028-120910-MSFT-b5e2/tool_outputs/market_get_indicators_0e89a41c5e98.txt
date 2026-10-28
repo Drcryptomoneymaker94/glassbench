@@ -1,0 +1,36 @@
+## close_50_sma values from 2026-09-28 to 2026-10-28:
+
+2026-10-28: N/A: Not a trading day (weekend or holiday)
+2026-10-27: 510.15490173339845
+2026-10-26: 509.11725036621095
+2026-10-25: N/A: Not a trading day (weekend or holiday)
+2026-10-24: N/A: Not a trading day (weekend or holiday)
+2026-10-23: 508.3546337890625
+2026-10-22: 507.7833612060547
+2026-10-21: 507.19185546875
+2026-10-20: 506.5901220703125
+2026-10-19: 506.0549047851562
+2026-10-18: N/A: Not a trading day (weekend or holiday)
+2026-10-17: N/A: Not a trading day (weekend or holiday)
+2026-10-16: 505.3655145263672
+2026-10-15: 504.7629296875
+2026-10-14: 503.70501098632815
+2026-10-13: 502.8688916015625
+2026-10-12: 501.7345654296875
+2026-10-11: N/A: Not a trading day (weekend or holiday)
+2026-10-10: N/A: Not a trading day (weekend or holiday)
+2026-10-09: 500.1885009765625
+2026-10-08: 498.49214904785157
+2026-10-07: 495.83607299804686
+2026-10-06: 493.0930908203125
+2026-10-05: 490.27446899414065
+2026-10-04: N/A: Not a trading day (weekend or holiday)
+2026-10-03: N/A: Not a trading day (weekend or holiday)
+2026-10-02: 487.3905255126953
+2026-10-01: 484.65718505859377
+2026-09-30: 482.1933166503906
+2026-09-29: 479.87536865234375
+2026-09-28: 477.7268511962891
+
+
+50 SMA: A medium-term trend indicator. Usage: Identify trend direction and serve as dynamic support/resistance. Tips: It lags price; combine with faster indicators for timely signals.

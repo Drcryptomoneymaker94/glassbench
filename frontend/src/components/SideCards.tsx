@@ -82,8 +82,47 @@ function AihfDecisionCard({ run }: { run: RunView }) {
   );
 }
 
+/** Vibe-Trading: the closing JSON block of the agent's answer, and how its rating was read. */
+function VibeDecisionCard({ run }: { run: RunView }) {
+  const d: Record<string, any> | undefined = run.agents.decision?.structured ?? run.decision;
+  const ended = run.status === "failed" || run.status === "cancelled";
+  const levels: [string, number | undefined][] = [["Entry", d?.entry], ["Stop", d?.stop], ["Target", d?.target]];
+  return (
+    <div className="panel panel-pad" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="panel-head">
+        <span className="panel-title">Decision</span>
+        {run.rating ? (
+          <span className="rating" style={{ color: ratingColor(run.rating), fontSize: 15 }} title={d?.rating_rule}>{run.rating}</span>
+        ) : (
+          <span className="muted" style={{ fontSize: 11.5 }}>{ended ? "no final rating" : "final rating pending"}</span>
+        )}
+      </div>
+      <div className="kv">
+        <span className="k">Rating</span>
+        <span className="v">{d?.rating_how ?? (ended ? "not reached" : "waiting")}</span>
+        <span className="rating">{d?.action ?? "—"}</span>
+        {levels.map(([k, v]) => (
+          <span key={k} style={{ display: "contents" }}>
+            <span className="k">{k}</span>
+            <span className="v num">{v == null ? "—" : fmtPrice(v)}</span>
+            <span className="rating" />
+          </span>
+        ))}
+        <span className="k">Horizon</span>
+        <span className="v">{d?.horizon ?? "—"}</span>
+        <span className="rating">{d?.confidence != null ? `${Math.round(d.confidence)}%` : ""}</span>
+      </div>
+      {d?.thesis && <p style={{ margin: 0, fontSize: 12.5 }}>{d.thesis}</p>}
+      {d?.rating_rule && <p className="muted" style={{ margin: 0, fontSize: 11.5 }}>{d.rating_rule}</p>}
+      {run.error && <p className="error" style={{ margin: 0 }}>{run.error}</p>}
+      {run.rating && <p className="advice-note">Model output from a research tool, not a recommendation to buy, sell or hold. Not investment advice.</p>}
+    </div>
+  );
+}
+
 export function DecisionCard({ run }: { run: RunView }) {
   if (run.engine === "ai_hedge_fund") return <AihfDecisionCard run={run} />;
+  if (run.engine === "vibe_trading") return <VibeDecisionCard run={run} />;
   const rm = run.agents.research_manager?.structured ?? run.decision?.research;
   const tr = run.agents.trader?.structured ?? run.decision?.trader;
   const pm = run.agents.portfolio_manager?.structured ?? run.decision?.portfolio ?? undefined;

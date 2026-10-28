@@ -1,0 +1,1 @@
+{"ok": false, "error": "run_dcf() got an unexpected keyword argument 'ebit'", "signature": "(inputs: 'Mapping[str, Any]', *, capital_structure_basis: 'str', discounting_convention: 'str', terminal_value_method: 'str', gdp_growth_ceiling: 'float' = 0.04) -> 'DCFResult'"}

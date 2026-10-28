@@ -1,0 +1,1 @@
+{"status": "ok", "query": "Nvidia stock news October 27 2026", "backends": "duckduckgo, google, bing, brave, mojeek, yahoo", "results": [], "note": "No results found after trying the enabled search sources."}

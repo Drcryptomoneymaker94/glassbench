@@ -1,0 +1,68 @@
+## Verified market data snapshot for GOOGL
+
+- Requested analysis date: 2026-10-28
+- Latest trading row used: 2026-10-27
+- Rows after the requested analysis date are excluded before verification.
+
+### Latest verified OHLCV row
+
+| Field | Value |
+|---|---:|
+| Open | 317.00 |
+| High | 323.88 |
+| Low | 316.86 |
+| Close | 320.58 |
+| Volume | 28527400 |
+
+### Verified technical indicators (latest row)
+
+| Indicator | Value |
+|---|---:|
+| close_10_ema | 330.67 |
+| close_50_sma | 341.84 |
+| close_200_sma | 340.91 |
+| rsi | 33.96 |
+| boll | 340.77 |
+| boll_ub | 363.86 |
+| boll_lb | 317.68 |
+| macd | -5.91 |
+| macds | -2.49 |
+| macdh | -3.42 |
+| atr | 8.24 |
+
+### Recent verified closes (last 30 rows)
+
+| Date | Close |
+|---|---:|
+| 2026-09-16 | 342.87 |
+| 2026-09-17 | 347.33 |
+| 2026-09-18 | 349.54 |
+| 2026-09-21 | 354.97 |
+| 2026-09-22 | 351.16 |
+| 2026-09-23 | 337.83 |
+| 2026-09-24 | 342.36 |
+| 2026-09-25 | 343.92 |
+| 2026-09-28 | 342.75 |
+| 2026-09-29 | 340.92 |
+| 2026-09-30 | 344.08 |
+| 2026-10-01 | 338.24 |
+| 2026-10-02 | 343.50 |
+| 2026-10-05 | 346.47 |
+| 2026-10-06 | 347.68 |
+| 2026-10-07 | 350.50 |
+| 2026-10-08 | 348.29 |
+| 2026-10-09 | 351.66 |
+| 2026-10-12 | 352.72 |
+| 2026-10-13 | 353.78 |
+| 2026-10-14 | 347.64 |
+| 2026-10-15 | 349.22 |
+| 2026-10-16 | 340.59 |
+| 2026-10-19 | 344.18 |
+| 2026-10-20 | 340.28 |
+| 2026-10-21 | 334.76 |
+| 2026-10-22 | 324.22 |
+| 2026-10-23 | 320.21 |
+| 2026-10-26 | 316.80 |
+| 2026-10-27 | 320.58 |
+
+Use this snapshot as the source of truth for exact OHLCV, price-level, and indicator-value claims. If another tool output conflicts with it, flag the discrepancy rather than inventing a reconciled number. Do not claim historical validation, support/resistance bounces, or exact percentage moves unless directly supported by tool output with concrete dates and prices.

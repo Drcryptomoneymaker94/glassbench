@@ -1,0 +1,6 @@
+## Polymarket prediction markets: "AI technology"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will OpenAI rename itself to OpenSI?** — Yes 11% ($28,850 volume, resolves 2027-01-01, 1-week +2.9pp)
+- **Exponential Time Hypothesis disproof confirmed by June 30, 2027?** — Yes 76% ($7,339 volume, resolves 2027-07-01)
+- **Exponential Time Hypothesis disproof confirmed by December 31, 2026?** — Yes 52% ($4,082 volume, resolves 2027-01-01)

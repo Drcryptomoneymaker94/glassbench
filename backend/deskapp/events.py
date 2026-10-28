@@ -22,12 +22,14 @@ class EventBus:
         self._seq: dict[str, int] = {}
         self._subs: dict[str, list[asyncio.Queue]] = defaultdict(list)
 
-    def emit(self, run_id: str, type_: str, agent: str | None = None, **payload) -> dict:
+    def emit(self, run_id: str, type_: str, agent: str | None = None, *, at: float | None = None, **payload) -> dict:
+        """at: the event's original time, for runs imported from another app's log; None stamps it now."""
         with self._lock:
             if run_id not in self._seq:
                 self._seq[run_id] = self.store.last_seq(run_id)
             self._seq[run_id] += 1
-            event = {"run_id": run_id, "seq": self._seq[run_id], "ts": time.time(), "type": type_, "agent": agent, "payload": payload}
+            event = {"run_id": run_id, "seq": self._seq[run_id], "ts": at if at is not None else time.time(), "type": type_,
+                     "agent": agent, "payload": payload}
             self.store.add_event(event)
             run_dir = RUNS_DIR / run_id
             run_dir.mkdir(parents=True, exist_ok=True)

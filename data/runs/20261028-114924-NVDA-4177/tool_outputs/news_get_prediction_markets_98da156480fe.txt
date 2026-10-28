@@ -1,0 +1,9 @@
+## Polymarket prediction markets: "NVDA"
+Live, market-implied probabilities (higher traded volume = deeper, more reliable). A probability is the crowd's priced odds of the event, not a forecast you should take as certain.
+
+- **Will NVIDIA (NVDA) hit (LOW) $192 in October?** — Yes 1% ($18,835 volume, resolves 2026-11-01, 1-week -3.4pp)
+- **Will NVIDIA (NVDA) hit (LOW) $208 in October?** — Yes 12% ($17,275 volume, resolves 2026-11-01, 1-week -16.0pp)
+- **Will NVIDIA (NVDA) hit (LOW) $200 in October?** — Yes 2% ($14,338 volume, resolves 2026-11-01, 1-week -9.1pp)
+- **Will NVIDIA (NVDA) hit (HIGH) $264 in October?** — Yes 3% ($7,439 volume, resolves 2026-11-01, 1-week -1.1pp)
+- **Will NVIDIA (NVDA) hit (HIGH) $248 in October?** — Yes 3% ($6,894 volume, resolves 2026-11-01, 1-week -5.0pp)
+- **Will NVIDIA (NVDA) hit (HIGH) $224 in October?** — Yes 54% ($6,883 volume, resolves 2026-11-01, 1-week -26.5pp)

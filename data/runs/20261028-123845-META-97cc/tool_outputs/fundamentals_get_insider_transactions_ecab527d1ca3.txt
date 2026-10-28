@@ -1,0 +1,152 @@
+# Insider Transactions data for META
+,Shares,Value,URL,Text,Insider,Position,Transaction,Start Date,Ownership
+0,1575,1113840.0,,Sale at price 707.20 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-10-19,D/I
+1,1575,1146758.0,,Sale at price 728.10 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-10-12,D/I
+2,1575,1146726.0,,Sale at price 728.08 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-10-05,D/I
+3,1575,1180966.0,,Sale at price 748.91 - 750.42 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-09-28,D/I
+4,27474,21359454.0,,Sale at price 775.32 - 779.33 per share.,ZUCKERBERG MARK,Chief Executive Officer,,2026-09-24,I
+5,17140,,,,ZUCKERBERG MARK,Chief Executive Officer,,2026-09-24,I
+6,1575,1071425.0,,Sale at price 680.27 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-09-21,D/I
+7,40000,28510260.0,,Sale at price 700.50 - 725.02 per share.,COX CHRISTOPHER K,Officer,,2026-09-21,I
+8,20000,13504556.0,,Sale at price 675.23 per share.,COX CHRISTOPHER K,Officer,,2026-09-15,I
+9,1575,1035925.0,,Sale at price 657.73 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-09-14,D/I
+10,20000,13005575.0,,Sale at price 650.21 - 651.15 per share.,COX CHRISTOPHER K,Officer,,2026-09-09,I
+11,5354,3301175.0,,Sale at price 612.21 - 622.99 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-09-08,D/I
+12,3240,2002508.0,,Sale at price 618.06 per share.,ANDERSON AARON,Officer,,2026-09-03,D
+13,1559,847581.0,,Sale at price 543.67 per share.,MAHONEY CURTIS J,Officer,,2026-08-18,D
+14,9196,5063389.0,,Sale at price 547.51 - 560.63 per share.,LI SUSAN J.,Chief Financial Officer,,2026-08-18,I
+15,7848,4379184.0,,Sale at price 558.00 per share.,BOSWORTH ANDREW,Chief Technology Officer,,2026-08-18,D
+16,2127,1467311.0,,Sale at price 689.85 per share.,LI SUSAN J.,Chief Financial Officer,,2026-08-14,I
+17,103,,,,COLLISON PATRICK,Director,,2026-08-14,D
+18,4757,,,,MAHONEY CURTIS J,Officer,,2026-08-14,D
+19,18245,,,,LI SUSAN J.,Chief Financial Officer,,2026-08-14,I
+20,7732,,,,POWELL DINA H,President,,2026-08-14,D
+21,167,,,,ARNOLD JOHN DOUGLAS,Director,,2026-08-14,D
+22,110,,,,SONGHURST CHARLES,Director,,2026-08-14,D
+23,110,,,,WHITE DANA,Director,,2026-08-14,D
+24,16389,,,,BOSWORTH ANDREW,Chief Technology Officer,,2026-08-14,D
+25,16388,,,,OLIVAN JAVIER,Chief Operating Officer,,2026-08-14,D
+26,110,,,,ELKANN JOHN PHILIPP,Director,,2026-08-14,D
+27,2448,,,,ANDERSON AARON,Officer,,2026-08-14,D
+28,16388,,,,COX CHRISTOPHER K,Officer,,2026-08-14,I
+29,1692,1016373.0,,Sale at price 600.00 - 607.14 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-08-10,D/I
+30,426,250907.0,,Sale at price 588.16 - 591.69 per share.,ANDREESSEN MARC L,Director,,2026-08-04,I
+31,500,280780.0,,Sale at price 561.56 per share.,KIMMITT ROBERT M,Director,,2026-08-03,D
+32,591690,0.0,,Stock Gift at price 0.00 per share.,ZUCKERBERG MARK,Chief Executive Officer,,2026-07-31,I
+33,464,252212.0,,Sale at price 543.56 per share.,ALFORD PEGGY,Director,,2026-07-31,I
+34,591690,,,,ZUCKERBERG MARK,Chief Executive Officer,,2026-07-31,I
+35,1466,891108.0,,Sale at price 607.85 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-07-27,D/I
+36,1466,946816.0,,Sale at price 645.85 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-07-20,D/I
+37,2163,1429787.0,,Sale at price 660.98 - 661.13 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-07-13,D/I
+38,5235,3145422.0,,Sale at price 600.00 - 603.14 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-07-06,D/I
+39,500,303875.0,,Sale at price 607.75 per share.,KIMMITT ROBERT M,Director,,2026-07-01,D
+40,1398,838800.0,,Sale at price 600.00 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-06-15,D/I
+41,504,317162.0,,Sale at price 629.29 per share.,KIMMITT ROBERT M,Director,,2026-06-01,D
+42,1466,922539.0,,Sale at price 629.29 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-06-01,D/I
+43,2079,1268024.0,,Sale at price 609.92 per share.,MAHONEY CURTIS J,Officer,,2026-05-27,D
+44,1466,892765.0,,Sale at price 608.98 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-05-26,D/I
+45,11322,6904533.0,,Sale at price 604.63 - 618.43 per share.,LI SUSAN J.,Chief Financial Officer,,2026-05-18,I
+46,7847,4769642.0,,Sale at price 604.51 - 611.83 per share.,BOSWORTH ANDREW,Chief Technology Officer,,2026-05-18,D
+47,1466,893307.0,,Sale at price 609.35 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-05-18,D/I
+48,767,,,,TAN HOCK E,Director,,2026-05-15,D
+49,600,,,,KIMMITT ROBERT M,Director,,2026-05-15,D
+50,703,,,,COLLISON PATRICK,Director,,2026-05-15,D
+51,6342,,,,MAHONEY CURTIS J,Officer,,2026-05-15,D
+52,600,,,,XU TONY,Director,,2026-05-15,D
+53,18243,,,,LI SUSAN J.,Chief Financial Officer,,2026-05-15,I
+54,9635,,,,POWELL DINA H,President,,2026-05-15,D
+55,767,,,,ARNOLD JOHN DOUGLAS,Director,,2026-05-15,D
+56,709,,,,SONGHURST CHARLES,Director,,2026-05-15,D
+57,709,,,,WHITE DANA,Director,,2026-05-15,D
+58,16388,,,,BOSWORTH ANDREW,Chief Technology Officer,,2026-05-15,D
+59,480,,,,ANDREESSEN MARC L,Director,,2026-05-15,I
+60,600,,,,TRAVIS TRACEY THOMAS,Director,,2026-05-15,D
+61,16388,,,,OLIVAN JAVIER,Chief Operating Officer,,2026-05-15,D
+62,709,,,,ELKANN JOHN PHILIPP,Director,,2026-05-15,D
+63,600,,,,KILLEFER NANCY,Director,,2026-05-15,D
+64,16388,,,,COX CHRISTOPHER K,Officer,,2026-05-15,I
+65,2451,,,,ANDERSON AARON,Officer,,2026-05-15,D
+66,600,,,,HOUSTON ANDREW W,Director,,2026-05-15,D
+67,600,,,,ALFORD PEGGY,Director,,2026-05-15,I
+68,1555,940106.0,,Sale at price 604.57 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-05-11,D/I
+69,1555,945036.0,,Sale at price 607.74 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-05-04,D/I
+70,409,251343.0,,Sale at price 614.53 per share.,ALFORD PEGGY,Director,,2026-05-01,I
+71,1555,1043156.0,,Sale at price 670.84 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-04-27,D/I
+72,1555,1057540.0,,Sale at price 680.09 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-04-20,D/I
+73,580,386860.0,,Sale at price 667.00 per share.,KIMMITT ROBERT M,Director,,2026-04-15,D
+74,4665,2936559.0,,Sale at price 626.24 - 634.68 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-04-13,D/I
+75,1555,941366.0,,Sale at price 605.38 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-03-23,D/I
+76,580,366572.0,,Sale at price 632.02 per share.,KIMMITT ROBERT M,Director,,2026-03-16,D
+77,1555,982791.0,,Sale at price 632.02 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-03-16,D/I
+78,1555,987332.0,,Sale at price 634.94 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-03-09,D/I
+79,1555,990862.0,,Sale at price 637.21 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-03-02,D/I
+80,56571,36471144.0,,Sale at price 640.11 - 648.83 per share.,LI SUSAN J.,Chief Financial Officer,,2026-02-27,I
+81,392,252056.0,,Sale at price 643.00 per share.,ALFORD PEGGY,Director,,2026-02-25,I
+82,55702,35293175.0,,Sale at price 630.31 - 637.94 per share.,LI SUSAN J.,Chief Financial Officer,,2026-02-24,I
+83,1555,1014917.0,,Sale at price 652.68 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-02-23,D/I
+84,18789,12212850.0,,Sale at price 650.00 per share.,LI SUSAN J.,Chief Financial Officer,,2026-02-20,I
+85,167,0.0,,Stock Gift at price 0.00 per share.,ANDERSON AARON,Officer,,2026-02-18,D
+86,8089,5106082.0,,Sale at price 630.68 - 632.49 per share.,BOSWORTH ANDREW,Chief Technology Officer,,2026-02-18,D
+87,580,370724.0,,Sale at price 639.18 per share.,KIMMITT ROBERT M,Director,,2026-02-17,D
+88,3262,2086457.0,,Sale at price 639.18 - 639.77 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-02-17,D/I
+89,167,,,,TAN HOCK E,Director,,2026-02-13,D
+90,6418,4106044.0,,Sale at price 639.77 per share.,LI SUSAN J.,Chief Financial Officer,,2026-02-13,I
+91,102,,,,COLLISON PATRICK,Director,,2026-02-13,D
+92,189,,,,XU TONY,Director,,2026-02-13,D
+93,36367,,,,LI SUSAN J.,Chief Financial Officer,,2026-02-13,I
+94,2024,,,,POWELL DINA H,President,,2026-02-13,D
+95,167,,,,ARNOLD JOHN DOUGLAS,Director,,2026-02-13,D
+96,110,,,,SONGHURST CHARLES,Director,,2026-02-13,D
+97,110,,,,WHITE DANA,Director,,2026-02-13,D
+98,16902,,,,BOSWORTH ANDREW,Chief Technology Officer,,2026-02-13,D
+99,16903,,,,OLIVAN JAVIER,Chief Operating Officer,,2026-02-13,D
+100,110,,,,ELKANN JOHN PHILIPP,Director,,2026-02-13,D
+101,2114,,,,ANDERSON AARON,Officer,,2026-02-13,D
+102,16903,,,,COX CHRISTOPHER K,Officer,,2026-02-13,I
+103,517,342869.0,,Sale at price 663.19 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-02-09,D
+104,517,369448.0,,Sale at price 714.60 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-02-02,D
+105,517,343805.0,,Sale at price 665.00 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-01-26,D
+106,517,314517.0,,Sale at price 608.35 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-01-20,D
+107,580,358602.0,,Sale at price 618.28 per share.,KIMMITT ROBERT M,Director,,2026-01-15,D
+108,517,337601.0,,Sale at price 653.00 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-01-12,D
+109,517,336262.0,,Sale at price 650.41 per share.,OLIVAN JAVIER,Chief Operating Officer,,2026-01-05,D
+110,519,341860.0,,Sale at price 658.69 per share.,NEWSTEAD JENNIFER,Officer,,2025-12-30,D
+111,517,340258.0,,Sale at price 658.14 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-12-29,D
+112,519,342218.0,,Sale at price 659.38 per share.,NEWSTEAD JENNIFER,Officer,,2025-12-23,D
+113,517,341794.0,,Sale at price 661.11 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-12-22,D
+114,519,333836.0,,Sale at price 643.23 per share.,NEWSTEAD JENNIFER,Officer,,2025-12-16,D
+115,580,374680.0,,Sale at price 646.00 per share.,KIMMITT ROBERT M,Director,,2025-12-15,D
+116,517,333982.0,,Sale at price 646.00 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-12-15,D
+117,519,344699.0,,Sale at price 664.16 per share.,NEWSTEAD JENNIFER,Officer,,2025-12-09,D
+118,517,346199.0,,Sale at price 669.63 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-12-08,D
+119,519,333312.0,,Sale at price 642.22 per share.,NEWSTEAD JENNIFER,Officer,,2025-12-02,D
+120,517,330379.0,,Sale at price 639.03 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-12-01,D
+121,600,0.0,,Stock Gift at price 0.00 per share.,KIMMITT ROBERT M,Director,,2025-11-26,D
+122,519,323929.0,,Sale at price 624.14 per share.,NEWSTEAD JENNIFER,Officer,,2025-11-25,D
+123,517,309445.0,,Sale at price 598.54 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-11-24,D
+124,33583,0.0,,Stock Gift at price 0.00 per share.,LI SUSAN J.,Chief Financial Officer,,2025-11-20,I
+125,2859,0.0,,Stock Gift at price 0.00 per share.,NEWSTEAD JENNIFER,Officer,,2025-11-19,D
+126,519,307040.0,,Sale at price 591.60 per share.,NEWSTEAD JENNIFER,Officer,,2025-11-18,D
+127,11690,6935743.0,,Sale at price 590.64 - 596.95 per share.,BOSWORTH ANDREW,Chief Technology Officer,,2025-11-18,D
+128,726,429502.0,,Sale at price 591.60 per share.,ANDERSON AARON,Officer,,2025-11-18,D
+129,600,365610.0,,Sale at price 609.35 per share.,KIMMITT ROBERT M,Director,,2025-11-17,D
+130,3127,1903077.0,,Sale at price 604.23 - 609.46 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-11-17,D
+131,167,,,,TAN HOCK E,Director,,2025-11-14,D
+132,6875,4190038.0,,Sale at price 609.46 per share.,LI SUSAN J.,Chief Financial Officer,,2025-11-14,I
+133,5063,3085696.0,,Sale at price 609.46 per share.,BOSWORTH ANDREW,Chief Technology Officer,,2025-11-14,D
+134,103,,,,COLLISON PATRICK,Director,,2025-11-14,D
+135,24421,,,,BOSWORTH ANDREW,Chief Technology Officer,,2025-11-14,D
+136,103,,,,POWELL DINA H,Director,,2025-11-14,D
+137,167,,,,ARNOLD JOHN DOUGLAS,Director,,2025-11-14,D
+138,109,,,,SONGHURST CHARLES,Director,,2025-11-14,D
+139,109,,,,WHITE DANA,Director,,2025-11-14,D
+140,36367,,,,LI SUSAN J.,Chief Financial Officer,,2025-11-14,I
+141,16900,,,,OLIVAN JAVIER,Chief Operating Officer,,2025-11-14,D
+142,109,,,,ELKANN JOHN PHILIPP,Director,,2025-11-14,D
+143,16900,,,,COX CHRISTOPHER K,Officer,,2025-11-14,I
+144,2114,,,,ANDERSON AARON,Officer,,2025-11-14,D
+145,16723,,,,NEWSTEAD JENNIFER,Officer,,2025-11-14,D
+146,189,,,,XU TONY,Director,,2025-11-14,D
+147,516,325596.0,,Sale at price 631.00 per share.,NEWSTEAD JENNIFER,Officer,,2025-11-10,D
+148,517,326227.0,,Sale at price 631.00 per share.,OLIVAN JAVIER,Chief Operating Officer,,2025-11-10,D
+149,519,325932.0,,Sale at price 628.00 per share.,NEWSTEAD JENNIFER,Officer,,2025-11-04,D

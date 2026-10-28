@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, type Meta, type Run, type SearchResult } from "../api";
+import { api, type Meta, type Run, type SearchResult, type VibeSession } from "../api";
 import { RunDots } from "../components/CommitteeBoard";
 import { DownloadIcon, PlusIcon } from "../components/Icons";
 import { EMPTY_FILTERS, RATINGS, RunFilters, applyFilters, engineName, modelLabel, versionLabel, versionTitle, type Filters } from "../components/RunFilters";
@@ -17,12 +17,21 @@ const AGENT_NAMES: Record<string, string> = {
 const KIND: Record<string, string> = { "report.updated": "report", "llm.reasoning": "reasoning", "tool.result": "tool result", "tool.called": "tool call", "data.flag": "flag", "decision.structured": "decision", "run.failed": "error" };
 
 type SortKey = "created" | "ticker" | "trade_date" | "rating" | "duration" | "cost" | "flags";
-type FrameworkView = "all" | "tradingagents" | "ai_hedge_fund";
+type FrameworkView = "all" | "tradingagents" | "ai_hedge_fund" | "vibe_trading";
+type Engine = Exclude<FrameworkView, "all">;
 const FRAMEWORK_VIEWS: { id: FrameworkView; label: string }[] = [
   { id: "all", label: "All" },
   { id: "tradingagents", label: "TradingAgents" },
   { id: "ai_hedge_fund", label: "AI Hedge Fund" },
+  { id: "vibe_trading", label: "Vibe-Trading" },
 ];
+/** Entry, stop, target and horizon: the trader and portfolio manager on TradingAgents, the closing block on Vibe-Trading. */
+const levelsOf = (r: Run): { entry?: number; stop?: number; target?: number; horizon?: string } => {
+  const d: Record<string, any> | undefined = r.decision ?? undefined;
+  if (r.engine === "vibe_trading") return { entry: d?.entry ?? undefined, stop: d?.stop ?? undefined, target: d?.target ?? undefined, horizon: d?.horizon ?? undefined };
+  return { entry: d?.trader?.entry_price ?? undefined, stop: d?.trader?.stop_loss ?? undefined, target: d?.portfolio?.price_target ?? undefined, horizon: d?.portfolio?.time_horizon ?? undefined };
+};
+const engineOf = (r: Run): Engine => (r.engine === "ai_hedge_fund" || r.engine === "vibe_trading" ? r.engine : "tradingagents");
 const duration = (r: Run) => (r.started_at ? (r.finished_at ?? Date.now() / 1000) - r.started_at : -1);
 const SORTERS: Record<SortKey, (r: Run) => number | string> = {
   created: (r) => r.created_at,
@@ -48,6 +57,7 @@ export default function RunsPage({ meta }: { meta: Meta }) {
   const [runs, setRuns] = useState<Run[]>();
   const [error, setError] = useState<string>();
   const [dialog, setDialog] = useState(false);
+  const [importing, setImporting] = useState(false);
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [search, setSearch] = useState<SearchResult>();
   const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({ key: "created", dir: -1 });
@@ -70,12 +80,12 @@ export default function RunsPage({ meta }: { meta: Meta }) {
   const snippets = useMemo(() => new Map(search?.runs.map((r) => [r.run_id, r]) ?? []), [search]);
 
   const counts = useMemo(() => {
-    const c = { all: runs?.length ?? 0, tradingagents: 0, ai_hedge_fund: 0 };
-    for (const r of runs ?? []) c[(r.engine || "tradingagents") === "ai_hedge_fund" ? "ai_hedge_fund" : "tradingagents"] += 1;
+    const c = { all: runs?.length ?? 0, tradingagents: 0, ai_hedge_fund: 0, vibe_trading: 0 };
+    for (const r of runs ?? []) c[engineOf(r)] += 1;
     return c;
   }, [runs]);
   const inFramework = useMemo(
-    () => (runs ?? []).filter((r) => framework === "all" || ((r.engine || "tradingagents") === "ai_hedge_fund" ? "ai_hedge_fund" : "tradingagents") === framework),
+    () => (runs ?? []).filter((r) => framework === "all" || engineOf(r) === framework),
     [runs, framework],
   );
 
@@ -130,16 +140,23 @@ export default function RunsPage({ meta }: { meta: Meta }) {
 
       <div className="cta-bar">
         <div>
-          <b>{framework === "ai_hedge_fund" ? "Run the fund on a ticker" : "Run the agents on a ticker"}</b>
+          <b>{framework === "ai_hedge_fund" ? "Run the fund on a ticker" : framework === "vibe_trading" ? "Run the research agent on a ticker" : "Run the agents on a ticker"}</b>
           <span className="muted">
             {framework === "ai_hedge_fund"
               ? "Pick a strategy and a date; each analyst scores the stock, the strategy blends, a simulated broker fills. Every call is logged."
+              : framework === "vibe_trading"
+              ? "Vibe-Trading's investment committee or one research agent, read-only tools, closing on a rating. Sessions from its own app can be imported."
               : "Pick stocks, a date and the analysts; watch the twelve agents work and keep the full log."}
           </span>
         </div>
-        <button className="btn btn-primary btn-lg" onClick={() => setDialog(true)}>
-          <PlusIcon /> New run
-        </button>
+        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 8, flexShrink: 0 }}>
+          {framework === "vibe_trading" && meta.engines?.vibe_trading?.installed && (
+            <button className="btn btn-lg" onClick={() => setImporting(true)}>Import from Vibe-Trading</button>
+          )}
+          <button className="btn btn-primary btn-lg" onClick={() => setDialog(true)}>
+            <PlusIcon /> New run
+          </button>
+        </div>
       </div>
 
       <section className="panel">
@@ -176,7 +193,7 @@ export default function RunsPage({ meta }: { meta: Meta }) {
               </thead>
               <tbody>
                 {shown.map((r) => {
-                  const d = r.decision;
+                  const lv = levelsOf(r);
                   const dash = <span className="muted">—</span>;
                   const hit = snippets.get(r.id);
                   const open = () => navigate(`/runs/${r.id}`);
@@ -189,6 +206,7 @@ export default function RunsPage({ meta }: { meta: Meta }) {
                       <td style={{ fontWeight: 700 }}>
                         {r.ticker}
                         {r.purpose === "backtest" && <span className="tag-bt" title={`Backtest run · memory ${r.memory ?? "off"}`}>BT</span>}
+                        {r.purpose === "imported" && <span className="tag-variant" title="Run in Vibe-Trading's own app and imported: its own prompt, tools and date, not a controlled Glassbench run">imported</span>}
                         {r.data_source === "yahoo" && <span className="tag-variant" title="Free Yahoo Finance and SEC EDGAR data through Glassbench's adapter, not native to AI Hedge Fund">free data</span>}
                       </td>
                       <td className="num">{r.trade_date}</td>
@@ -198,10 +216,10 @@ export default function RunsPage({ meta }: { meta: Meta }) {
                       </td>
                       <td className="mono" style={{ fontSize: 11.5, color: "var(--ink-2)" }}>{r.quick_model === r.deep_model ? modelLabel(r.quick_model) : `${modelLabel(r.quick_model)} · ${modelLabel(r.deep_model)}`}</td>
                       <td className="rating" style={{ color: ratingColor(r.rating) }}>{r.rating ?? dash}</td>
-                      <td className="r">{d?.trader?.entry_price != null ? fmtPrice(d.trader.entry_price) : dash}</td>
-                      <td className="r">{d?.trader?.stop_loss != null ? fmtPrice(d.trader.stop_loss) : dash}</td>
-                      <td className="r">{d?.portfolio?.price_target != null ? fmtPrice(d.portfolio.price_target) : dash}</td>
-                      <td className="clip" title={d?.portfolio?.time_horizon ?? undefined} style={{ color: "var(--ink-2)" }}>{d?.portfolio?.time_horizon ?? dash}</td>
+                      <td className="r">{lv.entry != null ? fmtPrice(lv.entry) : dash}</td>
+                      <td className="r">{lv.stop != null ? fmtPrice(lv.stop) : dash}</td>
+                      <td className="r">{lv.target != null ? fmtPrice(lv.target) : dash}</td>
+                      <td className="clip" title={lv.horizon ?? undefined} style={{ color: "var(--ink-2)" }}>{lv.horizon ?? dash}</td>
                       <td className="r">{fmtUsd(r.cost_usd)}</td>
                       <td className="r" style={{ color: r.flags ? "var(--warn)" : "var(--muted)" }}>{r.flags}</td>
                       <td className="muted" title={`${fmtDate(r.created_at)} ${fmtClock(r.created_at, false)} · ${r.started_at ? fmtDuration(duration(r)) : "not started"}`}>{fmtDate(r.created_at)}</td>
@@ -227,10 +245,20 @@ export default function RunsPage({ meta }: { meta: Meta }) {
         )}
       </section>
 
+      {importing && (
+        <VibeImportDialog
+          onClose={() => setImporting(false)}
+          onImported={(id) => {
+            setImporting(false);
+            navigate(`/runs/${id}`);
+          }}
+        />
+      )}
+
       {dialog && (
         <NewRunDialog
           meta={meta}
-          initialEngine={framework === "ai_hedge_fund" && meta.engines?.ai_hedge_fund?.installed ? "ai_hedge_fund" : "tradingagents"}
+          initialEngine={framework !== "all" && framework !== "tradingagents" && meta.engines?.[framework]?.installed ? framework : "tradingagents"}
           onClose={() => setDialog(false)}
           onStarted={(ids) => {
             setDialog(false);
@@ -240,6 +268,67 @@ export default function RunsPage({ meta }: { meta: Meta }) {
         />
       )}
     </>
+  );
+}
+
+/** Sessions found in Vibe-Trading's own home folder; importing one adds it to the database as an imported run. */
+function VibeImportDialog({ onClose, onImported }: { onClose: () => void; onImported: (id: string) => void }) {
+  const [list, setList] = useState<{ home: string; exists: boolean; sessions: VibeSession[] }>();
+  const [busy, setBusy] = useState<string>();
+  const [error, setError] = useState<string>();
+  useEffect(() => {
+    api.vibeSessions().then(setList).catch((e) => setError(String(e.message || e)));
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+  const importOne = async (s: VibeSession) => {
+    setBusy(s.key);
+    setError(undefined);
+    try {
+      onImported((await api.vibeImport(s.kind, s.id)).run_id);
+    } catch (e: any) {
+      setError(String(e.message || e));
+      setBusy(undefined);
+    }
+  };
+  return (
+    <div className="scrim" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
+      <div className="dialog" role="dialog" aria-modal="true" aria-labelledby="vt-import-title">
+        <h2 id="vt-import-title">Import from Vibe-Trading</h2>
+        <p className="muted" style={{ margin: 0, fontSize: 12.5 }}>
+          Sessions and swarm runs you ran in Vibe-Trading's own app, read from {list?.home ?? "its home folder"}. Imported runs keep their own prompt, tools and date; they are tagged as imported and are not controlled Glassbench runs.
+        </p>
+        {!list && !error && <p className="muted">Reading…</p>}
+        {list && !list.exists && <p className="muted">No Vibe-Trading home folder found. Set GLASSBENCH_VT_HOME if it is not in the default place.</p>}
+        {list?.exists && list.sessions.length === 0 && <p className="muted">No sessions yet.</p>}
+        {list && list.sessions.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 360, overflowY: "auto" }}>
+            {list.sessions.map((s) => (
+              <div key={s.key} style={{ display: "flex", gap: 10, alignItems: "center", justifyContent: "space-between", fontSize: 12.5 }}>
+                <div style={{ minWidth: 0 }}>
+                  <div className="clip">{s.prompt || s.id}</div>
+                  <span className="muted mono" style={{ fontSize: 11 }}>
+                    {s.kind === "swarm" ? "swarm" : "session"} · {fmtDate(s.started)} {fmtClock(s.started, false)}
+                    {s.tool_calls != null ? ` · ${s.tool_calls} tools` : ""}{s.answered ? "" : " · no answer"}
+                  </span>
+                </div>
+                {s.imported_run ? (
+                  <button className="btn" onClick={() => onImported(s.imported_run!)}>Open</button>
+                ) : (
+                  <button className="btn" disabled={!!busy} onClick={() => importOne(s)}>{busy === s.key ? "Importing…" : "Import"}</button>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+        {error && <div className="error">{error}</div>}
+        <div className="dialog-foot">
+          <span />
+          <button className="btn btn-ghost" onClick={onClose}>Close</button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -260,7 +349,7 @@ export function StatusCell({ status }: { status: Run["status"] }) {
   );
 }
 
-function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents" }: { meta: Meta; onClose: () => void; onStarted: (ids: string[]) => void; initialEngine?: "tradingagents" | "ai_hedge_fund" }) {
+function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents" }: { meta: Meta; onClose: () => void; onStarted: (ids: string[]) => void; initialEngine?: Engine }) {
   const [tickers, setTickers] = useState("NVDA");
   const [date, setDate] = useState(meta.default_trade_date);
   const [analysts, setAnalysts] = useState<string[]>(meta.analysts);
@@ -280,7 +369,20 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
   const [error, setError] = useState<string>();
 
   const aihf = meta.engines?.ai_hedge_fund;
-  const [engine, setEngine] = useState<"tradingagents" | "ai_hedge_fund">(initialEngine);
+  const [engine, setEngine] = useState<Engine>(initialEngine);
+  const vt = meta.engines?.vibe_trading;
+  const [vtProvider, setVtProvider] = useState<string>(vt?.providers?.[0] ?? "ollama");
+  const [vtModel, setVtModel] = useState("");
+  const [vtMode, setVtMode] = useState<"committee" | "single">("committee");
+  const vtProv = providers.find((p) => p.id === vtProvider);
+  const vtBlocked = !vt?.installed
+    ? "Vibe-Trading is not installed: clone it next to Glassbench (./Vibe-Trading) with its own .venv"
+    : vtProv?.key && !vtProv.present
+    ? `${vtProv.key} is not loaded.`
+    : !vtModel.trim()
+    ? "Type the model id your server serves."
+    : undefined;
+  const isVt = engine === "vibe_trading";
   const [strategy, setStrategy] = useState<string>(aihf?.strategies?.[0]?.name ?? "custom");
   const [aihfAnalysts, setAihfAnalysts] = useState<string[]>(aihf?.analysts?.filter((a) => a.kind === "llm").map((a) => a.name) ?? []);
   const [aihfModel, setAihfModel] = useState<string>(aihf?.default_model ?? "deepseek-flash");
@@ -314,7 +416,9 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
     setBusy(true);
     setError(undefined);
     try {
-      const res = isAihf
+      const res = isVt
+        ? await api.start({ tickers: list, trade_date: date, analysts: meta.analysts, depth: 1, quick_model: vtModel.trim(), deep_model: vtModel.trim(), provider: vtProvider, engine, vt_mode: vtMode })
+        : isAihf
         ? await api.start({
             tickers: list, trade_date: date, analysts: meta.analysts, depth: 1, quick_model: "deepseek-v4-flash", deep_model: "deepseek-v4-pro", provider: "deepseek",
             engine, strategy: strategy === "custom" ? null : strategy, aihf_analysts: strategy === "custom" ? aihfAnalysts : null, aihf_model: aihfModel, aihf_data: dataSource,
@@ -336,6 +440,7 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
           <div className="seg">
             <button className={engine === "tradingagents" ? "on" : ""} onClick={() => setEngine("tradingagents")}>TradingAgents</button>
             <button className={isAihf ? "on" : ""} disabled={!aihf?.installed} title={aihf?.installed ? `AI Hedge Fund ${aihf.version ?? ""}` : aihf?.error} onClick={() => setEngine("ai_hedge_fund")}>AI Hedge Fund</button>
+            <button className={isVt ? "on" : ""} disabled={!vt?.installed} title={vt?.installed ? `Vibe-Trading ${vt.version ?? ""}` : "Vibe-Trading is not installed"} onClick={() => setEngine("vibe_trading")}>Vibe-Trading</button>
           </div>
         </div>
         <div className="row2">
@@ -348,7 +453,7 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
             <label htmlFor="trade-date">Analysis date</label>
             <input id="trade-date" className="input" type="date" value={date} max={meta.default_trade_date} onChange={(e) => setDate(e.target.value)} />
             <span className="hint" style={{ color: pastDate && !isAihf ? "var(--warn)" : undefined }}>
-              {isAihf ? "Filled at the next completed close; a recent date may come back pending" : pastDate ? "Past dates get an empty news feed" : "Today gives the fullest news and profile data"}
+              {isAihf ? "Filled at the next completed close; a recent date may come back pending" : isVt ? "Vibe-Trading has no date input: its news and web tools return today's items" : pastDate ? "Past dates get an empty news feed" : "Today gives the fullest news and profile data"}
             </span>
           </div>
         </div>
@@ -414,6 +519,42 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
             </p>
             {aihfBlocked && <div className="error">{aihfBlocked}</div>}
           </>
+        ) : isVt ? (
+          <>
+            <div className="field">
+              <span className="label">Mode</span>
+              <div className="seg" role="radiogroup" aria-label="Vibe-Trading mode">
+                <button role="radio" aria-checked={vtMode === "committee"} className={vtMode === "committee" ? "on" : ""} onClick={() => setVtMode("committee")}>
+                  Investment committee<small>Vibe-Trading's own preset</small>
+                </button>
+                <button role="radio" aria-checked={vtMode === "single"} className={vtMode === "single" ? "on" : ""} onClick={() => setVtMode("single")}>
+                  One research agent<small>Glassbench's prompt</small>
+                </button>
+              </div>
+            </div>
+            <div className="row2">
+              <div className="field">
+                <label htmlFor="vt-provider">Provider</label>
+                <select id="vt-provider" className="select" value={vtProvider} onChange={(e) => setVtProvider(e.target.value)}>
+                  {(vt?.providers ?? ["ollama"]).map((id) => {
+                    const p = providers.find((x) => x.id === id);
+                    return <option key={id} value={id}>{p?.label ?? id}{p?.key && !p.present ? " (no key)" : ""}</option>;
+                  })}
+                </select>
+              </div>
+              <div className="field">
+                <label htmlFor="vt-model">Model</label>
+                <input id="vt-model" className="input" value={vtModel} onChange={(e) => setVtModel(e.target.value)} placeholder={vtProvider === "ollama" ? "the id your local server serves" : "deepseek-v4-flash"} />
+              </div>
+            </div>
+            <p className="muted" style={{ fontSize: 11.5, margin: 0 }}>
+              {vtMode === "committee"
+                ? "Vibe-Trading's investment committee with its own prompts: bull and bear researchers in parallel, then the chief risk officer, then the portfolio manager. "
+                : "One Vibe-Trading research agent on Glassbench's prompt. "}
+              Read-only data tools and its shell-free maths tool only: no shell, no file access, no backtests, no broker tools. The portfolio manager's answer ends in a JSON block that Glassbench maps to the shared rating table.
+            </p>
+            {vtBlocked && <div className="error">{vtBlocked}</div>}
+          </>
         ) : (
           <>
         <div className="field">
@@ -466,11 +607,11 @@ function NewRunDialog({ meta, onClose, onStarted, initialEngine = "tradingagents
         {error && <div className="error">{error}</div>}
         <div className="dialog-foot">
           <span className="muted" style={{ fontSize: 12 }}>
-            {isAihf ? `AI Hedge Fund ${aihf?.version ?? ""} · ${dataMeta.native ? dataMeta.label : `${dataMeta.label}, not native`} · simulated broker · no orders are placed` : `${prov.label}${prov.key && !prov.present ? ` · ${prov.key} not loaded` : ""} · paper only · no orders are placed`}
+            {isVt ? `Vibe-Trading ${vt?.version ?? ""} · ${vtMode === "committee" ? "investment committee" : "one agent"} · ${vtProv?.label ?? vtProvider} · research only · no orders are placed` : isAihf ? `AI Hedge Fund ${aihf?.version ?? ""} · ${dataMeta.native ? dataMeta.label : `${dataMeta.label}, not native`} · simulated broker · no orders are placed` : `${prov.label}${prov.key && !prov.present ? ` · ${prov.key} not loaded` : ""} · paper only · no orders are placed`}
           </span>
           <div style={{ display: "flex", gap: 8 }}>
             <button className="btn btn-ghost" onClick={onClose}>Cancel</button>
-            <button className="btn btn-primary" disabled={busy || !list.length || (isAihf ? !!aihfBlocked : !analysts.length || !quick.trim() || !deep.trim() || (!!prov.key && !prov.present))} onClick={submit}>
+            <button className="btn btn-primary" disabled={busy || !list.length || (isVt ? !!vtBlocked : isAihf ? !!aihfBlocked : !analysts.length || !quick.trim() || !deep.trim() || (!!prov.key && !prov.present))} onClick={submit}>
               {busy ? "Starting…" : list.length > 1 ? `Start ${list.length} runs` : "Start run"}
             </button>
           </div>

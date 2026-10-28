@@ -1,0 +1,1 @@
+DATA_UNAVAILABLE: optional macro_data could not be retrieved (502 Server Error: Bad Gateway for url: https://api.stlouisfed.org/fred/series?series_id=CPIAUCSL&realtime_start=2026-10-28&realtime_end=2026-10-28&api_key=***&file_type=json). Proceed without it; do not fabricate values.
