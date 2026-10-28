@@ -1,0 +1,5 @@
+**1. Grade: D+.** The book lost 0.218% and trailed SPY by about 8 basis points. The process was weaker than the result: several adds were driven by intraday price position and the need to close a gap to the benchmark, not by a clear thesis.
+
+**2. Decision to change:** Round 2 through Round 4. I added to META, GOOGL, WELL, and GE to "catch up" with the market, to "close gap to SPY," and because they were "near session high." Those are reasons to chase, not reasons to hold a position. I'd have held cash, or sized smaller, unless each name had a specific edge. The NVDA buy was also a problem: I called a $19,500 position "a modest bet," which doesn't match its size.
+
+**3. Lesson for tomorrow:** Set the thesis and position size before the round starts, and never add because a stock is near its high or because I'm behind SPY. If a stated reason doesn't justify the size, shrink the size.

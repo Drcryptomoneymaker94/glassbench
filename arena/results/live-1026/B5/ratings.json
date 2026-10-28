@@ -1,0 +1,125 @@
+{
+ "date": "2026-10-26",
+ "rows": [
+  {
+   "ticker": "NVDA",
+   "rating": "Overweight",
+   "exit": 0,
+   "seconds": 419.1
+  },
+  {
+   "ticker": "AAPL",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 557.8
+  },
+  {
+   "ticker": "BRK.B",
+   "rating": "Hold",
+   "exit": 0,
+   "seconds": 359.7
+  },
+  {
+   "ticker": "JPM",
+   "rating": "Hold",
+   "exit": 0,
+   "seconds": 460.7
+  },
+  {
+   "ticker": "LLY",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 533.0
+  },
+  {
+   "ticker": "JNJ",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 552.2
+  },
+  {
+   "ticker": "GOOGL",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 479.1
+  },
+  {
+   "ticker": "META",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 359.9
+  },
+  {
+   "ticker": "AMZN",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 547.0
+  },
+  {
+   "ticker": "TSLA",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 448.5
+  },
+  {
+   "ticker": "CAT",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 347.6
+  },
+  {
+   "ticker": "GE",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 455.2
+  },
+  {
+   "ticker": "WMT",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 420.4
+  },
+  {
+   "ticker": "COST",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 530.5
+  },
+  {
+   "ticker": "XOM",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 496.4
+  },
+  {
+   "ticker": "CVX",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 477.9
+  },
+  {
+   "ticker": "NEE",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 554.6
+  },
+  {
+   "ticker": "SO",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 470.1
+  },
+  {
+   "ticker": "WELL",
+   "rating": "Overweight",
+   "exit": 0,
+   "seconds": 342.6
+  },
+  {
+   "ticker": "PLD",
+   "rating": "Underweight",
+   "exit": 0,
+   "seconds": 461.8
+  }
+ ]
+}

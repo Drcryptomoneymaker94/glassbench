@@ -1,0 +1,174 @@
+{
+ "rule": "2 largest S&P 500 companies (SPY weight) in each of the 10 largest GICS sectors",
+ "holdings_as_of": "23-Oct-2026",
+ "sectors": [
+  {
+   "sector": "Information Technology",
+   "spy_weight": 37.87
+  },
+  {
+   "sector": "Financials",
+   "spy_weight": 11.97
+  },
+  {
+   "sector": "Health Care",
+   "spy_weight": 9.88
+  },
+  {
+   "sector": "Communication Services",
+   "spy_weight": 9.14
+  },
+  {
+   "sector": "Consumer Discretionary",
+   "spy_weight": 8.88
+  },
+  {
+   "sector": "Industrials",
+   "spy_weight": 7.96
+  },
+  {
+   "sector": "Consumer Staples",
+   "spy_weight": 4.88
+  },
+  {
+   "sector": "Energy",
+   "spy_weight": 3.85
+  },
+  {
+   "sector": "Utilities",
+   "spy_weight": 2.03
+  },
+  {
+   "sector": "Real Estate",
+   "spy_weight": 1.76
+  },
+  {
+   "sector": "Materials",
+   "spy_weight": 1.69
+  }
+ ],
+ "unmatched_spy_tickers": [],
+ "universe": [
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA CORP",
+   "sector": "Information Technology",
+   "spy_weight": 7.7705
+  },
+  {
+   "ticker": "AAPL",
+   "name": "APPLE INC",
+   "sector": "Information Technology",
+   "spy_weight": 7.7241
+  },
+  {
+   "ticker": "BRK.B",
+   "name": "BERKSHIRE HATHAWAY INC CL B",
+   "sector": "Financials",
+   "spy_weight": 1.537
+  },
+  {
+   "ticker": "JPM",
+   "name": "JPMORGAN CHASE + CO",
+   "sector": "Financials",
+   "spy_weight": 1.3416
+  },
+  {
+   "ticker": "LLY",
+   "name": "ELI LILLY + CO",
+   "sector": "Health Care",
+   "spy_weight": 1.551
+  },
+  {
+   "ticker": "JNJ",
+   "name": "JOHNSON + JOHNSON",
+   "sector": "Health Care",
+   "spy_weight": 0.9678
+  },
+  {
+   "ticker": "GOOGL",
+   "name": "ALPHABET INC CL A",
+   "sector": "Communication Services",
+   "spy_weight": 2.8598
+  },
+  {
+   "ticker": "META",
+   "name": "META PLATFORMS INC CLASS A",
+   "sector": "Communication Services",
+   "spy_weight": 2.1568
+  },
+  {
+   "ticker": "AMZN",
+   "name": "AMAZON.COM INC",
+   "sector": "Consumer Discretionary",
+   "spy_weight": 3.7049
+  },
+  {
+   "ticker": "TSLA",
+   "name": "TESLA INC",
+   "sector": "Consumer Discretionary",
+   "spy_weight": 1.5967
+  },
+  {
+   "ticker": "CAT",
+   "name": "CATERPILLAR INC",
+   "sector": "Industrials",
+   "spy_weight": 0.4796
+  },
+  {
+   "ticker": "GE",
+   "name": "GENERAL ELECTRIC",
+   "sector": "Industrials",
+   "spy_weight": 0.4512
+  },
+  {
+   "ticker": "WMT",
+   "name": "WALMART INC",
+   "sector": "Consumer Staples",
+   "spy_weight": 0.8134
+  },
+  {
+   "ticker": "COST",
+   "name": "COSTCO WHOLESALE CORP",
+   "sector": "Consumer Staples",
+   "spy_weight": 0.6774
+  },
+  {
+   "ticker": "XOM",
+   "name": "EXXONMOBIL HOLDINGS CORP",
+   "sector": "Energy",
+   "spy_weight": 1.1467
+  },
+  {
+   "ticker": "CVX",
+   "name": "CHEVRON CORP",
+   "sector": "Energy",
+   "spy_weight": 0.7015
+  },
+  {
+   "ticker": "NEE",
+   "name": "NEXTERA ENERGY INC",
+   "sector": "Utilities",
+   "spy_weight": 0.2608
+  },
+  {
+   "ticker": "SO",
+   "name": "SOUTHERN CO/THE",
+   "sector": "Utilities",
+   "spy_weight": 0.1625
+  },
+  {
+   "ticker": "WELL",
+   "name": "WELLTOWER INC",
+   "sector": "Real Estate",
+   "spy_weight": 0.2602
+  },
+  {
+   "ticker": "PLD",
+   "name": "PROLOGIS INC",
+   "sector": "Real Estate",
+   "spy_weight": 0.1828
+  }
+ ],
+ "sha256": "c8a4616dc3c2624c4716aff965b7ff6504cb6211cf080bdb7e00a429e95cd812"
+}

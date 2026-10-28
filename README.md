@@ -32,6 +32,11 @@ A frameworks page keeps a reference sheet per framework: how it decides, what it
 
 > **Not investment advice.** Glassbench is a research and education tool. Every rating, price level and report in this repository and its database is output from language models, published so the method can be judged. None of it is a recommendation to buy, sell or hold any security, by the author or anyone else. Orders go to paper accounts only.
 
+## New
+
+- **Local models, Oct 2026.** TradingAgents on two open-weight models served by llama.cpp on one desktop (Qwen3-30B-A3B and Qwen3.6-35B-A3B), 12 stocks each at no API cost, their ratings set beside DeepSeek's on the same stocks and date. Ratings, speed and every report in [results/local-models](results/local-models/), plus how to point Glassbench at a local server.
+- **Harness Arena, Oct 2026.** Five AI books on Alpaca paper accounts for two sessions: Claude Code and dsh crossed with Haiku and DeepSeek on one prompt, against TradingAgents. Code, daily reports and a luck test in [arena/](arena/).
+
 ## Screenshots
 
 | Runs, the record of every analysis | A run, with the committee board |
@@ -210,6 +215,8 @@ glassbench/
 ├── backend/tests/      adapter, backtest, simulator, variants, run config, AI Hedge Fund
 ├── frontend/src/       React and TypeScript (Vite)
 ├── data/               the runs database and the run files
+├── results/            local-models/: TradingAgents on local models, ratings, speed, reports
+├── arena/              Harness Arena: five AI books on Alpaca paper, code and daily reports
 └── docs/               how a run works, backtest method, the valuation matched pair, research notes, screenshots
 ```
 

@@ -1,0 +1,228 @@
+{
+ "runs": [
+  "live-1026",
+  "live-1027"
+ ],
+ "days": [
+  {
+   "run": "live-1026",
+   "spy_return": -0.0013961742216656026,
+   "books": {
+    "B1": {
+     "start": 100000.0,
+     "end": 99479.38,
+     "return": -0.005206199999999939,
+     "percentile": 0.0497,
+     "ai_cost": 0.013264283200000001,
+     "trading_cost_est": 62.804272972751576,
+     "turnover": 298658.08237874694,
+     "slippage_est": 59.73161647574939,
+     "sec_fee_est": 3.0726564970021872,
+     "trades": 15,
+     "max_drawdown": 0.005332522769608185
+    },
+    "B2": {
+     "start": 100000.0,
+     "end": 99621.85,
+     "return": -0.003781499999999993,
+     "percentile": 0.075,
+     "ai_cost": 0.009825125,
+     "trading_cost_est": 41.80870907557839,
+     "turnover": 198814.18438612143,
+     "slippage_est": 39.76283687722429,
+     "sec_fee_est": 2.0458721983541017,
+     "trades": 16,
+     "max_drawdown": 0.0038779246168969567
+    },
+    "B3": {
+     "start": 100000.0,
+     "end": 99367.65,
+     "return": -0.006323500000000037,
+     "percentile": 0.0123,
+     "ai_cost": 0.008512621600000003,
+     "trading_cost_est": 55.351188425828965,
+     "turnover": 263219.7118124613,
+     "slippage_est": 52.64394236249226,
+     "sec_fee_est": 2.7072460633367035,
+     "trades": 13,
+     "max_drawdown": 0.006391164761679765
+    },
+    "B4": {
+     "start": 100000.0,
+     "end": 99711.34,
+     "return": -0.0028866000000000724,
+     "percentile": 0.1625,
+     "ai_cost": 0.00810029,
+     "trading_cost_est": 41.39475453165477,
+     "turnover": 196844.30884702975,
+     "slippage_est": 39.36886176940595,
+     "sec_fee_est": 2.025892762248813,
+     "trades": 14,
+     "max_drawdown": 0.002930869869377858
+    },
+    "B5": {
+     "start": 100000.0,
+     "end": 100106.76,
+     "return": 0.0010676000000000574,
+     "percentile": 0.9274,
+     "ai_cost": 0,
+     "trading_cost_est": 16.714540953,
+     "turnover": 79479.51000000001,
+     "slippage_est": 15.895902000000001,
+     "sec_fee_est": 0.8186389530000002,
+     "trades": 2,
+     "max_drawdown": 0.0014410313994261004
+    }
+   }
+  },
+  {
+   "run": "live-1027",
+   "spy_return": 0.0052311625965353326,
+   "books": {
+    "B1": {
+     "start": 99476.3,
+     "end": 100414.29,
+     "return": 0.009429281145358237,
+     "percentile": 0.9931,
+     "ai_cost": 0.022213788800000002,
+     "trading_cost_est": 61.12644872986456,
+     "turnover": 290612.43032576866,
+     "slippage_est": 58.12248606515373,
+     "sec_fee_est": 3.003962664710834,
+     "trades": 28,
+     "max_drawdown": 0.0028017849901495495
+    },
+    "B2": {
+     "start": 99619.79,
+     "end": 100147.44,
+     "return": 0.00529663834866545,
+     "percentile": 0.8549,
+     "ai_cost": 0.01827248,
+     "trading_cost_est": 41.9700824373003,
+     "turnover": 199545.7046115154,
+     "slippage_est": 39.90914092230308,
+     "sec_fee_est": 2.0609415149972174,
+     "trades": 13,
+     "max_drawdown": 0.002013651331883511
+    },
+    "B3": {
+     "start": 99364.93,
+     "end": 100285.31,
+     "return": 0.009262624147171383,
+     "percentile": 0.9999,
+     "ai_cost": 0.021018127200000004,
+     "trading_cost_est": 61.44764703071821,
+     "turnover": 292144.1841827661,
+     "slippage_est": 58.428836836553224,
+     "sec_fee_est": 3.0188101941649825,
+     "trades": 38,
+     "max_drawdown": 0.0024888521620417122
+    },
+    "B4": {
+     "start": 99709.3,
+     "end": 100285.42,
+     "return": 0.005777996636221472,
+     "percentile": 0.898,
+     "ai_cost": 0.018876305,
+     "trading_cost_est": 47.44506882914122,
+     "turnover": 225578.28118377706,
+     "slippage_est": 45.11565623675541,
+     "sec_fee_est": 2.3294125923858076,
+     "trades": 20,
+     "max_drawdown": 0.002143731828425232
+    },
+    "B5": {
+     "start": 100098.3,
+     "end": 100519.04,
+     "return": 0.0042032681873718225,
+     "percentile": 0.6191,
+     "ai_cost": 0,
+     "trading_cost_est": 25.127371638,
+     "turnover": 119483.45999999999,
+     "slippage_est": 23.896691999999998,
+     "sec_fee_est": 1.230679638,
+     "trades": 3,
+     "max_drawdown": 0.004252143234557477
+    }
+   }
+  }
+ ],
+ "total": {
+  "B1": {
+   "return": 0.004173990421859397,
+   "pnl_from_100k": 414.2899999999936,
+   "ai_cost": 0.035478072,
+   "trading_cost_est": 123.93072170261614,
+   "slippage_est": 117.85410254090311,
+   "sec_fee_due_last_day": 3.003962664710834,
+   "pnl_after_costs": 293.39645672237964,
+   "turnover": 589270.5127045156,
+   "alpaca_charged_between_days": -3.0800000000017462,
+   "percentiles": [
+    0.0497,
+    0.9931
+   ]
+  },
+  "B2": {
+   "return": 0.0014951091107500147,
+   "pnl_from_100k": 147.44000000000233,
+   "ai_cost": 0.028097605,
+   "trading_cost_est": 83.77879151287868,
+   "slippage_est": 79.67197779952737,
+   "sec_fee_due_last_day": 2.0609415149972174,
+   "pnl_after_costs": 65.67898308047775,
+   "turnover": 398359.88899763685,
+   "alpaca_charged_between_days": -2.0600000000122236,
+   "percentiles": [
+    0.075,
+    0.8549
+   ]
+  },
+  "B3": {
+   "return": 0.0028805519433767746,
+   "pnl_from_100k": 285.3099999999977,
+   "ai_cost": 0.029530748800000006,
+   "trading_cost_est": 116.79883545654718,
+   "slippage_est": 111.07277919904548,
+   "sec_fee_due_last_day": 3.0188101941649825,
+   "pnl_after_costs": 171.18887985798716,
+   "turnover": 555363.8959952274,
+   "alpaca_charged_between_days": -2.720000000001164,
+   "percentiles": [
+    0.0123,
+    0.9999
+   ]
+  },
+  "B4": {
+   "return": 0.0028747178711312493,
+   "pnl_from_100k": 285.41999999999825,
+   "ai_cost": 0.026976595,
+   "trading_cost_est": 88.83982336079599,
+   "slippage_est": 84.48451800616137,
+   "sec_fee_due_last_day": 2.3294125923858076,
+   "pnl_after_costs": 198.5790928064511,
+   "turnover": 422422.59003080684,
+   "alpaca_charged_between_days": -2.039999999993597,
+   "percentiles": [
+    0.1625,
+    0.898
+   ]
+  },
+  "B5": {
+   "return": 0.005275355596488618,
+   "pnl_from_100k": 519.0399999999936,
+   "ai_cost": 0,
+   "trading_cost_est": 41.841912590999996,
+   "slippage_est": 39.792594,
+   "sec_fee_due_last_day": 1.230679638,
+   "pnl_after_costs": 478.01672636199356,
+   "turnover": 198962.97,
+   "alpaca_charged_between_days": -8.459999999991851,
+   "percentiles": [
+    0.9274,
+    0.6191
+   ]
+  }
+ },
+ "spy_return": 0.003827684760503214
+}
